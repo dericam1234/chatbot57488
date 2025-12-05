@@ -1,0 +1,133 @@
+Asiantuntijaraportti: Datan Kerääminen ja Hyödyntäminen Suomen Kansallisessa Turvallisuudessa
+•	Tapausesimerkki: Suojelupoliisin Hybriditiedustelu ja Päätöksenteko
+•	OSA 1: Johdanto – Uusi Aika, Uudet Toimivallat
+Suomen kansallisessa turvallisuudessa datan käyttö ei ole vain tekninen päivitys; se on perustavanlaatuinen muutos. Vuoden 2019 tiedustelu-lainsäädäntö  edusti yhtä Suomen lähihistorian merkittävintä valti-osääntöoikeudellista ja filosofista muutosta.   
+Ennen vuotta 2019 Suomen turvallisuusviranomaiset toimivat pääasiassa poliisivaltuuksin. Niiden oli odotettava, että oli syytä epäillä rikosta, ennen kuin raskaita tiedonhankintakeinoja voitiin käyttää. Tämä lähestymistapa oli luonteeltaan reaktiivinen. Muuttunut uhkaympäristö teki tästä mallista riittämättömän. Kyse ei ollut enää vain perinteisestä rikollisuudesta, vaan kansalliseen turvallisuuteen kohdistuvista vakavista uhista, kuten terror-ismista , vieraiden valtioiden vakoilusta  ja hybridisodankäynnistä. Nämä uhat kehittyvät ja toteutetaan usein kauan ennen kuin varsinainen rikosilmoitus on edes mahdollinen.   
+Lainsäädännöllinen vastaus tähän oli antaa Suojelupoliisille (Supo) ja Puolustusvoimille uudet tiedusteluvaltuudet. Tämä mahdollisti siirtymän proaktiiviseen eli ennakoivaan toimintaan. Tavoitteena on nyt havaita ja tor-jua uhat ennen kuin ne aiheuttavat peruuttamatonta vahinkoa. Tämän mahdollistamiseksi Suomen perustuslain 10 §:ää, joka turvaa yksityisyyden suojan, jouduttiin muuttamaan. Tämä korostaa, että datan kerääminen tie-dustelutarkoituksiin on suora, tietoinen ja parlamentaarisesti hyväksytty rajo-itus yksilön perusoikeuksiin kansallisen turvallisuuden nimissä.   
+Tämä raportti käyttää konkrettisena tapausesimerkkinä Suojelupoliisin datan käyttöä kuvitteellisen, mutta realistisen hybridivaikuttamisen operaation tor-jumiseksi ja analysoi prosessia annettujen kysymysten mukaisesti.
+•	OSA 2: Tapausesimerkki – Hybridiaikakauden Uhan Anatomia
+Skenaariona on, että vieras valtiollinen toimija ("Toimija X") on aloittanut Suomeen kohdistuvan laaja-alaisen hybridivaikuttamisen operaation. Sen tavoitteena on heikentää yhteiskunnallista eheyttä ja luottamusta virano-maisiin sekä kerätä tietoa kriittisestä infrastruktuurista.   
+Operaatio koostuu useasta rinnakkaisesta osa-alueesta:
+1.	Informaatiovaikuttaminen: Toimija X rahoittaa ja ohjaa peitellysti trolli-verkostoa, joka levittää sosiaalisessa mediassa räätälöityä disin-formaatiota.   
+2.	Kybervakoilu: Toimija X:n valtiollinen kybertoimija yrittää murtautua suomalaisen energiayhtiön hallintajärjestelmiin kerätäkseen tietoa ja luodakseen pohjaa mahdolliselle sabotaasille.   
+3.	Poliittinen painostus: Toimija X:n tiedustelu-upseerit, jotka toimivat diplomaattipeitteellä, pyrkivät peitellysti luomaan kontakteja ja värväämään lähteitä suomalaisista asiantuntijaorganisaatioista.   
+4.	Ääriliikkeiden tukeminen: Toimija X ohjaa piilossa varoja kotimaiselle ääriryhmälle lietsoakseen yhteiskunnallisia levottomuuksia.   
+Suojelupoliisin lakisääteinen tehtävä on tunnistaa, estää ja paljastaa täl-lainen kansallista turvallisuutta vaarantava toiminta. Seuraavat osiot kuvaa-vat, miten data on tässä tehtävässä keskeistä.   
+•	OSA 3: Tiedonkeruun Anatomia (Mitä dataa kerätään?)
+Hybridiaikakaudella yksikään datalähde ei yksinään riitä. Suojelupoliisin kyky ei perustu yksittäiseen datatyyppiin, vaan sen kykyyn yhdistää eli fuu-sioida useita täysin erilaisia datatyyppejä niin sanotuksi "all-source intelli-gence" -tuotteeksi. Vasta yhdistettynä nämä palaset muodostavat kuvan, joka paljastaa Toimija X:n operaation.
+•	3.1 Avoimien Lähteiden Tiedustelu (OSINT)
+•	Mitä dataa: Kaikki julkisesti ja laillisesti saatavilla oleva tie-to. Skenaariossamme tähän kuuluu sosiaalinen media (SOCMINT), kuten Twitter/X-, Telegram- ja Facebook-tilien sisältö ja metadata ; verkkosivustojen ja foorumien, kuten Ylilaudan tai pimeän verkon (Tor-verkko) keskustelut ; sekä julkiset rekisterit, akateemiset julkaisut ja vuodetut tietokannat.   
+•	Muoto ja määrä: Data on pääosin strukturoimatonta (teksti, kuva, vid-eo). Määrä on valtava, mitattavissa petatavuissa.
+•	Lähde: Julkinen internet.   
+•	Merkitys: OSINT antaa Supolle "peruslinjan" (baseline). Se paljastaa disinformaationarratiivit ja niiden leviämisen, mutta ei itsessään kerro, kuka niitä ohjaa.
+•	3.2 Signaalitiedustelu (SIGINT)
+•	Mitä dataa: Tämä on tiedustelulakien ytimessä. Se jaetaan viesti-tiedusteluun (COMINT), joka koskee viestien sisältöjä ja metatietoja (kuka viesti kenelle, milloin, mistä), ja elektroniseen tiedusteluun (ELINT), joka koskee muita kuin viestien signaaleja, kuten tutkien tai asejärjestelmien sähköisiä allekirjoituksia.   
+•	Lähde ja rajoitukset: On elintärkeää ymmärtää, että kyseessä ei ole suomalaisten massavalvonta. Laki sallii vain Suomen rajan ylittävän tietoliikenteen kohdennetun seurannan. Laki kieltää Su-omen sisäisen liikenteen seurannan ja edellyttää, että haku kohdistetaan tarkoin määriteltyihin hakuehtoihin (esim. tunnetun Toimija X:n kybervakoiluyksikön IP-osoitteet).   
+•	Oikeudellinen prosessi: Menetelmän käyttö vaatii aina tuomioistuimen luvan. Skenaariossamme Supo saisi tuomioistuimen luvalla seurata epäiltyjen Toimija X:n kybervakoili-joiden ja suomalaisen energiayhtiön välistä dataliikennettä.   
+•	3.3 Henkilötiedustelu (HUMINT)
+•	Mitä dataa: Tiedot, jotka on saatu ihmislähteiltä. Tämä data on usein kvalitatiivista, epävarmaa ja vaikeasti varmennettavaa, mutta par-haimmillaan korvaamatonta, koska se voi paljastaa vastustajan ai-keita.   
+•	Muoto ja lähde: Raportit, muistiot ja suulliset selonteot, jotka ovat peräisin peitellyistä kontakteista, diplomaattisista keskusteluista, vapaaehtoisista tietolähteistä tai loikkareista. Puolustusvoimien laaja kiinnostus HUMINT-koulutukseen osoittaa alan merkityksen Suomen puolustukselle.   
+•	Skenaariossa: Supon vastatiedustelu  saa vihjeen ihmislähteeltä, että Toimija X:n diplomaatti (joka on todellisuudessa tiedustelu-upseeri) on lähestynyt epäilyttävästi suomalaisasiantuntijoita.   
+•	3.4 Taloustiedustelu (FININT) ja Viranomaisyhteistyö
+•	Mitä dataa: Tieto rahavirroista. Supo ei itse valvo pankkitilejä, mutta se tekee tiivistä yhteistyötä Keskusrikospoliisin Rahanpesun selvitte-lykeskuksen kanssa.   
+•	Lähde: Pankkien ilmoitukset epäilyttävistä siirroista.   
+•	Skenaariossa: Rahanpesun selvittelykeskus havaitsee epäilyttävän, peitellyn varainsiirron ulkomaiselta peiteyhtiöltä suomalaisen ääriry-hmän jäsenen tilille ja välittää tiedon Supolle osana terrorismin rahoittamisen torjuntaa.   
+•	OSA 4: Käyttäjät ja Päämäärät (Kuka dataa hyödyntää ja miksi?)
+•	4.1 Ensisijainen Toimija: Suojelupoliisi
+Suojelupoliisi on datan kerääjä, prosessoija ja analysoija. Sen päämäärä on kansallisen turvallisuuden suojaaminen. Skenaariossamme tämä to-teutuu kolmen lakisääteisen tehtävän kautta:   
+1.	Vastatiedustelu: Torjua Toimija X:n vakoilu ja HUMINT-operaatiot.   
+2.	Terrorismin torjunta: Estää ja paljastaa ääriryhmän toiminta ja sen saama rahoitus.   
+3.	Yhteiskuntajärjestyksen suojelu: Tunnistaa Toimija X:n pyrkimykset horjuttaa demokraattista järjestelmää informaatiovaikuttamisen kaut-ta.   
+•	4.2 Lopullinen Käyttäjä: Suomen Ylin Valtiojohto
+•	Kuka: Tasavallan Presidentti ja Valtioneuvosto (eli hallitus).   
+•	Päämäärä: Strateginen päätöksenteko. Tämä on kriittinen ero po-liisitoimintaan. Poliisi kerää dataa (todisteita) viedäkseen tapauksen syyttäjälle ja oikeuteen. Supo kerää dataa (tiedustelutietoa) antaakseen valtiojohdolle tilannekuvan ja toimintavaihtoehtoja. Supo tuottaa analysoimastaan datasta ainutlaatuista tietoa, jota valtiojohto ei saa mistään muualta.   
+•	Skenaariossa: Valtiojohto ei ole kiinnostunut yksittäisestä IP-osoitteesta. He haluavat vastauksen kysymykseen: "Mitä Toimija X yrittää tehdä? Miten vakava uhka on? Miten meidän tulisi reagoida diplomaattisesti, poliittisesti ja lainsäädännöllisesti?"
+•	OSA 5: Analyysin Moottori (Miten dataa analysoidaan?)
+Raakadata (Osasta 3) on hyödytöntä, kunnes se analysoidaan. Prosessi, jolla petatavut muuttuvat valtiojohdon pöydällä olevaksi yhden sivun muisti-oksi, on tiedustelun analyyttinen ydin.  
+•	5.1 Datan Fuusiointi ja Jäsennys
+Ensimmäinen vaihe on "tiedon fuusiointi", jossa eri lähteistä (OSINT, SIGINT, HUMINT, FININT) tuleva data yhdistetään. Käytössä on Big Data -alustoja ja tietokantoja (kuten SQL-pohjaiset järjestelmät ), joilla data jäsen-nellään ja "puhdistetaan".   
+•	5.2 Analyysitekniikat (Ihminen ja Kone)
+•	Verkostoanalyysi (Network Analysis): Tämä on ehkä tärkein yksit-täinen tekniikka tässä skenaariossa. Analyytikko käyttää ohjelmis-toja  piirtääkseen graafin, joka yhdistää operaation eri osapuolet.   
+•	Analyysin vaiheet skenaariossa:
+1.	Analyytikko aloittaa Rahanpesun selvittelykeskuksen ilmoittamasta pankkitilistä (FININT).   
+2.	Hän lisää verkostoon tilin omistavan ääriryhmän jä-senen.
+3.	Hän lisää tähän jäseneen liittyvät OSINT-tiedot: some-tilit ja foorumikirjoitukset.   
+4.	Hän huomaa, että nämä tilit levittävät täsmälleen samaa disinformaationarratiivia, jonka toinen OSINT-analyytikko on merkinnyt Toimija X:n ohjaamaksi.
+5.	Samaan aikaan SIGINT-analyytikko saa osuman (tuomioistuimen luvalla) Toimija X:n ky-bervakoiluyksikön ja energiayhtiön välillä.   
+6.	Ja HUMINT-analyytikko lataa järjestelmään raportin Toimija X:n diplomaatin epäilyttävistä kontakteista.   
+•	Tulos: Kun nämä neljä erillistä pistettä yhdistetään verkosto-kartalle , erillisiltä vaikuttaneet tapaukset paljastuvat yhdeksi koordinoiduksi hybridiaikakauden operaatioksi. Lisäksi käytetään sisällönanalyysiä  ja tapahtumakaavioita  operaation kronologian ja narratiivien ymmärtämiseksi.   
+•	5.3 Ennakoiva Analytiikka ja Tekoäly (AI/ML)
+Koska datamäärät (erityisesti OSINT ja SIGINT) ovat liian suuria ihmisen käsiteltäväksi, tekoäly ja koneoppiminen ovat välttämättömiä.   
+•	Anomalioiden havaitseminen: Koneoppimismalli  voi valvoa SIGINT-dataa  ja hälyttää, kun se havaitsee poikkeavaa liikennettä, joka viittaa kyberhyökkäyksen valmisteluun.   
+•	Trendien mallintaminen: Tekoäly voi seuloa miljoonia somenviestejä (OSINT) ja tunnistaa bot-verkoston toimintamallit sekä ennustaa, mikä disinformaationarratiivi on nousemassa suosituksi.   
+•	OSA 6: Datan Arvo (Mitä hyötyä analyysista on?)
+Datan arvo mitataan sen kyvyssä mahdollistaa parempia päätöksiä ja konkreettisia torjuntatoimia.
+•	6.1 Operatiivinen Hyöty: Ennakkovaroitus ja Torjunta
+Analyysin perusteella Supo ei vain tiedä, mitä tapahtuu, vaan voi toimia.
+•	Kyberuhka: Supo antaa energiayhtiölle kohdennetun, teknisen va-roituksen Toimija X:n hyökkäysmenetelmistä (perustuen SIGINT-dataan), mahdollistaen hyökkäyksen torjumisen.   
+•	Vastatiedustelu: Verkostoanalyysi paljastaa Toimija X:n tiedustelu-upseerin. Supo voi neutralisoida tämän uhan joko hiljaisesti tai ilmoittamalla asiasta Ulkoministeriölle.
+•	Terrorismin rahoitus: Supo välittää FININT- ja OSINT-analyysinsa KRP:lle, joka voi käynnistää rikostutkinnan ja estää varojen käytön.   
+•	6.2 Strateginen Hyöty: Tilannekuva Valtiojohdolle
+Tämä on datan suurin arvo. Supo tuottaa valtiojohdolle  tiiviin, analysoidun raportin: "Toimija X suorittaa koordinoitua hybridiaikakauden operaatiota Suomea vastaan. Olemme torjuneet välittömät uhat A, B ja C. Arviomme mukaan operaation strateginen tavoite on X, ja suosittelemme varautumista toimiin Y ja Z." Tämä dataan perustuva analyysi antaa valtiojohdolle tiedol-lisen ylivoiman ja mahdollistaa proaktiivisen ulko- ja turvallisuuspolitiikan.   
+•	OSA 7: Valvonnan Välttämättömyys (Eettisyys ja Yksityisyys)
+Datan käyttö tiedustelussa ei ole eettisesti neutraalia. Se on perusta-vanlaatuisessa jännitteessä yksilön perusoikeuksien, kuten yksityisyyden suojan, kanssa. Kysymys ei ole voidaanko dataa käyttää, vaan miten sen käyttöä rajoitetaan ja valvotaan demokraattisessa oikeusvaltiossa. Suomen malli perustuu "turvallisuuden ja vapauden" tasapainoon, jossa turvallisuut-ta pidetään vapauden rajoituksena, ei sen edellytyksenä.   
+•	7.1 Keskeiset Eettiset Riskit
+•	Algoritminen Vinouma (Algorithmic Bias): Tämä on tekoälyn käytön suurin eettinen kompastuskivi. Jos Supo kehittää koneoppimis-mallin  tunnistamaan "radikalisoitumisen merkkejä"  OSINT-datasta, malli on täysin riippuvainen opetusdatastaan. Jos opetusdata (esim. menneet terrorismitapaukset) on historiallisista syistä vinoutunut kos-kemaan tiettyä uskontoa tai poliittista suuntausta, tekoäly oppii tämän vinouman. Se saattaa alkaa merkitä täysin viattomia, tiettyyn ryhmään kuuluvia ihmisiä riskeiksi, mikä luo syrjivän palautesilmukan ja loukkaa perusoikeuksia.   
+•	"Mustan Laatikon" Ongelma: Monet nykyaikaiset tekoälymallit ovat "mustia laatikoita" (black box) – edes niiden kehittäjät eivät voi täysin selittää, miksi ne päätyivät tiettyyn tulokseen. Jos tekoäly liputtaa henkilön, mutta kukaan ei voi perustella miksi, miten henkilö voi puolustautua tai miten tuomioistuin voi arvioida toimenpiteen lail-lisuutta?   
+•	Datan Väärinkäyttö (Vihollisen Toimesta): Supo itse on nostanut esiin riskin, että autoritääriset valtiot hyödyntävät Suomen avointa dataa. Tekoälyn avulla vihollinen voi yhdistellä harmittomilta vaikutta-via datamassoja (esim. julkiset terveys- ja geenitiedot ) luodakseen kohdennettuja biologisia aseita tai painostaakseen avainhenkilöitä. Tämä kääntää länsimaisen avoimuuden ihanteen itseään vastaan.   
+•	7.2 Suomen Ratkaisu: Monitasoinen ja Poikkeuksellisen Vahva Valvonta
+Läpinäkyvyyden ja oikeudenmukaisuuden varmistamiseksi Suomi on ra-kentanut vastapainoksi maailman vahvimpiin kuuluvan valvontajärjest-elmän. Legitimiteetti perustuu siihen, että mikään toimija ei valvo itse itseään.
+1.	Ennakkokontrolli (Tuomioistuin): Raskaimpiin pe-rusoikeuspuuttumisiin (kuten SIGINT ) Supon on saa-tava etukäteen lupa Helsingin käräjäoikeuden erikoistuomaril-ta. Tuomari punnitsee riippumattomasti, ovatko lailliset edellytykset täyttyneet.   
+2.	Laillisuusvalvonta (Tiedusteluvalvontavaltuutettu): Itsenäinen, riippumaton viranomainen , jolla on täysi pääsy kaikkeen Supon dataan ja järjestelmiin. Hän valvoo reaaliaikaisesti ja jälkikäteen, että lakia noudatetaan kirjaimellisesti.   
+3.	Parlamentaarinen Valvonta (Eduskunnan Tiedusteluvalvontava-liokunta): Erityinen, salassapitovelvollinen valiokunta , joka koostuu kansanedustajista. He eivät valvo vain laillisuutta, vaan myös asianmukaisuutta ja tarkoituksenmukaisuutta. He kysyvät: "Käyt-tääkö Supo näitä valtavia datamääriä ja valtuuksia oikeisiin asioihin? Ovatko toiminnan painopisteet  kohdallaan?"   
+•	OSA 8: Johtopäätökset – Datatiedustelu Uutena Sosiaalisopi-muksena
+Datan kerääminen ja analysointi on modernille tiedustelupalvelulle, kuten Suojelupoliisille, elinehto. Muuttunut turvallisuusympäristö, jota hallitsevat hybridiaikakauden uhat, kybervakoilu ja globaali terrorismi , on tehnyt enna-koivasta ja dataan perustuvasta tilannekuvasta kansallisen suvereniteetin ja turvallisuuden välttämättömän edellytyksen.   
+Tämä raportti on kuvannut, miten Supon on fuusioitava useita datalähteitä – julkisesta OSINT-datasta  ja ihmislähteiden HUMINT-tiedoista  aina tiukasti säänneltyyn SIGINT-dataan  – paljastaakseen monimutkaisen hybridiaika-kauden operaation. Tämä analyysi, joka hyödyntää verkostoanalyysiä  ja tekoälyä , tuottaa valtiojohdolle  ainutlaatuisen tilannekuvan, joka mahdollis-taa uhkien torjumisen ennen niiden toteutumista.   
+Vuoden 2019 tiedustelulainsäädäntö  ei ollut vain tekninen päivitys. Se oli Suomen vastaus datan aikakauteen – uusi sosiaalinen sopimus. Yhteiskunta myönsi valtiolle ennennäkemättömät valtuudet kerätä ja analysoida dataa kansalaisten perusoikeuksiin puuttuen. Tämän sopimuksen vastineeksi valtio sitoutui ennennäkemättömän vahvaan, monitasoiseen ja ulkopuoliseen valvontaan: tuomioistuimeen , riippumat-tomaan valtuutettuun  ja parlamentaariseen valiokuntaan.   
+Datan käytön merkityksellisyys ei piile siis datassa itsessään, vaan tämän sopimuksen tasapainossa. Järjestelmän legitimiteetti ja tehokkuus riippuvat jatkossa siitä, miten hyvin tämä valvonta pysyy teknologisen kehityksen (er-ityisesti tekoälyn vinoumat ) ja uusien uhkien  vauhdissa.   
+•	LÄHTEET
+Eduskunta. (n.d.). Tiedusteluvalvontavaliokunnan mietintö TiVM 1/2022 vp. Haettu 6.11.2025 osoit-teesta(https://www.eduskunta.fi/FI/vaski/Mietinto/Sivut/TiVM_1+2022.aspx)
+Eduskunta. (n.d.). Valtioneuvoston kirjelmä O 79/2020 vp. Haettu 6.11.2025 osoitteesta https://www.eduskunta.fi/valtiopaivaasiakirjat/O+79/2020
+Esignals. (2020). Tekoälyn etiikka ja datan vinoumat. Haaga-Helia am-mattikorkeakoulu. Haettu 6.11.2025 osoitteesta https://esignals.fi/teemat/vastuullisuus-teemat/tekoalyn-etiikka-ja-datan-vinoumat/
+EUR-Lex. (n.d.). Terrorismin torjunta. Haettu 6.11.2025 osoit-teesta(https://eur-lex.europa.eu/legal-content/FI/ALL/?uri=LEGISSUM:fight_against_terrorism)
+Finlex. (2019a). Laki sotilastiedustelusta 590/2019. Haettu 6.11.2025 osoit-teesta https://www.finlex.fi/fi/lainsaadanto/2019/590
+Finlex. (2019b). Laki tiedustelutoiminnan valvonnasta 121/2019. Haettu 6.11.2025 osoitteesta https://www.finlex.fi/fi/lainsaadanto/2019/121
+Glad, T. (n.d.). Tiedustelutiedon analysointi. Theseus. Haettu 6.11.2025 osoitteesta(https://www.theseus.fi/bitstream/10024/55441/1/Glad_Timo.pdf)
+Helsingin yliopisto. (n.d.). Massiivisten tietoaineistojen analysointi. Haettu 6.11.2025 osoitteesta https://helda-test-22.hulib.helsinki.fi/items/ec7881c9-d8d5-4003-a6c2-8e03bba40559/full
+Insightsoftware. (n.d.). Mitä on ennakoiva analytiikka? Haettu 6.11.2025 osoitteesta https://insightsoftware.com/fi/encyclopedia/predictive-analytics/
+Insightsoftware. (n.d.). What is predictive analytics? Haettu 6.11.2025 osoit-teesta https://insightsoftware.com/fi/blog/what-is-predictive-analytics/
+Jyväskylän yliopisto. (n.d.). Signaalitiedustelu (SIGINT). Haettu 6.11.2025 osoitteesta https://onlinecourses.jyu.fi/course/section.php?id=1918
+Katsaus.supo.fi. (n.d.). Dataa voidaan hyödyntää myös Suomea uhkaaviin tarkoituksiin. Suojelupoliisi. Haettu 6.11.2025 osoitteesta https://katsaus.supo.fi/dataa-voidaan-hyodyntaa-suomea-uhkaaviin-tarkoituksiin
+Koponen, J. (2015). Suomi hybridisodankäynnin kohteena. Ulkopoliittinen instituutti. Haettu 6.11.2025 osoitteesta https://fiia.fi/julkaisu/suomi-hybridisodankaynnin-kohteena
+Parliament.fi. (2024). Tiedusteluvalvontavaliokunnan mietintö TiVM 1/2024. Haettu 6.11.2025 osoitteesta(https://www.parliament.fi/pdf/TiVM+1/2024)
+Puolustusministeriö. (2019). Kysymyksiä & Vastauksia sotilastiedustelusta. Haettu 6.11.2025 osoitteesta https://www.defmin.fi/files/4543/Q_A_sotilastiedustelu110319.pdf
+Puolustusvoimat. (n.d.). Haetaan reservin henkilöstöä kriisinhallinnan hen-kilötiedustelutehtäviin. Haettu 6.11.2025 osoitteesta https://puolustusvoimat.fi/web/kansainvalinen-kriisinhallinta/-/haetaan-reservin-henkilostoa-kriisinhallinnan-henkilotiedustelutehtaviin-1
+Puolustusvoimat. (n.d.). Hae henkilötiedustelutehtäviin. Haettu 6.11.2025 osoitteesta https://puolustusvoimat.fi/web/kansainvalinen-kriisinhallinta/hae-henkilotiedustelutehtaviin
+Puolustusvoimat. (n.d.). Noin 12 000 hakemusta Puolustusvoimien hen-kilötiedustelun kurssille. Haettu 6.11.2025 osoitteesta https://puolustusvoimat.fi/-/noin-12-000-hakemusta-puolustusvoimien-henkilotiedustelun-kurssille
+Puolustusvoimat. (2025). Sotilastiedustelu Julkinen Katsaus 2025. Haettu 6.11.2025 osoitteesta https://puolustusvoimat.fi/documents/1948673/2014902/PV_sotilastiedustelu_raportti_2025_web.pdf/4de8d666-6bff-642d-2d07-df71154b33bd/PV_sotilastiedustelu_raportti_2025_web.pdf
+Reddit. (n.d.). Eläkeläinen sai 6,1 miljoonan euron lottovoiton ja jatkoi vastavakoilua. Haettu 6.11.2025 osoit-teesta(https://www.reddit.com/r/Suomi/comments/1o3iwgs/el%C3%A4kel%C3%A4inen_sai_61_miljoonan_euron_lottovoiton_ja/)
+Rikoksentorjunta.fi. (n.d.). Haaste 4/21: Avoimen verkkotiedon käyttö po-liisissa. Haettu 6.11.2025 osoitteesta https://rikoksentorjunta.fi/-/haaste-4-21-avoimen-verkkotiedon-kaytto-poliisissa
+Ruotsalainen, O. & Raunama, O. (n.d.). Avoimien tietolähteiden tiedustelu (OSINT) rikostiedustelun tukena. Theseus. Haettu 6.11.2025 osoit-teesta(https://www.theseus.fi/bitstream/10024/510269/2/ON_Ruotsalainen_Raunama.pdf)
+Ruotuväki. (n.d.). Puolustusvoimien henkilötiedustelukurssi keräsi runsaasti hakemuksia. Haettu 6.11.2025 osoitteesta https://ruotuvaki.fi/-/puolustusvoimien-henkilotiedustelukurssi-kerasi-runsaasti-hakemuksia
+Sisäministeriö. (n.d.). Siviilitiedustelulainsäädäntö. Haettu 6.11.2025 osoit-teesta https://intermin.fi/tiedustelu
+Sisäministeriö. (n.d.). Terrorismin torjuntatoimet Suomessa. Haettu 6.11.2025 osoitteesta https://intermin.fi/poliisiasiat/terrorismin-torjunta/torjuntatoimet-suomessa
+Suojelupoliisi. (n.d.). Supo torjuu terrorismia. Haettu 6.11.2025 osoitteesta https://supo.fi/supo-torjuu-terrorismia
+Suojelupoliisi. (n.d.). Tekstivastine jakso 6. Haettu 6.11.2025 osoitteesta https://supo.fi/tekstivastine-jakso-6
+Suojelupoliisi. (n.d.). Terrorismin torjunta. Haettu 6.11.2025 osoitteesta https://supo.fi/terrorismin-torjunta
+Suojelupoliisi. (n.d.). Tiedustelulaki. Haettu 6.11.2025 osoitteesta https://supo.fi/tiedustelulaki
+Suojelupoliisi. (n.d.). Tiedustelutieto palvelee valtiojohtoa. Haettu 6.11.2025 osoitteesta https://supo.fi/tiedustelutieto-palvelee-valtiojohtoa
+Suojelupoliisi. (n.d.). Tietosuoja. Haettu 6.11.2025 osoitteesta https://supo.fi/tietosuoja
+Suojelupoliisi. (n.d.). Vastatiedustelu. Haettu 6.11.2025 osoitteesta https://supo.fi/vastatiedustelu
+Tampereen korkeakouluyhteisö. (n.d.). Tiedon analysointi. Haettu 6.11.2025 osoitteesta https://research.tuni.fi/verne/tutkimus/tutkimusmenetelmat/tiedon-analysointi/
+Targetor. (n.d.). Tiedolla johtamisen uudet tuulet. Haettu 6.11.2025 osoit-teesta https://www.targetor.com/blog/tiedolla-johtamisen-uudet-tuulet-big-data-ja-ennakoiva-analytiikka-paatoksenteon-ytimessa/
+Tiedusteluvalvonta.fi. (n.d.). Tiedustelu ja vastatiedustelu. Haettu 6.11.2025 osoitteesta https://tiedusteluvalvonta.fi/-/tiedustelu-ja-vastatiedustelu
+Tiedusteluvalvonta.fi. (n.d.). Tiedustelu oikeusvaltiossa. Haettu 6.11.2025 osoit-teesta(https://tiedusteluvalvonta.fi/documents/12994206/0/Tiedustelu+oikeusvaltiossa.pdf/af714f44-d9c5-8226-66d3-362529e51336/Tiedustelu+oikeusvaltiossa.pdf)
+Tiedusteluvalvonta.fi. (n.d.). Tiedusteluvalvonta. Haettu 6.11.2025 osoit-teesta https://tiedusteluvalvonta.fi/tiedusteluvalvonta-
+Tiedusteluvalvonta.fi. (n.d.). Valvonnan kohteet. Haettu 6.11.2025 osoitteesta https://tiedusteluvalvonta.fi/valvonnan-kohteet
+Valtioneuvosto. (2019). Laki siviilitiedustelusta voimaan kesäkuun alusta. Haettu 6.11.2025 osoitteesta https://valtioneuvosto.fi/-/1410869/laki-siviilitiedustelusta-voimaan-kesakuun-alusta
+Vapaa-ajattelijat. (n.d.). Tekoälyn eettiset riskit ja vastuullinen suunnittelu. Haettu 6.11.2025 osoitteesta https://vapaa-ajattelijat.fi/blog/lehti/tekoalyn-eettiset-riskit-ja-vastuullinen-suunnittelu/
+Verkkouutiset. (n.d.). Näin Suomen signaalitiedustelua järjestettiin. Haettu 6.11.2025 osoitteesta https://www.verkkouutiset.fi/a/nain-suomen-signaalitiedustelua-jarjestettiin-kylman-sodan-lopussa/
+Wikipedia. (n.d.). Human intelligence (intelligence gathering). Haettu 6.11.2025 osoitteesta https://en.wikipedia.org/wiki/Human_intelligence_(intelligence_gathering
+Wikipedia. (n.d.). Hybridisodankäynti. Haettu 6.11.2025 osoitteesta https://fi.wikipedia.org/wiki/Hybridisodank%C3%A4ynti
+Wikipedia. (n.d.). List of intelligence gathering disciplines. Haettu 6.11.2025 osoitteesta https://en.wikipedia.org/wiki/List_of_intelligence_gathering_disciplines
+Wikipedia. (n.d.). Suojelupoliisi. Haettu 6.11.2025 osoit-teesta(https://fi.wikipedia.org/wiki/Suojelupoliisi)

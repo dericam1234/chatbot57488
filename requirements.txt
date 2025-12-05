@@ -1,0 +1,12 @@
+google-cloud-aiplatform  # Vertex AI:n käyttöön
+python-dotenv            # Ympäristömuuttujien hallintaan
+flask                    # Yksinkertaisen web-käyttöliittymän luomiseen
+numpy                    # Upotusten käsittelyyn
+scikit-learn             # Kosini-samankaltaisuuden laskemiseen (tai vastaava)
+python-dotenv
+python-docx
+google-cloud-storage 
+
+
+
+

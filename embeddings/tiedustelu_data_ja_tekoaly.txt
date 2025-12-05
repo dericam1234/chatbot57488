@@ -1,0 +1,15 @@
+Tämä on laaja ja erittäin ajankohtainen aihe. Kysymyksesi datan käytöstä, työkaluista ja tekoälyn roolista osuvat aivan modernin tiedustelutoiminnan ytimeen.
+Perinteisesti tätä prosessia kuvataan tiedustelusyklinä. Se on malli, joka jäsentää, miten raakadataa kerätään ja jalostetaan valmiiksi tiedustelutuotteeksi päätöksentekijöille.
+Löysin muutaman hyvän perusmateriaalin, jotka auttavat hahmottamaan kokonaisuutta ja vastaamaan kysymyksiisi:
+•	Tiedustelusyklin perusteet: Tämä SecMeterin artikkeli kuvaa lyhyesti ja ytimekkäästi perinteisen tiedustelusyklin vaiheet (kuten suunnittelu, hankinta, käsittely, analysointi ja jakelu). Tämä auttaa ymmärtämään, mihin eri kohtiin data, työkalut ja tekoäly sijoittuvat.
+o	Lähde: https://secmeter.com/tiedustelusykli.html
+•	Tekoäly poliisitoiminnassa (sovellettavissa tiedusteluun): Tämä Theseus-julkaisu, vaikka keskittyykin poliisiin, käsittelee monia samoja teemoja: miten tekoälyä voidaan hyödyntää datan hyödyntämisessä, resurssien kohdentamisessa ja prosessien automatisoinnissa.
+o	Lähde: https://www.theseus.fi/handle/10024/811845
+•	Avoimien lähteiden tiedustelu (OSINT): Merkittävä osa nykypäivän datasta on julkisesti saatavilla. Tämä IBM:n artikkeli (englanniksi) selittää, mitä OSINT on ja listaa konkreettisia työkaluja (kuten Maltego ja Shodan), joita käytetään julkisen datan keräämiseen ja analysointiin.
+o	Lähde: https://www.ibm.com/think/topics/osint
+Voimme tutkia näitä aiheita yhdessä askel kerrallaan. Koska kysymyksesi ovat laajoja, ehdotan, että pilkomme ne osiin.
+Mistä haluaisit aloittaa?
+1.	Datan rooli ja lähteet: Keskitytään siihen, mitä eri tiedustelulajeja (kuten OSINT, SIGINT, HUMINT) on ja miten ne keräävät "raakadataa".
+2.	Tekoäly ja työkalut analyysissä: Tarkastellaan, miten tekoäly auttaa löytämään "neulan heinäsuovasta" eli tunnistamaan malleja valtavista tietomassoista, ja mitä työkalut käytännössä tekevät.
+3.	Ihminen vs. kone: Pohditaan, miten tekoäly muuttaa ihmisanalyytikon roolia – mikä työ automatisoituu ja mikä inhimillinen taito korostuu tulevaisuudessa?
+

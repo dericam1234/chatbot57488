@@ -1,0 +1,1222 @@
+Oskar Lindholm
+ Automaattisten tiedonhankintamenetelmien soveltuvuus
+ avointen lähteiden tiedustelussa
+ Tietotekniikan kandidaatintutkielma
+ 19. toukokuuta 2023
+ Jyväskylän yliopisto
+ Informaatioteknologian tiedekunta
+Tekijä: Oskar Lindholm
+ Yhteystiedot: oskar.g.lindholm@student.jyu.fi
+ Ohjaaja: Timo Tiihonen
+ Työn nimi: Automaattisten tiedonhankintamenetelmien soveltuvuus avointen lähteiden tie
+dustelussa
+ Title in English: Automated Intelligence Collection Methods in Open-source Intelligence
+ Työ: Kandidaatintutkielma
+ Opintosuunta: Tietotekniikka
+ Sivumäärä: 48+0
+ Tiivistelmä: Avointen lähteiden tiedustelun haasteeksi on muodostunut digitaalisen tiedon
+ alati kasvava määrä, joka vaikeuttaa relevantin tiedon löytämistä internetistä. Tiedonhankin
+taa automatisoimalla tiedustelu kykenee keskittämään enemmän resursseja kerätyn tiedon
+ käsittelyyn ja analysointiin. Tässä tutkielmassa tarkastellaan automaattisten tiedonhankin
+tamenetelmien hyödyntämistä verkossa tapahtuvassa avointen lähteiden tiedustelussa. Tut
+kielman tavoitteena oli selvittää tiedonhankintamenetelmien soveltuvuutta erilaisiin tiedon
+tarpeisiin. Teksti- ja kuvatulkintamenetelmät osoittautuivat tutkimuksen perusteella moni
+käyttöisimmiksi tiedonkeräysmenetelmiksi. Tutkimus toteutettiin kirjallisuuskatsauksena.
+ Avainsanat: avointen lähteiden tiedustelu, OSINT, automaatio, tiedonkeräysmenetelmät
+ Abstract: The rapidly increasing amount of digital information is becoming a major chal
+lenge for open-source intelligence practitioners in finding relevant information. By automa
+ting the tasks of intelligence collection, intelligence practitioners are able to allocate mo
+re resources into processing and analysing the collected information. This bachelor’s thesis
+ focuses on the use of automated intelligence gathering methods in web-based open-source
+ intelligence. The purpose of the study was to evaluate the suitability of automated intelli
+gence gathering methods to different types of information needs. Text- and image-based gat
+hering methods turned out to be the most versatile methods in meeting different information
+ i
+needs. The research was conducted as a literature review.
+ Keywords: open-source intelligence, OSINT, automation, intelligence collection methods
+ ii
+Termiluettelo
+ avoin lähde
+ Lähde, johon kenellä tahansa on mahdollisuus hankkia pääsy
+ ilmaiseksi, pyynnön tai maksun kautta.
+ avointen lähteiden tiedustelu Tiedustelulaji, jossa keskitytään hankkimaan tietoa avoimis
+ta lähteistä, kuten massamediasta, kirjallisuudesta tai julkisista
+ tietokannoista.
+ informaatio
+ OSINT
+ metatieto
+ tiedontarve
+ tiedustelu
+ tieto
+ Informaatio on tietoa, jolla on konteksti ja rakenne, jotka anta
+vat tiedolle merkityksen. Informaatiota voidaan tulkita erilai
+sista perspektiiveistä tietämyksen luomiseksi.
+ Yleisesti käytetty lyhenne avointen lähteiden tiedustelua tar
+koittavasta englanninkielisestä termistä open-source intelli
+gence.
+ Tietoa, joka kuvailee tiivistetysti toista tietosisältöä. Esimer
+kiksi tiedostoa kuvailevaa metatietoa ovat tiedoston laatijan ni
+mi, tiedostopääte ja viimeisin tallennusajankohta.
+ Kokemus toimintaympäristöön tai tilanteeseen liittyvästä epä
+varmuudesta, jota pyritään vähentämään hankkimalla tietoa ja
+ parantamalla näin tilannetietoisuutta.
+ Tiedustelu on päätöksentekoa tukevaa tiedonhankintaa, tiedon
+ analysointia ja uuden tiedon tuottamista. Tiedustelun tarkoi
+tuksena on lisätä tai kehittää päätöksentekijän ymmärrystä o
+massta toimintaympäristöstään.
+ Tieto on klassisessa merkityksessään ”hyvin perusteltu, tosi
+ uskomus”. Tieto voidaan jakaa sen jalostusasteen mukaan da
+taksi, informaatioksi, tietämykseksi ja ymmärrykseksi.
+ iii
+Kuviot
+ Kuvio 1. Havainnekuva tiedustelusyklin rakenteesta ja tiedusteluprosessin kulusta.
+ Mukailtu Yhdysvaltain puolustushaarakomentajien neuvoston (2019) julkaisusta. .. 7
+ iv
+Sisällys
+ 1 JOHDANTO............................................................................. 1
+ 2 TIEDUSTELUJATIEDONHANKINTA.............................................. 3
+ 2.1 Tietojatiedontarve................................................................ 3
+ 2.2 Tiedustelu.......................................................................... 4
+ 2.3 Avointenlähteidentiedustelu..................................................... 7
+ 2.4 Tiedonhankintamenetelmätavointenlähteidentiedustelussa ................... 9
+ 2.5 Tiedustelunjaautomaationhaasteet..............................................11
+ 2.5.1Tiedonmääräjarelevanssi .................................................12
+ 2.5.2Tiedonjalähteidenluotettavuus ...........................................14
+ 3 AUTOMAATTISETTIEDONHANKINTAMENETELMÄT.........................15
+ 3.1 Tiedonpaikannusmenetelmät .....................................................15
+ 3.1.1Verkkosyötteet ..............................................................15
+ 3.1.2Ohjelmointirajapinnat ......................................................16
+ 3.1.3Hakurobotit .................................................................18
+ 3.2 Tiedonkeräysmenetelmät .........................................................19
+ 3.2.1Tekstitulkintamenetelmät...................................................20
+ 3.2.2Paikkatietomenetelmät .....................................................21
+ 3.2.3Kuvatulkintamenetelmät....................................................22
+ 3.2.4Verkostoanalyysimenetelmät...............................................23
+ 4 TIEDONHANKINTAMENETELMIENSOVELTUVUUSTIEDONTARPEISIIN.25
+ 4.1 Henkilöt............................................................................25
+ 4.2 Organisaatiot.......................................................................27
+ 4.3 Esineet .............................................................................28
+ 4.4 Tapahtumat ........................................................................29
+ 5 YHTEENVETO..........................................................................32
+ LÄHTEET......................................................................................34
+ v
+1 Johdanto
+ Modernin tietoyhteiskunnan tunnusomainen piirre on laaja-alainen tietojen kerääminen, ja
+kaminen ja hyödyntäminen yhteiskunnan eri sektoreilla. Tiedon tehokas hyödyntäminen
+ edellyttää kykyä tunnistaa ja toimittaa relevanttia tietoa päättäjille, jotka soveltavat sitä orga
+nisaatioidensa toiminnan johtamisessa (Martelius 2020). Tiedon jakamista ja päätöksentekoa
+ tuetaan tiedustelutoiminnalla, jossa kerätään, analysoidaan ja koostetaan tietoa toimintaym
+päristön olosuhteista. Tiedustelua hyödyntäviä tahoja ovat esimerkiksi kansainväliset järjes
+töt ja valtioiden hallinnot (Best 2008), turvallisuusviranomaiset (Bayerl ym. 2023) sekä kau
+palliset yritykset (Yang ja Lee 2012). Tietoja kerätään useista lähteistä erilaisilla tiedonhan
+kintamenetelmillä kattavan ja tarkan kokonaiskuvan muodostamiseksi toimintaympäristöstä.
+ Avointen lähteiden tiedustelu on tiedustelulaji, jossa kerätään tietoja vapaasti saatavilla ole
+vista lähteistä, kuten sanomalehdistä, tv-ohjelmista ja julkisista tietokannoista (Best 2008).
+ Digitalisaation seurauksena valtaosa julkisesti saatavilla olevasta informaatiosta on nykyään
+ löydettävissä internetistä. Internetin käytön yleistymisen ja lähdemateriaalin räjähdysmäisen
+ kasvun myötä avointen lähteiden tiedustelusta on tullut aiempaa käytännöllisempi tieduste
+lulaji. Vapaasti saatavissa olevan tiedon suurella määrällä on kuitenkin haittapuolensa, sillä
+ kaikkea julkista tietoa ei ole mahdollista kerätä (Pastor-Galindo ym. 2020). Avointen lähtei
+den tiedustelussa suurin haaste onkin erottaa tiedustelun kannalta relevantti tieto informaa
+tiotulvasta (Best 2011). Ongelman ratkaisemiseksi tiedonhankintaa on enenevissä määrin
+ ryhdytty automatisoimaan laaja-alaisen kokonaiskuvan hahmottamiseksi.
+ Automatisoidut tiedonhankintaohjelmat etsivät tiedustelijan antaman syötteen mukaisesti in
+formaatiota internetistä esimerkiksi verkkosivujen metatietojen tai sisällön perusteella (Pastor
+Galindo ym. 2020). Automaattinen tiedonhankinta mahdollistaa nopeasti kehittyvien tapah
+tumien seurannan, arvioinnin sekä reagoinnin tapahtumiin lähes reaaliajassa. Erilaisiin tie
+donhankintamenetelmiin pohjautuvat automatisoidut työkalut vaihtelevat kuitenkin toimin
+taperiaatteiltaan, käytettävyydeltään sekä tehokkuudeltaan suuresti. Eri tiedonhankintame
+netelmät soveltuvat vaihtelevasti erilaisiin tiedontarpeisiin, jolloin oikean tiedonhankinta
+työkalun ja-menetelmän valinta vaikuttaa merkittävästi kerätyn tiedon laatuun.
+ 1
+Automaattisten tiedonhankintatyökalujen soveltuvuutta on aiemmin tutkittu yksittäisten työ
+kalujen, keräysmenetelmien ja lähteiden näkökulmasta. Tiedustelussa käytettävien työkalu
+jen kehittämiselle ei ole olemassa yleisiä standardeja, joiden pohjalta työkaluja voisi suun
+nitella. Erityisesti automaattisesti kerättyjen lähteiden järjestäminen myöhempää tarkastelua
+ varten on tunnistettu merkittäväksi haasteeksi (Best 2011). Lisäksi verkkosivustojen häviä
+minen sekä palveluiden rajapintojen jatkuvat muutokset vaikeuttavat luotettavan tiedon ke
+räämistä automaattisesti (Eldridge, Hobbs ja Moran 2017). Avointen lähteiden tiedustelusta
+ kiinnostuneet harrastajat ja ammattilaiset kehittävät alati uusia tiedonhankintatyökaluja ja-menetelmiä vastaamaan monipuolistuviin tiedontarpeisiin ja muuttuviin verkkopalveluiden
+ rajapintoihin. Vapaasti käytettäviä työkaluja jaetaan myös aktiivisesti alaan keskittyneillä
+ foorumeilla ja verkkosivustoilla (Bellingcat 2022; Nordine 2022).
+ Tässä tutkielmassa arvioidaan automaattisten tiedonhankintamenetelmien soveltuvuutta eri
+tyyppisten tiedontarpeiden tyydyttämisessä. Tiedonhankintamenetelmiä arvioidaan niiden
+ käytettävyyden ja tehokkuuden perusteella. Tutkielman tavoitteena on tunnistaa eri tiedon
+tarpeisiin parhaiten soveltuvat tiedonhankintamenetelmät. Lisäksi tavoitteena on tunnistaa
+ automaattiseen tiedonhankintaan liittyviä haasteita, jotka tulisi huomioida työkalujen suun
+nittelussa. Tutkielma toteutetaan kirjallisuuskatsauksena, jossa keskitytään tiedustelututki
+muksen ja tietotekniikan alojen tutkimuskirjallisuuteen sekä avointen lähteiden tiedusteluun
+ erikoistuneisiin verkkojulkaisuihin.
+ Tutkielman näkökulma painottuu tiedusteluorganisaation suorituskyvyn kehittämiseen huo
+mioiden tiedonhankinnan eettisen vastuun sekä operaatioturvallisuuden. Tiedustelun suori
+tuskyvyn näkökulmasta automatisoitu tiedonhankinta vapauttaa tiedusteluorganisaation re
+sursseja tiedonkeräyksestä tiedon käsittelyyn ja analyysiin. Tehostunut käsittely- ja analyy
+sikapasiteetti edistää laadukkaamman tiedustelutiedon tuottamista.
+ Tämä tutkielma koostuu johdannosta, kolmesta sisältöluvusta ja yhteenvedosta. Ensimmäi
+sessä sisältöluvussa esitellään tiedustelun kannalta keskeisiä käsitteitä sekä pohditaan auto
+maation ja tiedustelun yhteensovittamisen haasteita. Toisessa sisältöluvussa syvennytään au
+tomaattisessa tiedonhankinnassa käytettäviin menetelmiin. Kolmannessa sisältöluvussa ar
+vioidaan tiedonhankintamenetelmien soveltuvuutta eri tiedontarpeiden tyydyttämisessä.
+ 2
+2 Tiedustelu ja tiedonhankinta
+ Tässä luvussa tarkastellaan tiedon, tiedontarpeen, tiedustelun sekä avointen lähteiden tie
+dustelun käsitteitä ja niiden suhteita toisiinsa. Käsitteiden määrittelyn jälkeen pohditaan au
+tomaation vaikutuksia tiedonhankinnan toteuttamiseen. Ensimmäisessä alaluvussa määritel
+lään tiedon ja tiedontarpeen käsitteet. Toisessa alaluvussa syvennytään tiedustelun olemuk
+seen. Kolmannessa alaluvussa tarkastellaan avointen lähteiden tiedustelun ominaispiirteitä
+ ja asemaa tiedustelulajina. Neljännessä alaluvussa vertaillaan manuaalisen ja automaattisen
+ tiedonhankinnan eroja. Viidennessä alaluvussa pohditaan tiedustelun ja automaation yhteen
+sovittamisen haasteita.
+ 2.1 Tieto ja tiedontarve
+ Tieteellisessä tutkimuksessa tiedustelu koetaan yleensä haastavaksi aiheeksi käsitellä, sillä
+ termille ei ole olemassa yleisesti hyväksyttyä, yksiselitteistä määritelmää. Tiedustelun mää
+ritelmää on tutkittu lähinnä tiedustelupalveluiden ja muiden julkishallinnon instituutioiden
+ näkökulmasta (Warner 2002). Kaikkea tiedustelua yhdistää kuitenkin suhde tietoon, tiedon
+hankintaan ja päätöksentekoon.
+ Tieto käsitetään klassisessa filosofiassa ’hyvin perustelluksi, todeksi uskomukseksi’. Tiedon
+ monitulkintaisen käsitteen vuoksi tietoa on pyritty luokittelemaan alakäsitteiksi sen välittä
+mänarvonjamerkityksen perusteella. Rowleyn (2007) mukaan tieto voidaan jakaa hierarkki
+sesti dataan, informaatioon, tietämykseen ja ymmärrykseen. Alimman tason tietoa kutsutaan
+ dataksi. Data on itsessään merkityksetöntä, kuvailevaa tietoa, jolta puuttuu konteksti ja tul
+kinta (Rowley 2007). Dataa ovat esimerkiksi yksittäiset symbolit, kuten numerot ja aakkoset.
+ Informaatio on kontekstiin asetettua, järjestettyä dataa (Rowley 2007). Konteksti ja rakenne
+ antavat datalle merkityksen, jolloin siitä tulee informaatiota. Informaatio voi olla yksittäi
+siä sanoja, tekstikatkelmia, kuvia tai lukuja tietokannassa. Tietämykseksi (engl. knowledge)
+ kutsutaan käsitystä, joka syntyy tulkitsemalla informaatiota tietystä perspektiivistä (Rowley
+ 2007). Tietämys on toisin sanoen asian tilaa tai siihen liittyvää informaatiota kuvaava tulkin
+ta (Haasio ja Savolainen 2004, 17). Tulkinnan perspektiiviin vaikuttavat aiemmat käsitykset,
+ 3
+asenteet ja arvot. Ymmärryksellä (engl. wisdom) tarkoitetaan kykyä asettaa tietämystä ja in
+formaation osia laajempaan kontekstiin sekä soveltaa kertynyttä tietämystä päätöksenteossa
+ (Rowley 2007).
+ Tiedustelutoimintaan liittyvät oleellisesti myös tiedontarpeen ja tiedonhankinnan käsitteet.
+ Tiedontarve määritellään informaatiotutkimuksessa kokemuksena toimintaympäristöön ja ti
+lanteeseen liittyvästä epävarmuudesta (Järvelin ja Sormunen 2010, 165). Tiedontarpeen tun
+nistamiselle virittäviä tekijöitä ovat muun muassa käsillä oleva ongelma (Savolainen 2010,
+ 90) sekä yksilön halu ymmärtää omaa toimintaympäristöään. Tiedontarve on siis aika- ja
+ tilannesidonnainen ilmiö. Tarvitulla tiedolla täytyy olla pelkän tiedonhalun lisäksi käyttötar
+koitus, jotta tarvittu tieto voitaisiin luokitella tiedontarpeeksi (Derr 1983). Tiedonhankinta
+ puolestaan on määritelty tiedontarpeesta nousevaksi toiminnaksi, jonka tavoitteena on tyy
+dyttää tiedontarve (Savolainen 2010, 91). Tiedonhankintaan kuuluu tarvittavan tiedon sisäl
+tävien lähteiden kartoittaminen, niiden luo hakeutuminen sekä niiden sisällön tulkitseminen
+ tiedontarpeen näkökulmasta (Savolainen 2010, 91–92). Tiedonhankinnan toteutusta ohjaavat
+ tiedontarpeen lisäksi aiemmat kokemukset tiedonhankinnasta, joiden perusteella tiedustelu
+tehtävään valitaan soveltuvimmat tiedonhankintamenetelmät tiedontarpeen tyydyttämiseksi.
+ Soveltuvuuteen vaikuttavat oletukset tiedonhankintamenetelmällä saatavan tiedon oikeelli
+suudesta, tarkkuudesta, luotettavuudesta ja määrästä.
+ 2.2 Tiedustelu
+ Tiedustelutoiminnassa jalostetaan ja hyödynnetään eritasoista tietoa ymmärryksen luomisek
+si. Tiedustelu voidaan käsittää ongelmanratkaisuprosessiksi, jossa kerätään, analysoidaan ja
+ tulkitaan tietoa sekä arvioidaan toimintaympäristön olosuhteiden kehittymistä tiedon perus
+teella (McDowell 2009, 5). Tiedustelu on luonteeltaan soveltavaa, monialaista tutkimusta,
+ jossa hyödynnetään tiedustelun kohteesta riippuen erilaisia tutkimusmenetelmiä ja teorioita
+ esimerkiksi psykologiasta, yhteiskunta-, tilasto- sekä kielitieteistä.
+ Laajemmasta tiedonhankinnan käsitteestä poiketen tiedustelun tavoitteena on hankkia sys
+temaattisesti tietoa päätöksenteon tueksi (Porvali 2018, 13). Tiedustelua hyödyntäviä orga
+nisaatioita ovat esimerkiksi valtionjohdot (Best 2008), viranomaiset (Bayerl ym. 2023) sekä
+ 4
+yritykset (Yang ja Lee 2012). Tiedustelutoimintaa voivat harjoittaa niin yksityishenkilöt kuin
+ suuret, tiedusteluun erikoistuneet organisaatiot. Toinen tiedustelulle ominainen piirre on toi
+minnan salaperäinen luonne. Tiedustelun olemassaolon oikeutuksena voidaan pitää kykyä
+ hankkia tietoa kohteista, jotka pyrkivät aktiivisesti estämään niihin kohdistuvaa tiedonhan
+kintaa pitämällä salassa haluttuja tietoja ja peittelemällä toiminnan yksityiskohtia (Lowent
+hal 2020, 5). Salassa pidettyjen tietojen hankkimiseksi tiedustelu ei ilmoita sen omaamis
+ta kyvyistä, toimintamalleista, kiinnostavista kohteista eikä kerätyistä tiedoista julkisuuteen.
+ Tällä tavoin tiedustelun kohde ei kykene tehokkaasti salaamaan arkaluontoisia tietojaan tai
+ toimintaansa siihen kohdistuvalta tiedustelulta. Jotta tiedustelun kohde ja menetelmät eivät
+ paljastuisi, pyritään tiedonhankinnasta jääviä jälkiä peittämään mahdollisimman hyvin jo
+ tietoa paikannettaessa ja kerättäessä. Lisäksi tiedustelun asiakkaalle jaettava tiedustelutie
+to sanitoidaan eli puhdistetaan lähdeviitteistä ja tiedusteluprosessin toteutukseen liittyvistä
+ yksityiskohdista, jotta tiedustelu ei paljastaisi tiedonhankinnassa käytettyjä lähteitä ja mene
+telmiä.
+ Tiedustelutoiminnan lähtökohtana on vastata tiedustelua toteuttavalle taholle välitettyyn tie
+topyyntöön, joka laaditaan havaittujen tiedontarpeiden perusteella. Tietopyynnön laatijaa
+ kutsutaan yleensä tiedustelun asiakkaaksi tai päätöksentekijäksi (Lowenthal 2020, 263) ja
+ tietopyynnön sisältöä kutsutaan yleisesti tiedusteluvaatimuksiksi (engl. intelligence require
+ment, JCS 2021). Tiedustelu tukee asiakkaan päätöksentekoa tuottamalla relevanttia ja enna
+koivaa tiedustelutietoa toimintaympäristön muutoksiin liittyvistä riskeistä, uhista ja mahdol
+lisuuksista (Lowenthal 2020, 2). Erotuksena laajemmasta tiedon käsitteestä tiedustelutieto on
+ erityistä tiedontarvetta varten kerättyä, prosessoitua ja analysoitua informaatiota, jolla pyri
+tään luomaan ymmärrys toimintaympäristön vallitsevasta tilasta (Dupont 2003). Kaikki tie
+dustelun keräämä tieto ei siis ole automaattisesti tiedustelutietoa, mutta kaikki tiedustelutieto
+ on tietoa (Lowenthal 2020, 1). Tiedustelun tavoitteena on vähentää asiakkaan toimintaympä
+ristöön liittyviä epävarmuustekijöitä, jotta tämä pystyisi ennakoimaan toimintaympäristössä
+ tapahtuvia muutoksia. Tällöin asiakkaan on helpompi harkita vaihtoehtoisten ratkaisujen vai
+kutuksia toimintaympäristöön sekä tehdä saavutetun ymmärryksen perusteella paras päätös
+ omien strategisten päämääriensä saavuttamiseksi.
+ Tiedustelun viitekehyksessä tiedontarpeet liittyvät useimmiten asiakkaan toimintaympäris
+5
+tössä vaikuttaviin toimijoihin, kuten kilpailijoihin tai vihollisiin (Warner 2002). Tiedustelun
+ kohteita voivat olla esimerkiksi yksityishenkilöt ja useista henkilöistä koostuvat yhteisöt se
+kä ilmiöt, kuten epidemiat ja luonnonmullistukset. Tiedustelu pyrkii tunnistamaan toimin
+taympäristössä vaikuttavia toimijoita sekä arvioimaan niiden kykyjä, aikomuksia ja suhteita
+ muihin toimijoihin (Yang ja Lee 2012). Toimintaympäristön muutokset ovat aina sidottuja
+ aikaan, mikä muuttaa jatkuvasti päätöksentekijän tiedontarpeita.
+ Asiakkaiden tiedontarpeet ja intressit vaihtelevat toimialoittain. Siksi tiedusteluorganisaatiot
+ erikoistuvat tietyn toimialan tutkimukseen, jotta tiedustelutuotteissa yhdistyisi korkea ana
+lyysiosaaminen sekä toimialalle tyypillisten tietolähteiden tuntemus. Esimerkiksi valtiojoh
+toa ja viranomaisia kiinnostavat yhteiskunnan vakauteen vaikuttavat ilmiöt ja toimijat (Best
+ 2008). Liike-elämässä puolestaan yrityksiä kiinnostavat markkinatilanne, kilpailevat organi
+saatiot sekä kuluttajien intressit (Yang ja Lee 2012).
+ Tiedustelun moniulotteista olemusta voidaan siis tulkita päätöksentekoa tukevana palvelu
+na, joka pyrkii luomaan kattavan tietopohjan päätöksenteon perustaksi ja ennakoimaan pää
+tösten vaikutuksia. Päätöksentekijälle toimitettava tiedustelutuote syntyy tiedusteluprosessin
+ seurauksena. Tiedusteluprosessi muodostaa tiedusteluorganisaation toiminnalle rungon, joka
+ tukee organisaatiota laadukkaan ja käyttökelpoisen tiedustelutiedon tuottamisessa (Lowent
+hal 2020, 67). Prosessia havainnollistetaan usein neli-, viisi- tai kuusivaiheisen tieduste
+lusyklin avulla (Best 2008; Marzell 2016, 38). Syklin vaiheita suoritetaan pääosin peräk
+käin ja osittain päällekkäin (Lowenthal 2020, 78–79). Tässä tutkielmassa tiedustelusyklin
+ vaiheiksi määritellään ohjaus, keräys, käsittely, analyysi ja jakelu (kuvio 1). Lisäksi tieduste
+lun ja päätöksentekijän välisen vuorovaikutuksen kautta syntyvä palaute käsitetään jatkuvana
+ toimintana tiedusteluprosessin jokaisessa vaiheessa (kuvio 1).
+ Tiedonhankinta käsitetään kuuluvan tiedusteluprosessin keräysvaiheeseen, joka alkaa tie
+donkeräyssuunnitelman (engl. intelligence collection plan, ICP) laatimisella (McDowell 2009,
+ 184–185). Tiedonkeräyssuunnitelmassa tarkennetaan tiedustelutehtävän pääpainoalueet ja
+ käytettävät tiedonhankintamenetelmät. Tiedonhankintamenetelmät valitaan kohteen ominai
+suuksien mukaansiten, että kohteesta saadaan hankittua mahdollisimman tarkkaa ja relevant
+tia informaatiota minimoiden samalla epäoleellisen informaation kerääminen (McDowell
+ 2009, 184). Keräysvaiheessa löydetyn informaation relevanssia arvioidaan pintapuolisesti,
+ 6
+Kuvio 1. Havainnekuva tiedustelusyklin rakenteesta ja tiedusteluprosessin kulusta. Mukailtu
+ Yhdysvaltain puolustushaarakomentajien neuvoston (2019) julkaisusta.
+ minkä jälkeen oleelliseksi katsottu informaatio tallennetaan myöhempää käsittelyä varten.
+ Vaikka tiedonhankinta toteutetaan pääosin tiedonkeräyssuunnitelman mukaisesti, kohden
+netaan tiedonhankintaa kerätystä informaatiosta tehtyjen arvioiden perusteella (McDowell
+ 2009, 183). Näin maksimoidaan mahdollisuudet löytää relevanttia tietoa tarkentamalla tie
+donhaun parametreja tai käytettyjä menetelmiä. Automatisoimalla keräysvaiheen tehtäviä
+ tiedustelu voi keskittää henkilöstöä tiedusteluprosessin käsittely- ja analyysivaiheisiin, jois
+sa korostuu asiantuntijaosaamisen tärkeys.
+ 2.3 Avointen lähteiden tiedustelu
+ Avointen lähteiden tiedustelu (engl. open-source intelligence, OSINT) on tiedustelulaji, joka
+ keskittyy keräämään tietoa julkisesti saatavilla olevista lähteistä (Best 2008). Tässä tutkiel
+massa avointen lähteiden tiedustelusta käytetään jatkossa lyhennettä OSINT. OSINT-tietoja
+ voidaan kerätä kaikista lähteistä, joihin on mahdollista päästä käsiksi laillisin keinoin. Lail
+7
+lisiin keinoihin lukeutuvat pääsyn pyytäminen tai ostaminen tietoon sekä tiedustelijan oma
+kohtainen havainnointi vapaasti saatavilla olevasta informaatiosta (Jardines 2016, 5). Lailli
+set keinot rajaavat OSINTin ulkopuolelle luvattoman tunkeutumisen, varkauden, hakkeroin
+nin ja sosiaalisen manipuloinnin eli ihmiseen kohdistuvan vihamielisen vaikuttamisen kautta
+ saatavan tiedon (Jardines 2016, 5).
+ Avoimista lähteistä kerättyä tietoa luokitellaan yleensä tiedon rakenteisuuden, jalostusasteen,
+ formaatin tai jakelutavan perusteella. Tiedon rakenteisuudella tarkoitetaan tiedon osien kes
+kinäisen järjestyksen tarkkuutta ja loogista jäsennystapaa (Gibson 2016, 73). Rakenteista tie
+toa ovat esimerkiksi kartastot ja tietokantojen järjestetyt tietovarannot. Rakenteetonta tietoa
+ puolestaan ovat esimerkiksi tekstitiedostot ja kuvat. NATO (2002) luokittelee kerätyt tiedot
+ niiden jalostusasteen mukaan dataksi, informaatioksi, tiedustelutiedoksi ja vahvistetuksi tie
+dustelutiedoksi. Tiedon formaatti ja jakelutapa määrittävät vahvasti menetelmät, joilla tietoa
+ on mahdollista etsiä ja kerätä. OSINT-tieto voi olla formaatiltaan esimerkiksi luonnollista
+ tekstiä, kuvia, ääntä, videokuvaa tai tietoaineistoja (Pastor-Galindo ym. 2020). OSINT-tietoa
+ voidaan luokitella jakelutavan perusteella massamedian lähetyksiin, painettuihin julkaisuihin
+ sekä digitaaliseen tietoon (Jardines 2016, 22–28).
+ OSINT on noussut kirjallisten ja digitaalisten aineistojen voimakkaan lisääntymisen myötä
+ edulliseksi ja helposti lähestyttäväksi tiedustelulajiksi. Internetin käyttö massamedian julkai
+sukanavana sekä painettujen aineistojen digitointi ovat helpottaneet yksityishenkilöiden pää
+syä avoimen tiedon äärelle (Benes 2013). OSINT soveltuu erinomaisesti tilannekuvan muo
+dostamiseen toimintaympäristöstä sekä perustietojen keräämiseen heikosti tunnetuista koh
+teista. Esimerkiksi viranomaiset ja muut valtiolliset toimijat hyödyntävät OSINT-menetelmiä
+ massamedioiden reaaliaikaisessa seurannassa kriisien ennakoimiseksi (Best 2008). OSINT
+ soveltuu myös tiedustelun asiakkaan tekemien päätösten vaikuttavuuden arviointiin lyhyel
+lä aikavälillä (Eldridge, Hobbs ja Moran 2017). Lähteiden julkinen luonne edistää pää
+töksenteon läpinäkyvyyttä tilanteissa, joissa OSINT-tietoja käytetään perusteena päätöksille
+ (Pastor-Galindo ym. 2020). Vaikka tiedustelutiedot ovat lähtökohtaisesti aina salaisia, voi
+daan OSINT-tietoja jakaa tiedustelun asiakkaalle matalammalla kynnyksellä ja vähäisem
+mällä sanitoinnilla kuin muilla tiedustelumenetelmillä kerättyjä tietoja. Läpinäkyvyys lisää
+ sidosryhmien luottamusta päätöksentekijää ja tiedustelua kohtaan sekä mahdollistaa lähtei
+8
+den omakohtaisen etsimisen ja arvioinnin päätöksen perusteiden oikeellisuuden varmistami
+seksi.
+ Avoimista lähteistä kerättävien tietojen arvioidaan muodostavan noin 80 % kaikesta tieduste
+lutiedosta, jota valtion viranomaiset hyödyntävät päätöksenteossaan (Dupont 2003; Hulnick
+ 2002). Tiedustelutoiminnan salaisen luonteen takia OSINT-tietojen tarkkaa osuutta kaikesta
+ tiedustelutiedosta ei ole mahdollista vahvistaa. Muihin tiedustelulajeihin verrattuna OSINT
+ on edullinen ja nopea tapa hankkia tietoa useista eri lähteistä (Dupont 2003; Ünver 2018).
+ Kalliisiin sensorijärjestelmiin sijoittamisen tai vuosia kestävän henkilöstökoulutuksen sijaan
+ OSINTiin vaaditaan vain päätelaite ja verkkoyhteys. OSINTin edullisuus antaa tiedusteluor
+ganisaatiolle mahdollisuuden keskittää taloudellisia resurssejaan esimerkiksi laadukkaam
+paan henkilöstökoulutukseen tai muihin tiedustelulajeihin liittyviin kalliisiin investointeihin.
+ Muihin tiedustelulajeihin verrattavana heikkoutena OSINTin avulla kerätty tieto on aina
+ toisen käden tietoa (Jardines 2016, 6). Tiedon toiskätisyydellä tarkoitetaan, että OSINT
+tiedustelija ei itse havaitse tutkittavaa ilmiötä ja siihen liittyvää informaatiota, vaan kerää
+ jonkun toisen havaitsemaa, koostamaa ja julkaisemaa tietoa. Toisaalta julkisesti levitetty, ja
+lostettu tieto voi helpottaa tiedustelijan työtä, sillä valmiiksi koostettu tieto vaatii yleensä
+ vähemmän käsittelyä kuin useista eri lähteistä kerätty raaka tieto (Lowenthal 2020, 136).
+ Toisen käden tieto ei itsessään ole vähempiarvoisempaa kuin ensi käden tieto, mutta sen al
+kuperäisen kerääjän ja julkaisijan motiiveja on pohdittava tiedon luotettavuuden arvioinnin
+ kannalta. Toisen käden tieto voi olla vahingossa tai tahallisesti levitettyä virheellistä tietoa
+ eli mis- tai disinformaatiota. Tiedon ja lähteiden luotettavuuden arviointi onkin yksi ammat
+timaisen OSINT-toiminnan kulmakivistä (Hulnick 2002).
+ 2.4 Tiedonhankintamenetelmät avointen lähteiden tiedustelussa
+ Tiedonkeräyssuunnitelman laatimisen ja pohjatietojen kartoittamisen jälkeen tiedonhankin
+taa ryhdytään toteuttamaan tiedustelun kohteesta tunnettujen lähtötietojen perusteella. Läh
+tötietoja voivat olla esimerkiksi nimet, nimimerkit, sähköpostiosoitteet, sijaintitiedot tai IP
+osoitteet (Pastor-Galindo ym. 2020). Tiedonhaun perusteella löytyvää relevanttia tietoa kerä
+tään ja analysoidaan karkeasti, jotta tiedonhaussa käytettäviä hakutermejä voitaisiin tarken
+9
+taa tiedonhaun kohdentamiseksi (McDowell 2009, 183).
+ OSINT voidaan jakaa tiedonhankinnan toteutustavan perusteella manuaaliseen, passiiviseen
+ ja automaattiseen tiedonhankintaan (Bazzell 2019, 516–518). Manuaalinen tiedonhankinta
+ on tiedustelijan suorittamaa tiedonhankintaa, jossa tämä käyttää erilaisia tiedonhankinnan
+ työkaluja päästäkseen käsiksi lähteeseen ja havainnoidakseen lähteen sisältämää informaa
+tiota. Tiedustelija käyttää tiedonhankinnassa harkittuja hakusanoja ja-tekniikoita löytääk
+seen tiedontarpeen kannalta relevanttia informaatiota (Best 2008). Kerätessään tietoa tiedus
+telija arvioi tiedon oikeellisuutta sekä relevanssia tiedontarpeen näkökulmasta. Tiedustelija
+ tallentaa oleellisiksi arvioidut tiedot prosessointia ja analyysia varten (Bazzell 2019, 517).
+ Manuaalista tiedonhankintaa voidaan tukea passiivisilla tiedonhankintatyökaluilla. Passiivi
+nen tiedonhankinta on tietokoneohjelman suorittamaa tiedonkeräystä manuaalisen tiedon
+hankintaprosessin kulusta (Bazzell 2019, 517). Esimerkiksi tiedustelijan vierailemien verk
+kosivustojen metatietojen sekä vierailujärjestyksen tallentaminen lokiin ovat passiivisen tie
+donhankinnan tehtäviä.
+ Manuaalisen ja passiivisen tiedonhankinnan ohella OSINT-tietoja voidaan paikantaa ja kerä
+tä automatisoidusti digitaalisilta alustoilta. Automaattinen tiedonhankinta on tietokoneohjel
+malle ennalta määriteltyjen komentosarjojen ja tiedustelijan syöttämien parametrien perus
+teella suoritettavaa tiedonhankintaa (Bazzell 2019, 518). Tiedonhankintaohjelmat hyödyn
+tävät internetin rakennetta, lähteeseen ja sen sisältämään informaatioon liittyviä metatietoja
+ sekä erilaisia hakumenetelmiä kiinnostavan tiedon paikantamiseksi ja poimimiseksi (Gibson
+ 2016, 84). Automaattisesta tiedonhankinnasta poiketen passiivista tiedonhankintaa suorite
+taan vain manuaalisen tiedonhankintaprosessin aikana. Automaattista tiedonhankintaa voi
+daan puolestaan suorittaa täysin erillään manuaalisesta tiedonhankinnasta.
+ Automaation soveltaminen OSINTissa siirtää pitkästyttävät ja vaativuustasoltaan yksinker
+taiset tehtävät tiedustelijoilta ohjelmistoille, jolloin tiedustelijoiden asiantuntijaosaamista voi
+daan hyödyntää tiedusteluprosessin muissa vaiheissa (Bayerl ym. 2023). Automaattisen tie
+donhankinnan suurimpia etuja ovat tiedonkeräyksen nopeus ja jatkuvuus sekä potentiaalises
+ti suuri kerätyn tiedon määrä. Tiedusteluprosessin aikana kerätyn tiedon määrän on havaittu
+ vaikuttavan tiedusteluanalyysin tarkkuuteen (Pastor-Galindo ym. 2020). Suurempi relevan
+tin lähdetiedon määrä auttaa tunnistamaan tiedustelun kohteeseen liittyviä toimijoita sekä
+ 10
+kohteen ja toimijoiden välisiä suhteita (Eldridge, Hobbs ja Moran 2017). Internetin valtavan
+ tietomäärän takia kaikkea tietoa ei ole mahdollista kerätä tarkan kokonaiskuvan muodosta
+miseksi (Pastor-Galindo ym. 2020). Automatisoidut tiedonhankintamenetelmät mahdollista
+vat kuitenkin laajemman tietomassan keräämisen manuaaliseen tiedonhankintaan verrattuna.
+ Tämä puolestaan mahdollistaa pinnalla olevien ilmiöiden ja laajempien trendien havaitsemi
+sen informaatiovirrasta (Hoppa ym. 2020).
+ Automaattisten tiedonhankintaohjelmien merkittävänä etuna on inhimillisten tekijöiden ja
+ virheiden minimointi tiedustelussa. Tiedonhankintaohjelmat eivät ole ihmisten tavoin alt
+tiita kognitiivisille ajattelun vinoumille, jotka saattavat alitajuisesti ohjata tiedonhankintaa
+ (Ponder-Sutton 2016, 11–12). Manuaalisen tiedonhankinnan tehokkuuteen vaikuttavat tie
+dustelijan kokemus, tekniset taidot, vireystila, motivaatio ja monet muut tekijät. Manuaa
+liseen tiedonhankintaan verrattuna automaattiset tiedonhankintaohjelmat kykenevät käsit
+telemään havaittuja tietoja tasaisella intensiteetillä, johon vaikuttavat ainoastaan ohjelmaa
+ suorittavan tietokoneen laskentateho sekä verkon tiedonsiirtonopeus. Vaikka automaattiset
+ tiedonhankintaohjelmat eivät kykene toimimaan täysin autonomisesti ilman käyttäjäsyötet
+tä, voivat työkalut jatkaa tiedonhankintaa annetun syötteen rajoissa käytännössä loputtomiin
+ (Eldridge, Hobbs ja Moran 2017). Tästä on hyötyä jatkuvan tilannekuvan muodostamisessa,
+ jota automaattinen tiedonhankinta tukee merkittävästi. Tiedonhankintaohjelmat kykenevät
+ suorittamaan tiedonkeräystä mihin vuorokaudenaikaan tahansa ja seuraamaan useiden eri
+ lähteiden julkaisuja herkemmin kuin ihminen.
+ 2.5 Tiedustelun ja automaation haasteet
+ Tiedonhankintaan liittyy lukuisia haasteita, jotka vaativat jatkuvaa toiminnan arvioimista tie
+dusteluprosessin sujuvuuden sekä tiedustelutiedon laadun säilyttämiseksi. Automaatio ei rat
+kaise tiedustelun luontaisia haasteita, vaikka se tehostaa tiedon hankinta- ja käsittelykykyä.
+ Automaation käyttö tiedustelussa voi pahimmassa tapauksessa vaikeuttaa tiedustelutyötä, jos
+ automatisoituja ratkaisuja suunnitellaan harkitsemattomasti.
+ Tiedonhankintatyökalujen kehittäminen ja testaaminen vie aikaa, jolloin yksittäisiä tiedus
+telutehtäviä varten tarvittavien työkalujen kehittäminen ei yleensä ole järkevää pitkällä täh
+11
+täimellä. Tämän vuoksi tiedonhankintatyökalujen tulisi olla tarpeeksi joustavia käytettäväk
+si erilaisissa tiedustelutehtävissä, mutta tarpeeksi erikoistuneita, jotta niillä voitaisiin kerätä
+ tarkkaa ja relevanttia tietoa kohteista.
+ 2.5.1 Tiedon määrä ja relevanssi
+ Tiedonhankinnassa on ensiarvoisen tärkeää löytää relevanttia tietoa tiedontarpeen tyydyttä
+miseksi. Relevanssilla tarkoitetaan informaation arvioitua käyttökelpoisuutta tietyssä käyt
+tötilanteessa ottaen huomioon tiedon käyttäjän tavoitteet, arvot ja odotukset (Järvelin ja Sor
+munen 2010, 164–165). Ennen tiedonhankinnan aloittamista tiedustelun tulisi olla perillä
+ tiedustelutehtävälle asetetuista tiedusteluvaatimuksista, joihin ryhdytään etsimään tarkkoja
+ vastauksia (Lowenthal 2020, 67). Epätarkat tiedusteluvaatimukset johtavat usein epärele
+vantin tiedon keräämiseen, mikä ei palvele asiakasta eikä päätöksentekoprosessia (Martelius
+ 2020).
+ Vaikka lähdetiedon saatavuus on yksi OSINTin merkittävimmistä vahvuuksista, on tiedon
+ valtavan määrän hallitseminen keskeinen haaste tiedustelulle (Best 2011; Jardines 2016, 26).
+ Suurista tietomassoista kerätyn informaation tarkastelu mahdollistaa trendien erottamisen
+ informaatiovirrasta (Hoppa ym. 2020). Samalla trendeihin keskittyminen saattaa estää tie
+dustelijaa havaitsemasta tärkeitä yksityiskohtia tai poikkeamia kerätyn informaation seasta
+ (Eldridge, Hobbs ja Moran 2017). Kriittisten yksityiskohtien havaitsematta jättäminen voi
+ koitua kohtalokkaaksi etenkin, jos tiedustelun päämääränä on tarkkailla potentiaalisia tur
+vallisuusuhkia.
+ Saatavilla olevan tiedon valtava määrä vaikeuttaa oleellisesti relevantin tiedon löytämistä tie
+tovirrasta (Eldridge, Hobbs ja Moran 2017). Harjaantunut tiedustelija kykenee arvioimaan
+ informaation relevanssia manuaalisen tiedonhankinnan aikana, jolloin epäoleellisia tietoja
+ voidaan karsia ennen käsittelyvaihetta. Tiedonhankintaohjelmat eivät kuitenkaan voi pää
+tellä tarkasti, vastaako löydetty tieto tarkasti tiedontarpeeseen. Automatisoitujen tiedonhan
+kintatyökalujen suunnittelussa ja käytössä tulisi ottaa huomioon syötteen parametrien mo
+nipuolisuus ja tarkkuus, jotta relevanttia informaatiota voitaisiin löytää nopeasti. Relevantin
+ informaation erottelukyky heijastuu hankitun tiedon määrän lisäksi tiedusteluanalyysin laa
+12
+tuun (Pastor-Galindo ym. 2020). Keräyskapasiteetin kasvaessa myös tiedontarpeen kannalta
+ oleellisen tiedon löytäminen vaikeutuu, koska kerättyä informaatiota on enemmän käsiteltä
+väksi. Tämän takia tiedonhankinnan tuloksia tulisi arvioida jo keräysvaiheessa, jotta tiedon
+hankintaohjelmien syötteitä voitaisiin päivittää ja tarkentaa parempien lähteiden ja tiedon
+ löytämiseksi.
+ Tiedustelun tehtävä- ja kontekstisidonnaisuus vaativat tiedonhankintamenetelmien sovelta
+mista kuhunkin tehtävään sopivalla tavalla, jolloin kerätyt lähteet voivat myös vaihdella suu
+resti. Kaikki informaatio ei lähtökohtaisesti ole yhtä arvokasta, minkä vuoksi tiedonhan
+kinnassa tulisi keskittyä tiedontarpeiden tyydyttämisen ohella laadukkaiden lähteiden etsi
+miseen (McDowell 2009, 182; Lowenthal 2020, 73). Monesti laadukkaat lähteet sisältävät
+ tiedusteluvaatimusten lisäksi paljon informaatiota, jota voidaan hyödyntää myöhemmissä
+ tiedustelutehtävissä. Siksi laadukkaiksi katsotut lähteet tulisi tallentaa ja indeksoida tiedus
+teluorganisaation tietovarantoihin, jotta tiedonkeräystä ei tarvitsisi suorittaa tarpeettomasti
+ uudelleen samankaltaisen tiedustelutehtävän kohdalla.
+ Lähdetiedon määrääkasvattaa myöstiedon toisteisuus. Toisteisella tiedolla tarkoitetaan useas
+sa eri lähteessä julkaistua tietoa, joka pohjautuu samaan ilmiöön tai havaintoon (Lowenthal
+ 2020, 137). Esimerkiksi uutisartikkelit saattavat sisältää täsmälleen saman informaation kuin
+ muut aiheesta julkaistut artikkelit. Toisteisen tiedon suuri määrä voi vinouttaa käsitystä tut
+kitun ilmiön merkittävyydestä. Automaattisissa tiedonhankintatyökaluissa hyödynnetään jä
+senninalgoritmeja, jotka tunnistavat toisteisen tiedon ja käsittelevät eri lähteistä saadun sa
+mantietosisällön yksittäisenä tiedusteluhavaintona (Best 2011). Toisteista tietoa julkaisevien
+ lähteiden seuraaminen voi lisäksi paljastaa lähteiden takana olevien organisaatioiden motii
+veja sekä niiden käyttämiä tietolähteitä (Jardines 2016, 31).
+ Julkisen tiedon suurta määrää ei tulisi käyttää oletuksena sille, että tiedontarpeeseen on ole
+massa yksiselitteinen, muut vaihtoehdot poissulkeva vastaus (Weir 2016). Kerätyistä tiedois
+ta koottu kokonaiskuva on lähes aina puutteellinen, sillä kaikkea tutkittavaan ilmiöön liit
+tyvää tietoa ei ole julkisesti saatavilla tai edes mahdollista hankkia. Jos manuaalisella tie
+donhankinnalla ei ole mahdollista löytää vastausta tiedontarpeeseen, on se myös mahdoton
+ta automatisoiduin keinoin (Weir 2016). Toisaalta automaattisilla menetelmillä kerättävissä
+ olevaa tietoa voi rajoittaa vaatimus maksaa tietolähteen käytöstä tai verkkopalveluun tunnis
+13
+tautumisesta. Automaattisella tiedonhankinnalla voisi tosin selvittää nopeasti, onko tiedon
+tarpeisiin saatavissa tyydyttäviä vastauksia avoimista lähteistä. Vastausten alustavan saata
+vuuden selvittäminen voi säästää tiedustelun resursseja kohdentamalla ne muihin tiedustelu
+kohteisiin.
+ 2.5.2 Tiedon ja lähteiden luotettavuus
+ Toinen OSINT-menetelmillä kerättyyn tietoon liittyvä ongelma on tiedon oikeellisuuden ja
+ lähteen luotettavuuden arviointi (Pastor-Galindo ym. 2020; Weir 2016). Verkossa kuka ta
+hansa voi julkaista sisältöä anonyymisti, minkä vuoksi informaation ja lähteisiin tulisi aina
+ suhtautua epäilevästi. Virheellinen tieto voi olla tahattomasti levitettyä tietoa eli misinfor
+maatiota tai tahallisesti harhaanjohtavaa tietoa eli disinformaatiota. Mis- ja disinformaatio
+ ovat tiedon oikeellisuuden arvioimisen lisäksi haaste lähteen luotettavuuden arvioinnille, sil
+lä lähteen motiivien arviointi on usein vaikeaa (Weir 2016).
+ Tarkasteltavan tiedon oikeellisuuden arvioimiseksi tietoa hankitaan useista toisistaan riippu
+mattomista lähteistä, jolloin tarkasteltavan tiedon uskottavuus vahvistuu (Weir 2016). Tämä
+ ei kuitenkaan tee arvioidusta tiedosta automaattisesti paikkansapitävää, vaan ainoastaan nos
+taa sen todennäköisyyttä olla paikkansapitävää. Lähteiden luotettavuuden arvioimiseksi käy
+tetyistä tietolähteistä pidetään yleensä kirjaa, jotta tietojen oikeellisuutta voitaisiin arvioida
+ jälkikäteen. Tiedusteluorganisaatiot kykenevät pitkän aikavälin seurannalla asettamaan läh
+teet luotettavuuden mukaan paremmuusjärjestykseen, mikä edistää lähteestä kerättävien tie
+tojen arviointia tulevaisuudessa (Gibson, Ramwell ja Day 2016, 107).
+ OSINT-tiedustelijat oppivat kokemuksen ja kehittyvän kohdeosaamisen kautta tunnistamaan
+ epäluotettavia lähteitä sekä suoranaista disinformaatiota (Hulnick 2002). Harjaantunut tie
+dustelija kykenee karsimaan epäluotettavia lähteitä jo manuaalisen keräysvaiheen aikana,
+ jolloin käsittelyvaiheen resursseja säästyy. Automaattisessa tiedonhankinnassa tulisikin kiin
+nittää huomiota ohjelman kykyyn arvioida lähteen semantiikkaa. Sisällön semantiikan tun
+nistamisen lisäksi olisi tärkeätä kyetä tunnistamaan lähteen lähestymistapaa ja asenteita tie
+toja kohtaan. Pakinoiden, blogien ja tiedeartikkeleiden erottelu erillisiksi tekstilajeiksi hel
+pottaa lähteen ja tiedon luotettavuuden arviointia keräys- ja käsittelyvaiheessa.
+ 14
+3 Automaattiset tiedonhankintamenetelmät
+ Tässä luvussa käsitellään automaattisen tiedonhankinnan toteuttamista verkossa. Aluksi esi
+tellään automaattisen tiedonhankinnan vaiheet, jonka jälkeen perehdytään tarkemmin tiedon
+hankinnassa käytettäviin tiedonpaikannus- ja tiedonkeräysmenetelmiin.
+ Verkossa tapahtuva tiedonhankintaprosessi voidaan jakaa kolmeen osaan. Ensimmäiseksi on
+ paikannettava verkkosivusto, joka sisältää tiedontarpeen kannalta relevanttia informaatiota.
+ Verkkosivuston paikantamisen jälkeen sen kanssa tulee kyetä vuorovaikuttamaan, jotta infor
+maatiosisältöä voisi käsitellä. Lopuksi verkkosivuston sisältämää informaatiota on kyettävä
+ arvioimaan tiedontarpeen perusteella annetun syötteen perusteella ja poimimaan oleellinen
+ tieto verkkosivustolta.
+ Tässä tutkielmassa tiedonhankintamenetelmät ymmärretään tiedonpaikannus- ja tiedonke
+räysmenetelmien yhdistelminä. Tiedon paikannuksella tarkoitetaan relevanttia informaatio
+ta sisältävän tietolähteen etsimistä ja paikantamista internetistä sekä tietoon käsiksi pääsyä.
+ Tiedonkeräyksellä tarkoitetaan relevantin informaation arvioimista, poimimista tietolähtees
+tä ja tallentamista myöhempää käsittelyä varten. Paikannus- ja keräysmenetelmien välille on
+ haastavaa tehdä selkeätä rajanvetoa, koska ne usein hyödyntävät toistensa kykyjä käsitellä
+ lähteitä ja informaatiota.
+ 3.1 Tiedonpaikannusmenetelmät
+ Tiedonpaikannusmenetelmät ovat automaattisessa tiedonhankinnassa vastuussa relevantin
+ tiedon löytämisestä tiedonhankintaohjelmalle annetun syötteen perusteella. Tässä alaluvus
+sa tarkastellaan verkkosyötteiden, ohjelmointirajapintojen ja hakurobottien käyttömahdolli
+suuksia tiedon paikantamiseksi verkosta.
+ 3.1.1 Verkkosyötteet
+ Verkkosyöte (engl. web feed) on tiedonjakelukanava, jossa verkkosivuston ylläpitäjä voi il
+moittaa syötteen tilaajille sivuston päivityksistä ja uusista julkaisuista. Ilmoitukset jaetaan
+ 15
+verkkosyötteen tilaajille yleensä XML-kielisenä tiedostona, johon on koostettu viimeisim
+mät tiedot verkkosivuston muutoksista (Urbansky ym. 2021). Syötteen tilaaminen perustuu
+ verkko-osoitteeseen lähetettävään päivityspyyntöön, johon verkkosyötettä ylläpitävä palve
+lin vastaa viimeisimmät päivitykset sisältävällä tiedostolla (Gibson 2016, 81). Palvelimille
+ lähetettäviä päivityspyyntöjä voidaan automatisoida syötteenlukuohjelmien avulla, jotka pi
+tävät kirjaa seuratuista verkkosyötteistä ja koostavat syötteissä ilmoitetut muutokset tiedus
+telijalle luettavaksi (Urbansky ym. 2021). Erityisesti uutispalvelut, blogit ja sosiaalisen me
+dian kanavat suosivat verkkosyötteitä, sillä niiden kautta lukijakunta on mahdollista tavoittaa
+ nopeasti.
+ Verkkosyötteiden vahvuuksia ovat niiden helppokäyttöisyys, rakenteellisen tiedon saatavuus
+ sekä reaaliaikaisuus. Verkkosyötteen ylläpitäjä koostaa ilmoituksen standardoituun tiedos
+tomuotoon, mikä tekee tiedon käsittelystä ja analysoinnista tiedustelulle ketterämpää. Esi
+merkiksi Euroopan Unionin (2023) ylläpitämä European Media Monitor-palvelu seuraa ak
+tiivisesti uutispalveluiden verkkosyötteitä mahdollistaen kehittyvien tilanteiden seuraamisen
+ reaaliajassa. Ajantasainen informaatio parantaa huomattavasti tilannekuvan muodostamista
+ toimintaympäristöstä. Informaation reaaliaikaisuus perustuu kuitenkin palvelimelle lähetet
+tävien pyyntöjen tiheyteen, jolloin uuden informaation haku verkkosyötteistä on tiedustelun
+ ja tiedonhankintaohjelmien vastuulla (Urbansky ym. 2021).
+ Verkkosyötteiden haittapuolia ovat niiden päämäärähakuinen ja verrattain vähäinen käyt
+tö tiedonjakelukanavana. Palvelun ylläpitäjät kontrolloivat syötteessä jaettuja tietoja, jolloin
+ syötteessä julkaistaan harvoin tahattomasti arkaluontoista informaatiota. Verkkosyötteet so
+veltuvat myös kohdennettuun tiedonhankintaan huonosti, sillä niissä julkaistaan tietoa lähin
+nä ajankohtaisista tapahtumista.
+ 3.1.2 Ohjelmointirajapinnat
+ Ohjelmointirajapinta eli API (engl. application programming interface) on verkkosivuston
+ tarjoama palvelu, joka mahdollistaa sivuston ylläpidon ulkopuolisille käyttäjille pääsyn verk
+kosivuston sisäänrakennettuihin toimintoihin (Perez ja Germon 2015, 110). Verkkopalvelun
+ käyttäjät voivat lähettää rajapinnan kautta ennalta määriteltyjä kyselyjä suoraan palvelimel
+16
+le, joka palauttaa vastauksen rakenteisessa muodossa käyttäjälle (Perez ja Germon 2015,
+ 110). Ohjelmointirajapintoja käytetään yleensä eri ohjelmistojen välisessä tiedonvälitykses
+sä, mutta niiden kautta voidaan hankkia verkkosivustolta helposti saatavissa olevaa informaa
+tiota (Chaudhary ja Bansal 2022). Esimerkiksi monet sosiaalisen median palvelut ja uutissi
+vustot sallivat ohjelmointirajapintansa kautta yksittäisten julkaisujen tai käyttäjätilien hake
+misen. Julkaisuissa näkyvän informaation lisäksi jotkut ohjelmointirajapinnat mahdollistavat
+ myös julkaisun metatietojen hakemisen.
+ Ohjelmointirajapinta on tehokas tiedonpaikannusmenetelmä kohdistetussa tiedonhankinnas
+sa. Uutisartikkelit ja sosiaalisen median julkaisut noudattavat usein rakennetta, jossa julkai
+suun liittyvät tiedot, kuten tekstisisältö, julkaisijan nimimerkki, julkaisuajankohta ja sijainti
+ ovat upotettuina omiin kenttiinsä verkkosivustolla (Chaudhary ja Bansal 2022). Näihin tie
+toihin voi useimmiten päästä suoraan käsiksi ohjelmointirajapinnan kautta, mikä mahdollis
+taa relevanttien julkaisujen ja käyttäjätilien etsimisen syötettyjen parametrien avulla. Ohjel
+mointirajapintojen käyttöä voidaan automatisoida lähettämällä kyselyjä useisiin verkkopal
+veluihin samoilla parametreilla.
+ Ohjelmointirajapintojen heikkoutena ovat verkkosyötteiden tavoin palveluntarjoajan aset
+tamat rajoitteet, joiden puitteissa rajapintoja voidaan hyödyntää tiedonhankinnassa. Kaik
+keen verkkopalvelun sisältöön ei välttämättä pääse käsiksi pelkkien ohjelmointirajapinto
+jen avulla. Lisäksi jotkut ohjelmointirajapinnat vaativat käyttäjältä tunnistautumista palve
+lun toiminnallisuuksien käyttämiseksi (Perez ja Germon 2015, 110). Tunnistautuminen to
+teutetaan yleensä API-avaimella, joka on käyttäjälle erikseen luotu uniikki merkkijono, jo
+ka liitetään palvelimelle lähetettävään kyselyyn. Palveluntarjoajat kykenevät hallitsemaan
+ API-avaimilla palveluidensa käyttöä sekä ehkäisemään palvelinten ylikuormitusta. Käyttä
+jän API-avaimen perusteella palveluntarjoaja voi rajoittaa ohjelmointirajapinnan maksullis
+ten toimintojen käyttöä (Gibson 2016, 77) ja ehkäistä palvelimeen kohdistuvaa kuormitusta
+ rajoittamalla yksittäisellä API-avaimella tehtävien pyyntöjen määrää (Perez ja Germon 2015,
+ 110). Palveluntarjoajalla on API-avaimien myötä mahdollisuus seurata kullakin avaimella
+ tehtyjen kyselyjen sisältöä, mikä muodostuu ongelmaksi tiedonhankinnan salaamisessa.
+ 17
+3.1.3 Hakurobotit
+ Hakurobotti (engl. web crawler, web spider) on tiedonhakuohjelma, joka vierailee järjestel
+mällisesti eri verkkosivustoilla kartoittaen niiden rakennetta ja yhteyksiä muihin verkkosi
+vustoihin. Esimerkiksi verkkoselainten hakukoneiden valtavat hakemistot perustuvat lukui
+siin hakurobotteihin, jotka kartoittavat internettiä automaattisesti uusien verkkosivustojen
+ liittämiseksi hakukonetuloksiin (Hassan ja Hijazi 2018, 96–97). Hakurobotteja voidaan käyt
+tää kohdistetussa tiedonhankinnassa, jossa ne kartoittavat verkkosivustoja annetun syötteen
+ perusteella.
+ Hakurobotin toiminta perustuu hyperlinkkien tunnistamiseen verkkosivuston rakenteesta
+ (Gibson 2016, 75). Haku aloitetaan syöttämällä hakurobotille siemenlinkki (engl. seed URL),
+ joka ohjaa robotin ensimmäiselle kartoitettavalle sivustolle (Chaudhary ja Bansal 2022). Sie
+menlinkin lisäksi määritetään haun syvyys, jolla tarkoitetaan etäisyyttä, kuinka monen verk
+kosivuston päähän siemenlinkistä hakurobotti vierailee (Gibson 2016, 75). Hakurobotti skan
+naa sivuston hyperlinkeistä, jotka robotti tallentaa listalle. Tämän jälkeen hakurobotti vierai
+lee ja toistaa toimenpiteet rekursiivisesti jokaiselle listan hyperlinkille, kunnes se saavuttaa
+ haun syvyyden (Chaudhary ja Bansal 2022). Perinteisen hyperlinkkejä seuraavan hakurobo
+tin lisäksi robotti voidaan rakentaa yhdistäen verkkoselaimen hakukoneiden toiminnallisuuk
+sia. Hakurobotin syötteenä voidaan tällöin käyttää tavallisen hakukonehaun tavoin avainsa
+noja, joiden perusteella hakukone etsii ja päättää verkkosivustot, joilla hakurobotti vierailee
+ (Di Pietro ym. 2014).
+ Verkkosivustoilla vierailemisen lisäksi hakurobottiin on yleensä liitettynä tiedonkeräysoh
+jelma, joka poimii ja käsittelee verkkosivuston sisältöä relevantin informaation löytämiseksi
+ (Chaudhary ja Bansal 2022). Tiedonkeräysohjelmat poimivat esimerkiksi tekstiä, kuvia ja
+ metatietoja, joiden avulla voidaan päätellä sisällön konteksti ja arvo tiedustelulle (Aliprandi
+ ym. 2014). Kohdennetussa tiedonhaussa hakurobotit hyödyntävät tiedonkeräysmenetelmiä
+ arvioidakseen, sisältääkö kartoitettava verkkosivusto tiedontarpeisiin nähden relevanttia in
+formaatiota (Gibson 2016, 75–76).
+ Hakurobotit ovat eteviä perustietojen selvittämiseksi tiedustelun kohteesta. Toisin kuin verk
+kosyötteet ja ohjelmointirajapinnat, hakurobotit eivät ole riippuvaisia verkkosivustojen yllä
+18
+pitäjien tarjoamista toiminnoista, vaan ne toimivat täysin oman sovelluslogiikkansa mukaan.
+ Hakurobotteihin liitettävät tiedonkeräysohjelmat ja niiden muokkaaminen tekevät hakuro
+boteista joustavia työkaluja suurten verkkosivustojen ja tietokantojen kartoittamisessa. Esi
+merkiksi sosiaalisen median palveluissa hakurobotti voi automaattisesti kartoittaa tiettyyn
+ käyttäjätiliin linkitetyt tilit ja analysoida tilien välisiä suhteita (Aliprandi ym. 2014).
+ Hakurobottien merkittävistä eduista huolimatta niiden toimintaan liittyy myös haasteita. En
+simmäisenä haasteena on hakurobottien suhteellinen hitaus tiedonhankinnassa. Verkkosivus
+tojen kartoittamiseen kuluu paljon aikaa, koska hakurobotin tulisi vierailun lisäksi kahlata
+ läpi verkkosivuston sisältö ja analysoida sen relevanssia kiinnostavan informaation paikan
+tamiseksi (Ponder-Sutton 2016, 9). Potentiaalisesti relevanttien lähteiden löytyessä verkkosi
+vuston sisällön lataaminen ja tallentaminen vie myös aikaa, jos sivusto sisältää suurikokoisia
+ tiedostoja, kuten kuvia tai videoita.
+ Vaikka hakurobottien toiminta perustuu niiden kehittäjän laatimiin algoritmeihin, voivat verk
+kosivuston ylläpitäjät ohjata hakurobottien toimintaa. Ylläpitäjä voi määritellä robots.txt
+nimisessä tiedostossa verkkosivustoilla vieraileville hakuroboteille kartoitettavaksi sallitut
+ kansiot ja tiedostot (Gibson 2016, 91). Mikäli hakurobotti sivuuttaa robots.txt-tiedoston kä
+sittelyn, voi verkkosivuston ylläpitäjä estää robotilta kokonaan pääsyn sivustolle (Gibson
+ 2016, 91).
+ 3.2 Tiedonkeräysmenetelmät
+ Automaattisessa tiedonhankinnassa tiedonkeräyksellä tarkoitetaan relevantin informaation
+ eristämistä, poimimista ja tallentamista lähteestä. Tiedonkeräystä, joka kohdistuu nimeno
+maan internet-lähteisiin, kutsutaan myös verkkoharavoinniksi (engl. web scraping) (Diouf
+ ym. 2019). Verkkoharavoinnissa hyödynnetään tiedonlouhinta-algoritmeja, jotka erottelevat
+ annetun syötteen perusteella kiinnostavan informaation verkkosivuston sisällöstä. Syöte voi
+ koostua esimerkiksi itsenäisiin kokonaisuuksiin eli entiteetteihin liittyvistä nimistä, kuvis
+ta, päivämäärä- tai sijaintitiedoista. OSINTissa käytettävät tiedonkeräysmenetelmät voidaan
+ Ünverin (2018) mukaan jakaa karkeasti neljään kategoriaan: tekstitulkinta-, paikkatieto-,
+ kuvatulkinta- sekä verkostoanalyysimenetelmiin. Tässä alaluvussa tarkastellaan edellä mai
+19
+nittuja tiedonkeräysmenetelmiä sekä niiden hyödyntämismahdollisuuksia tiedustelussa.
+ 3.2.1 Tekstitulkintamenetelmät
+ Tekstin ja kielen tulkintaan perustuvat tiedonkeräysmenetelmät keskittyvät lähteen tekstisi
+sällön jäsentämiseen ja tulkitsemiseen (Gibson 2016, 83). Tekstitulkintaohjelmat erikoistu
+vat esimerkiksi tekstin semanttisen sisällön tulkitsemiseen, kirjoittajan asenteiden ja arvojen
+ tulkitsemiseen tai tietyn informaation etsimiseen avainsanojen perusteella (Pastor-Galindo
+ ym. 2020; Ünver 2018).
+ Semanttiset tulkintamenetelmät keskittyvät arvioimaan tekstin välittämiä merkityksiä se
+kä luokittelemaan tekstiä aiheen, tekstilajin ja tekstissä välitettävien tunteiden perusteella
+ (Pastor-Galindo ym. 2020). Tekstin semanttisen sisällön arvioimiseksi tekstiä jäsennetään
+ sanojen, lauseiden ja kappaleiden tasolla. Sanavalintoja arvioimalla voidaan päätellä teks
+tin aihepiiri ja kirjoittajan asenne tekstissä käsiteltäviä asioita kohtaan (Gibson, Ramwell ja
+ Day 2016, 98; Ünver 2018). Lauseissa esiintyvien entiteettien välisiä suhteita voidaan ar
+vioida tulkitsemalla niiden kieliopillista asemaa lauseenjäseninä (Best 2011).
+ Tietyn informaation etsimisessä hyödynnetään erityisesti nimettyjen kokonaisuuksien tun
+nistusmenetelmiä (engl. Named-Entity Recognition, NER). Nimettyjä kokonaisuuksia ovat
+ kaikki entiteetit, jotka voidaan yksilöidä ja erottaa muista saman kategorian entiteeteistä (Di
+ Pietro ym. 2014). Esimerkiksi henkilöt, esineet ja sijainnit ovat kaikki nimettyjä kokonai
+suuksia. Nimettyjen kokonaisuuksien tunnistusmenetelmät perustuvat avainsanojen tunnis
+tamiseen suoraan tekstistä ja lauseiden jäsentämiseen sanaluokkien ja kieliopin perusteella
+ (Gibson 2016, 86).
+ Tekstitulkintamenetelmät ovat käytettävyydeltään joustavia hyvin erilaisten tiedontarpeiden
+ tyydyttämisessä. Tekstimuodossa julkaistava informaatio on asiasisällöltään tiivistä ja kyke
+nee välittämään tietoa myös abstrakteista ilmiöistä, kuten henkilötiedoista, organisaatiora
+kenteista ja ajatuksista. Raakaa tekstitietoa on helppo ladata ja käsitellä nopeasti, koska se
+ vie suhteellisen vähän tallennustilaa verrattuna audio-, kuva- tai videomateriaaliin.
+ Tekstitulkintamenetelmien suurimpana heikkoutena ovat kieleen liittyvät haasteet. Puhekie
+liset ilmaukset, kirjoitusvirheet ja toisesta kielestä käännetyt ilmaukset vaikeuttavat teksti
+20
+tulkintaa (Gibson 2016, 83; Rahwan 2022). Tämän lisäksi lähteen kieli voi olla tekstitulkin
+taohjelmalle vierasperäistä, mikä rajoittaa tekstin jäsentämistä ja sisällön semanttista luokit
+telua (Di Pietro ym. 2014). Kieleen liittyvien haasteiden lisäksi tekstimuotoinen sisältö on
+ lähes aina tarkoituksellisesti kirjoitettua ja rajattua, jolloin sisältöön ei usein lipsahda arka
+luontoista tietoa, jota tekstin julkaisija ei halua levitettävän internetissä.
+ 3.2.2 Paikkatietomenetelmät
+ Paikkatieto on kohteeseen tai ilmiöön liittyvää informaatiota, joka viittaa tiettyyn maantie
+teelliseen sijaintiin. Paikkatieto voi olla luonteeltaan staattista tai dynaamista informaatiota.
+ Staattista paikkatietoa ovat yksittäiseen muuttumattomaan sijaintiin liittyvät tiedot, kuten vi
+deon kuvauspaikka tai rakennuksen sijainti kartalla (Stock ja Guesgen 2016, 171). Dynaa
+misella paikkatiedolla tarkoitetaan sijaintia muuttavaan kohteeseen liitettyä tietoa (Stock ja
+ Guesgen 2016, 171). Tällaista tietoa ovat esimerkiksi lentokoneen sijainnin ja korkeuden
+ ilmaiseva paikkatieto.
+ Geopaikannuksella tarkoitetaan paikkatietojen selvittämistä hallussa olevien lähtötietojen
+ perusteella (Best 2011). Geopaikannukseen liittyy läheisesti geokoodaus, joka tarkoittaa si
+jaintitietojen muuttamista paikannimistä koordinaateiksi ja toisinpäin (Gibson, Ramwell ja
+ Day 2016, 103–104). Geopaikannukseen soveltuvia lähtötietoja ovat esimerkiksi koordinaa
+tit, kuvat ja videot tapahtumapaikasta sekä kirjalliset muistiot, jotka kuvailevat tapahtuma
+paikkaa. Lähtötietoja analysoimalla on mahdollista tunnistaa maantieteeseen perustuvia vih
+jeitä, joiden avulla tarkka sijainti voidaan selvittää. Tällaisia vihjeitä ovat esimerkiksi posti
+numerot, rekisterikilpien maatunnukset, tienviitat sekä IP-osoitteet. Geopaikannusta on käy
+tetty muun muassa sotarikosten selvittämisessä (Bellingcat 2017) ja rikollisten piilopaikko
+jen paljastamisessa (Van Ess 2019).
+ Paikkatietojen avulla on mahdollista seurata reaaliajassa kehittyviä tapahtumia, kuten liiken
+neruuhkia tai mielenosoituksia (Stefanidis, Crooks ja Radzikowski 2013). Paikkatieto voi
+ myös paljastaa arkaluontoista tietoa tiedustelun kohteesta. Esimerkiksi sotilasjoukkojen lii
+kehdintää on seurattu Tinder-käyttäjien sijaintitietojen perusteella (Coakley 2021) ja salais
+ten sotilastukikohtien sijainteja on paljastunut liikuntasovelluksessa jaetuista harjoituslokeis
+21
+ta (Kozera 2020).
+ Paikkatietomenetelmien automatisoinnin haasteena voidaan pitää yhdenmukaisten sijainti
+tietojen heikkoa saatavuutta ja epätarkkuutta. Verkkojulkaisuissa sijaintitietoja jaetaan useim
+miten paikanniminä koordinaattien sijaan, mikä vaikeuttaa tarkan sijainnin määrittämistä. Si
+jaintitietojen epätarkkuuteen vaikuttavat muun muassa samanlaiset maantieteelliset paikan
+nimet, epäviralliset paikannimet ja paikkoihin liittyvien sanallisten kuvauksien monitulkin
+taisuus (Gibson, Ramwell ja Day 2016, 103–104). Paikkatietojen selvittäminen muiden kuin
+ koordinaattien tai paikannimien avulla vaatii päättelykykyä, johon nykyiset koneoppimis
+menetelmät eivät vielä yllä, vaikka tutkimukset ovat tuottaneet lupaavia tuloksia (Murgese
+ ym. 2022).
+ 3.2.3 Kuvatulkintamenetelmät
+ Kuvatulkintamenetelmillä analysoidaan digitaalisten kuvien ja videoiden sisältöä sekä niihin
+ liitettyjä metatietoja. Kuvatulkintamenetelmiä hyödynnetään fyysisen maailman kohteiden
+ tunnistamisessa ja paikantamisessa sekä lähdemateriaalin aitouden todentamisessa (Helmus
+ 2022). Kuvien sisällön tulkinta jaetaan tyypillisesti kahteen pääluokkaan. Kuvantunnistus
+ (engl. image recognition) keskittyy erottelemaan ja tunnistamaan kuvassa näkyviä entiteet
+tejä, kuten henkilöitä, esineitä ja ajoneuvoja (Rahwan 2022). Kasvojentunnistus (engl. facial
+ recognition) keskittyy kuvassa näkyvien kasvojen erottamiseen, yksilöimiseen ja analysoi
+miseen (Rahwan 2022). Visuaalisen sisällön lisäksi kuva- ja videotiedostot sisältävät meta
+tietoja, jotka ilmaisevat muun muassa tiedoston pakkaustyypin, kameran ominaisuudet sekä
+ kuvaushetkellä käytetyt asetukset (Ünver 2018). Lisäksi metatiedot voivat sisältää kuvaus
+paikan maantieteelliset koordinaatit (Toevs 2015).
+ Kuvatulkinta voi paljastaa tiedustelun kohteesta arkaluontoista tietoa, jota julkaisija ei ole ot
+tanut huomioon julkaistessaan sisältöä verkkoon. Kuvassa näkyvien maastonmuotojen, maa
+merkkien, säätilan ja varjojen perusteella voidaan esimerkiksi päätellä tarkka kuvanottopaik
+ka ja ajankohta ilman metatietoja (Van Der Weide 2020). Kuvien ja videoiden aitouden ar
+vioimiseksi OSINTissa käytetään koneoppimismenetelmiä ja käänteistä kuvahakua (Helmus
+ 2022). Koneoppimismenetelmillä voidaan automaattisesti havaita poikkeamia kuvamateri
+22
+aalista, jotka voivat kieliä materiaalin peukaloinnista (Helmus 2022). Käänteisen kuvahaun
+ perusteella on mahdollista selvittää kuvan alkuperä, mikä puolestaan voi paljastaa kuvaan
+ liittyviä väärennettyjä sosiaalisen median tilejä tai valeuutisia (McKeown ym. 2014; Toler
+ 2019).
+ Kuvien ja videoiden automaattinen tulkinta ei ole aivan mutkatonta, vaikka ne tarjoavat
+kin tiedustelulle paljon informaatiota. Kuvista ja videoista on tullut koneoppimismenetel
+miä hyödyntävien deepfake-videoiden myötä yleinen tapa levittää disinformaatiota (Helmus
+ 2022). Väärennettyjen videoiden aitouden vahvistaminen tulee olemaan entistä vaikeampi
+ haaste koneoppimismenetelmien kehittyessä (Helmus 2022). Metatietojen saatavuus ja luo
+tettavuus ovat toinen huolenaihe kuvatulkintamenetelmien käytölle. Monet sosiaalisen me
+dian palvelut poistavat kuvista ja videoista metatietoja, jotta niitä ei voisi käyttää hyväksi
+ vahingollisessa toiminnassa (Toevs 2015). Metatietojen aitouden vahvistaminen on lisäksi
+ vaikeampaa kuin kuvien sisällön, sillä tietokoneiden käyttöjärjestelmät eivät yleensä pidä
+ kirjaa metatiedoissa tapahtuvista muutoksista (Toevs 2015).
+ 3.2.4 Verkostoanalyysimenetelmät
+ Verkostoanalyysimenetelmillä kartoitetaan ja tutkitaan kahden tai useamman entiteetin vä
+lisiä suhteita ja niiden muodostamia verkostoja (Ünver 2018). Verkosto voi olla esimerkik
+si henkilöistä koostuva ystäväpiiri tai organisaation työntekijöiden muodostama hierarkki
+nen yhteisö. Ihmisten ja organisaatioiden ohella verkostot voivat kuvastaa elottomien jär
+jestelmien osien suhteita toisiinsa. Esimerkiksi useista erilaisista komponenteista koostuvan
+ koneen toimintaa voidaan arvioida tutkimalla komponenttien välisiä suhteita tai yksittäisen
+ komponentin vaikutusta koneen toimintaan.
+ Alkujaan verkostoanalyysimenetelmät pohjautuvat matematiikan verkkoteoriaan sekä sosio
+logiaan (Perez ja Germon 2015; Ball 2016). Verkosto koostuu jäsenistä eli solmuista ja jä
+senten välisistä suhteista eli kaarista. Verkosto voi koostua erityyppisistä solmuista ja kaa
+rista, jotka eivät ole samankaltaisia keskenään (Gibson, Ramwell ja Day 2016, 101). Solmut
+ voivat esimerkiksi edustaa henkilöitä ja esineitä samassa verkostossa. Solmujen ja kaarien li
+säksi verkostolla on ominaisuuksia, kuten verkottuneisuus eli verkoston tiheys, solmujen vä
+23
+liset etäisyydet sekä solmujen välisten kaarien suuntaisuus ja luonne (Ball 2016). Sosiaalisen
+ median verkostojen ominaisuuksia voidaan arvioida analysoimalla esimerkiksi käyttäjätilien
+ tykkäys- ja kommentointiaktiivisuutta, käyttäjien vuorovaikutuksen kohteita sekä käyttäjien
+ ystävä- ja kontaktilistoja.
+ Verkostoanalyysillä voidaan hahmottaa verkostoon kuuluvien jäsenten keskinäisiä hierar
+kioita ja käyttäytymistä (Ünver 2018). Lisäksi verkoston sisäisen dynamiikan tarkastelu voi
+ paljastaa verkoston toiminnan kannalta oleellisia avainhenkilöitä ja prosesseja (Ball 2016).
+ Automatisoidut verkostoanalyysiohjelmat tukevat tiedustelua kartoittamalla toimintaympä
+ristön toimijoiden ja ilmiöiden välisiä yhteyksiä, jotka voivat paljastaa yllättäviäkin asioita
+ verkoston toiminnasta.
+ 24
+4 Tiedonhankintamenetelmien soveltuvuus
+ tiedontarpeisiin
+ Tässä luvussa arvioidaan edellisessä luvussa esiteltyjen tiedonpaikannus- ja tiedonkeräys
+menetelmien soveltuvuutta erilaisiin tiedontarpeisiin. Tarkasteltavia tiedontarpeita ovat hen
+kilöt, organisaatiot, esineet ja tapahtumat. Tarkasteltavien tiedontarpeiden valinta ei perustu
+ aiempaan tieteelliseen tutkimukseen, vaan ne edustavat kohteita, joista tyypillisesti hanki
+taan OSINT-menetelmillä tietoa. Tiedonhankintamenetelmien soveltuvuuden arvioimiseksi
+ tutkimuksessa tarkastellaan kuhunkin tiedontarpeeseen liittyvien tietojen saatavuutta ja käy
+tettävyyttä tiedontarpeen tyydyttämisessä.
+ 4.1 Henkilöt
+ Tässä tutkielmassa henkilöllä tarkoitetaan ihmistä, jolla on oma henkilökohtainen identiteet
+ti, jonka perusteella tämä pystytään erottamaan muista ihmisistä. Henkilöön kohdistuvalla
+ OSINTilla pyritään usein selvittämään tämän perustiedot, kuten nimi, yhteystiedot ja ulko
+näkö, sekä kartoittamaan tämän sidosryhmiä, kuten perhettä ja ystäväpiiriä (Hassan ja Hijazi
+ 2018, 258). Henkilöön kohdistuva OSINT on eettisesti arka aihe, sillä raja päätöksentekoa
+ tukevan tiedustelun ja vaanimisen välillä voi olla häilyvä.
+ Henkilöön liittyvien tietojen hankkiminen on riippuvainen tämän digitaalisen jalanjäljen
+ koosta (Ramwell, Day ja Gibson 2016, 198–199). Henkilö, joka julkaisee aktiivisesti sisäl
+töä omalla nimellään esimerkiksi sosiaalisessa mediassa, on luonnollisesti helpompi kohde
+ tiedustelulle kuin henkilö, jolla ei ole julkisia käyttäjätilejä verkkopalveluissa. Erityisesti so
+siaalisen median palvelut tarjoavat tiedustelulle arvokasta tietoa henkilön kiinnostuksen koh
+teista ja sidosryhmistä (Hassan ja Hijazi 2018, 258–259). Monissa verkkopalveluissa käyt
+täjät voivat kuitenkin itse säädellä käyttäjätilinsä näkyvyyttä ulkopuolisille, mikä vähentää
+ julkisesti saatavilla olevaa tietoa kohteesta (McKeown ym. 2014).
+ Henkilöihin liittyvien tietojen epävarmuus on tunnistettu OSINTissa merkittäväksi haasteek
+si, sillä kaikki henkilöstä saatavilla oleva tieto ei välttämättä täsmää tiedustelun todellisen
+ 25
+kohdehenkilön tietojen kanssa (McKeown ym. 2014). Riittämättömät lähtötiedot voivat se
+kavoittaa tutkimusta varsinkin, jos tietoja löytyy useasta samannimisestä henkilöstä (Weir
+ 2016). Lisäksi henkilöihin liittyvien tietojen vahvistamista vaikeuttavat keksittyjen identi
+teettien turvin verkossa esiintyvät henkilöt (Ranaldi ja Zanzotto 2020).
+ Tiedonpaikannusmenetelmistä ohjelmointirajapinnat ja hakurobotit soveltuvat parhaiten hen
+kilöön liittyvien tietojen selvittämiseksi. Ohjelmointirajapinnat mahdollistavat yksittäisten
+ käyttäjätilien ja julkaisujen etsimisen samanaikaisesti useista sosiaalisen median palveluis
+ta (Gibson 2016, 76–77; Silvestri ym. 2015). Hakuroboteilla voidaan kartoittaa käyttäjän
+ julkaisuja ja seuraajalistoja (Aliprandi ym. 2014). Verkkosyötteet voivat olla hyödyllisiä tie
+donpaikannusmenetelmiä, mikäli tiedustelun kohteena oleva henkilö esiintyy toistuvasti uu
+tisotsikoissa tai julkaisee aktiivisesti sisältöä verkkosyötteitä käyttävissä palveluissa.
+ Automaattisilla tekstitulkintamenetelmillä on helppo kerätä henkilötietoja sosiaalisen me
+dian palveluista, koska käyttäjien profiilisivut ovat yleensä rakenteeltaan yhteneviä samas
+sa palvelussa. Silvestrin ym. (2015) kehittämällä työkalulla käyttäjätileistä kerättyjen nimi
+merkkien ja yhteystietojen avulla voitiin tunnistaa saman henkilön käyttäjätilejä muista verk
+kopalveluista automaattisesti. Henkilötietojen ohella tekstitulkintamenetelmillä voidaan ar
+vioida kohdehenkilön asenteita ja arvomaailmaa tulkitsemalla tämän julkaisujen tekstisisäl
+töä ja kommentteja (Drus ja Khalid 2019).
+ Automaattisilla paikkatietomenetelmillä on mahdollista ennustaa henkilön ajankohtainen o
+linpaikka tai todennäköinen asuinpaikka (Luo ym. 2020). Esimerkiksi sosiaalisen median
+ julkaisuun liitetyn paikkamerkinnän perusteella voidaan päätellä henkilön sijainti kuvanot
+tohetkellä tai julkaisuhetkellä. Luo ym. (2020) toteavat henkilöiden reaaliaikaisen sijainnin
+ selvittämisen nykyisin käytössä olevilla menetelmillä haasteelliseksi.
+ Automaattisilla kuvatulkintamenetelmillä voidaan Ranaldin ja Zanzotton (2020) havaintojen
+ mukaan tunnistaa yksittäisen henkilön muita käyttäjätilejä sosiaalisen median julkaisuihin
+ liitettyjen kuvien, symbolien ja logojen perusteella. Erityisesti kasvojentunnistus on havait
+tu tehokkaaksi keinoksi yksittäisen henkilön eri käyttäjätilien yhdistämisessä (Ranaldi ja
+ Zanzotto 2020).
+ Automaattisilla verkostoanalyysimenetelmillä voidaan arvioida henkilön todennäköinen a
+26
+suin- tai työpaikka kartoittamalla tämän sosiaalisen median ystäväpiiriä (Luo ym. 2020).
+ Jurgensin (2021) tutkimuksen perusteella henkilön asuinpaikka voidaan päätellä hyvinkin
+ tarkasti analysoimalla tämän sosiaalisen median kontakteja. Henkilön työ- ja harrastusyhtei
+söjä voidaan yhtä lailla päätellä sosiaalisen median julkaisujen ja kontaktien perusteella.
+ 4.2 Organisaatiot
+ Organisaatiot käsitetään tässä tutkielmassa yhdestä tai useammasta ihmisestä koostuvaksi
+ ryhmäksi, joka voidaan erottaa toiminnan tavoitteiden ja jäsenten perusteella muista ryhmis
+tä. Yksittäinen ihminen voidaan käsittää henkilön sijaan ryhmäksi, jos kyseessä on esimer
+kiksi yritys tai järjestö, jonka toiminta voidaan erottaa henkilön yksityiselämästä. Organi
+saatiot ovat olemukseltaan dynaamisia järjestelmiä, mikä tarkoittaa, että niihin liittyy uusia
+ jäseniä ja niistä poistuu vanhoja jäseniä ajan kuluessa (Bartal, Sasson ja Ravid 2009). Orga
+nisaatioiden tiedustelussa mielenkiinto kohdistuu usein yksittäisen organisaation aikeiden,
+ toimintaprotokollien, resurssien ja toimintakyvyn selvittämiseen. Henkilöiden tavoin organi
+saatioista saatavan tiedon määrä riippuu organisaation julkisuusasteesta. Kaupalliset yrityk
+set ovat lähtökohtaisesti helpompia kohteita tiedustelulle kuin esimerkiksi harrastelijapiirit
+ tai järjestäytyneen rikollisuuden organisaatiot.
+ Tiedonpaikannusmenetelmistä organisaatioihin liittyviä tietoja on tehokkainta selvittää ha
+kurobottien avulla. Julkisilla organisaatioilla on yleensä verkkosivusto ja sosiaalisen median
+ tilejä, joiden kautta viestitään organisaation ulkopuolisille henkilöille ja sidosryhmille. Tä
+män lisäksi organisaatioilla saattaa olla sosiaalisen median yhteisöjä, joissa organisaation
+ jäsenet viestivät keskenään sisäisesti. Ei-julkisten organisaatioiden kartoittaminen onnistuu
+ myös hakuroboteilla esimerkiksi käymällä läpi organisaation oletettujen jäsenten sosiaalisen
+ median kontaktilistoja (Aliprandi ym. 2014). Verkkosyötteillä voidaan seurata organisaation
+ ulkoista viestintää ja ilmaantuvuutta mediassa. Ohjelmointirajapinnoilla puolestaan voidaan
+ hankkia tietoja julkisen organisaation tietokannoista organisaation asettamien rajoitteiden
+ puitteissa.
+ Verkoston sisäistä ja ulkoista viestintää tulkitsemalla voidaan kartoittaa organisaation ra
+kennetta, jäsenten välistä hierarkiaa sekä sidosryhmiä. Automaattiset verkostoanalyysi- ja
+ 27
+tekstitulkintamenetelmät soveltuvat hyvin tällaiseen tarkoitukseen (Ball 2016). Tekstitulkin
+tamenetelmillä voidaan tarkastella organisaation jäsenten viestien asiasisältöä, mistä voi ol
+la hyötyä esimerkiksi organisaation jäsenten aseman ja jäsenten välisten suhteiden laadun
+ arvioimisessa (Ball 2016). Tekstitulkintamenetelmillä voidaan myös arvioida organisaation
+ ulkoista viestintää kuluttajille, yhteistyökumppaneille ja muille sidosryhmille.
+ Verkostoanalyysimenetelmiä voidaan yksittäiseen henkilöön kohdistuvan tiedustelun tavoin
+ hyödyntää useamman henkilön muodostaman verkoston kartoittamisessa. Verkoston jäsen
+ten viestintäkäyttäytymistä analysoimalla voidaan arvioida suhteiden tiiveyttä ja luonnetta
+ (Chaudhary ja Bansal 2022). Lubarskin ja Morzyn (2012) havaintojen mukaan verkoston jä
+sen koettiin sitä tärkeämmäksi, mitä nopeammin muut jäsenet reagoivat tämän lähettämiin
+ sähköpostiviesteihin. Havainto voidaan yleistää koskemaan kaikkea henkilöiden välistä vies
+tintää, jolloin esimerkiksi sosiaalisessa mediassa käydyt julkiset keskustelut ja kommentit
+ voivat tarjota arvokasta tietoa jäsenten välisistä suhteista.
+ Paikkatieto- ja kuvatulkintamenetelmät soveltuvat verrattain heikosti tiedonhankintaan orga
+nisaatioista. Organisaatioiden mahdollisia toimipaikkoja voidaan selvittää esimerkiksi jul
+kaisujen sijaintien perusteella (Luo ym. 2020). Kuvatulkintamenetelmiä voidaan puolestaan
+ hyödyntää organisaatioon liittyvien tunnuksien, logojen ja symbolien tunnistamisessa (Ra
+naldi ja Zanzotto 2020). Kuvatulkintamenetelmistä voi myös olla hyötyä organisaation toi
+mipaikkojen tai vaikutusalueiden tunnistamiseksi kuvamateriaalista. Lisäksi kasvojentunnis
+tusta voidaan hyödyntää organisaation jäsenten kartoittamisessa esimerkiksi yhteiskuvista.
+ 4.3 Esineet
+ Tässä tutkielmassa esineillä tarkoitetaan elottomia, konkreettisia entiteettejä, jotka voidaan
+ erottaa muista saman kategorian edustajista. Esimerkiksi rakennukset, ajoneuvot ja laitteet
+ luokitellaan esineiksi. Henkilöistä, organisaatioista ja tapahtumista poiketen esineistä ei ole
+ aina mielekästä kerätä tietoa kappalekohtaisesti.
+ Tiedonpaikannusmenetelmistä hakurobotit soveltuvat parhaiten tietojen keräämiseen esineis
+tä. Esimerkiksi esineistä koostuvia tietokantoja voidaan kartoittaa hakurobottien avulla ja
+ avainsanoja hyödyntävillä hakuroboteilla voidaan etsiä tietoa tietystä esineen mallista. Oh
+28
+jelmointirajapintoja voidaan käyttää esimerkiksi tietosanakirjoista ja katalogeista saatavien
+ tietojen keräämisessä. Verkkosyötteet soveltuvat heikosti tietojen hankkimiseen esineistä,
+ sillä yleensä esineistä julkaistaan tietoa blogeissa ja uutisissa vain harvoin.
+ Automaattisilla tekstitulkintamenetelmillä voidaan kartoittaa perustietoja esineiden ominai
+suuksista, kuten koosta, valmistustiedoista, tuotantomääristä ja käyttötarkoituksesta.
+ Automaattiset paikkatietomenetelmät soveltuvat suurten kiinteiden esineiden, kuten raken
+nusten paikantamiseen. Automaattisten kuvatulkintamenetelmien soveltaminen yhdessä paik
+katietomenetelmien kanssa voi nopeuttaa huomattavasti rakennusten sijainnin selvittämistä
+ (Murgese ym. 2022). Kiinteiden kohteiden paikantamisen lisäksi liikkuvien ajoneuvojen,
+ kuten laivojen ja lentokoneiden liikettä voidaan seurata niiden lähettämien sijaintitietojen
+ perusteella (Fiorella 2019). Ajoneuvoja pienempien esineiden paikantaminen ei yleensä ole
+ mielekästä eikä usein edes mahdollista.
+ Esineiden fyysisten ominaisuuksien arvioimisessa kuvatulkintamenetelmät soveltuvat erin
+omaisesti esineiden tunnistamiseen sekä kappalekohtaisesti että yleisluontoisesti. Sasin, Nai
+rin ja P:n (2022) kehittämää kuvatulkintaohjelmaa on käytetty laittomien aineiden tunnista
+miseksi pimeän verkon kauppapaikoilla. Lee ja Kang (2019) puolestaan havaitsivat auto
+maattisen kuvatulkinnan toimivaksi menetelmäksi automerkkien ja mallien tunnistamisessa.
+ Uniikkien esineiden tunnistamiseksi kuvatulkintamenetelmiä voisi soveltaa esimerkiksi au
+ton rekisterikilpien automaattisessa tunnistamisessa.
+ Viitteitä verkostoanalyysimenetelmien soveltamisesta esineiden välisten verkostojen tulkin
+taan ei löytynyt tutkimustietoa. Voidaan olettaa, etteivät verkostoanalyysimenetelmät sovel
+lu kovin hyvin esineistä saatavien tietojen keräämiseen, koska esineet eivät julkaise tietoa
+ itsestään.
+ 4.4 Tapahtumat
+ Tapahtuma käsitetään tässä tutkielmassa ainutkertaisena tai toistuvana ilmiönä, joka tapah
+tuu tiettynä ajanhetkenä. Tapahtumista saatavilla olevien tietojen määrä vaihtelee merkittä
+västi tapahtuman julkisuusasteen mukaan. Tapahtumat voivat olla useamman päivän kestä
+29
+viä, monivaiheisia ilmiöitä, joista on saatavilla paljon erilaista tietoa. Tällaisia tapahtumia
+ ovat esimerkiksi luonnonilmiöt, festivaalit tai taistelut. Toisaalta tapahtumat voivat olla hy
+vin lyhytkestoisia tapahtumia, joista ei välttämättä ole saatavilla tietoa etukäteen eikä tapah
+tuman jälkeen. Esimerkiksi kahden henkilön välinen tapaaminen voi olla julkisuusasteeltaan
+ matala, jolloin siitä ei todennäköisesti ilmesty tietoa julkisesti saataville.
+ Tapahtumien ajallisen ulottuvuuden takia ohjelmointirajapinnat ja verkkosyötteet toimivat
+ parhaiten reaaliaikaisten tapahtumien seuraamisessa ja tulevaisuuden tapahtumiin liittyvän
+ informaation hankkimisessa. Verkkosyötteet voivat olla erityisen hyödyllisiä kehittyvien ta
+pahtumien seurannassa, mikäli ne ylittävät uutiskynnyksen (European Media Monitor 2023).
+ Ohjelmointirajapinnoilla on mahdollista kerätä tietoa erityisillä hashtageilla tai muilla tun
+nisteilla tehdyistä julkaisusta reaaliaikaisesti (Stefanidis, Crooks ja Radzikowski 2013). Tun
+nisteiden ilmaantuvuuden seuraaminen sosiaalisen median kanavissa ja uutispalveluissa voi
+ auttaa tiedustelua arvioimaan tapahtuman merkittävyyttä (Best 2011). Hakuroboteilla on teo
+riassa mahdollista hankkia tietoa myös käynnissä olevista tapahtumista, mutta niiden toimin
+tafilosofia soveltuu paremmin laajojen tietokantojen kartoittamiseen.
+ Tekstitulkintamenetelmillä voidaan kerätä tapahtumaan liittyviä perustietoja, kuten sijainti,
+ ajankohta ja järjestäjä (Li, Ji ja Zhao 2015). Tämän lisäksi tekstitulkintamenetelmillä voi
+daan kartoittaa tapahtumaan osallistuvia tahoja (Li, Ji ja Zhao 2015). Semanttisilla teks
+tintulkintamenetelmillä kyetään luokittelemaan erillisiä tapahtumia niistä saatavilla olevia
+ tietoja vertailemalla eri lähteiden välillä (Yang ja Lee 2012). Zhang ym. (2017) havaitsi
+vat tapahtumasta kertovien tekstisisältöjen tulkintatarkkuuden parantuvan yhdistämällä teks
+titulkintamenetelmien lisäksi kuvatulkintamenetelmiä analyysiin. Liittämällä tekstitulkinta
+työkalun jäsentämiin entiteetteihin kuvia entiteettien nimen perusteella analyysin tarkkuus
+ parani huomattavasti tekstin semanttisen tulkinnan osalta (Zhang ym. 2017).
+ Kuvatulkintamenetelmät ovat tapahtuman olosuhteiden ymmärtämiseksi korvaamaton työ
+kalu, sillä kuvat välittävät tietoa tapahtumaan osallistuvista henkilöistä ja tapahtuman vai
+heista, joista ei välttämättä löydy kirjoitettua tietoa. Kuvat tapahtumapaikalta voivat paljas
+taa tapahtuman tarkan maantieteellisen sijainnin ja sen myötä kuvanottoajankohdan (Van
+ Der Weide 2020). Murgesen ym. (2022) havaintojen perusteella kuvia on mahdollista geo
+paikantaa automaattisesti alueilla, joista on olemassa valmiiksi paljon kuvamateriaalia. Ta
+30
+pahtumien geopaikantamisesta olisi suuri hyöty onnettomuustilanteissa, joissa apu täytyy
+ toimittaa nopeasti perille (Murgese ym. 2022).
+ Tapahtumaan liittyviä paikkatietoja on mahdollista hankkia esimerkiksi sosiaalisen median
+ julkaisuista (Stefanidis, Crooks ja Radzikowski 2013). Julkaisuihin liittyvien sijaintitietojen
+ perusteella voidaan arvioida tapahtuman kokoa ja tapahtuman sijainnin muutosta reaaliai
+kaisesti (Stefanidis, Crooks ja Radzikowski 2013). Koska tapahtumaan liittyy useita erityyp
+pisiä entiteettejä, voidaan verkostoanalyysimenetelmillä tulkita eri henkilöiden, ryhmien ja
+ esineiden osallisuutta tapahtumaan.
+ 31
+5 Yhteenveto
+ Havaintojen perusteella tiedonpaikannusmenetelmistä soveltuvimmaksi arvioidaan hakuro
+botit. Tiedonpaikannusmenetelmien soveltuvuuteen vaikuttavat ratkaisevasti tarvittavan tie
+don ajankohtaisuus ja julkisuusaste. Verkkosyötteet ja ohjelmointirajapinnat ovat toimivia
+ menetelmiä reaaliaikaisten tietojen hankkimisessa, mutta ne soveltuvat heikosti matalan jul
+kisuusasteen tietojen paikantamiseen. Hakurobotit puolestaan soveltuvat perustietojen ke
+räämiseen suurista tietomassoista, joista on olemassa pidemmältä aikaväliltä dokumentoitua
+ tietoa. Hakuroboteilla kyetään hankkimaan tietoa myös matalan julkisuusasteen kohteista.
+ Tiedonkeräysmenetelmistä teksti- ja kuvatulkintamenetelmät arvioidaan monikäyttöisimmik
+si, sillä tekstit ja kuvat välittävät paljon tietoa tiiviisti ilmaistuna erilaisista kohteista. Teks
+titulkintamenetelmillä kyetään etsimään tietoa konkreettisten ja abstraktien kohteiden tunto
+merkkien perusteella. Kuvatulkintamenetelmillä voidaan analysoida konkreettisten kohtei
+den ominaisuuksia ja kuvan olosuhteita päätelmien tekemiseksi. Paikkatieto- ja verkostoa
+nalyysimenetelmät soveltuvat heikoiten erilaisten tiedontarpeiden tyydyttämisessä. Paikka
+tietomenetelmillä voidaan lähinnä hankkia tietoa tiedontarpeen fyysisestä sijainnista ja ver
+kostoanalyysimenetelmät soveltuvat kohteiden vuorovaikutuksen arviointiin. Henkilöiden ja
+ organisaatioiden välisen vuorovaikutuksen arviointi voi paljastaa niiden toimintaa ohjaavia
+ aikeita.
+ Tiedonhankinnan automaation keskeisiä haasteita ovat tiedon määrään, laatuun, relevans
+siin ja luotettavuuteen liittyvät ongelmat, jotka tulisi ottaa huomioon tiedonhankintaohjel
+mia suunniteltaessa. Tiedustelun keräysvaiheessa käsiteltävän tiedon määrän vähentämiseksi
+ on tärkeää, että tiedonhankintaohjelmalle annettu syöte on riittävän yksityiskohtaista ja että
+ ohjelma kykenee käsittelemään yksityiskohtaisia lähtötietoja hakua rajoittavina parametrei
+na. Tiedonhankintaohjelman tulisi kyetä tunnistamaan toisteista informaatiota jäsenninalgo
+ritmien avulla, jotta käsitys havaitun ilmiön merkittävyydestä ei vinoutuisi. Laadukkaiksi
+ havaitut lähteet ja niiden sisältämä tieto tulisi tallentaa ja indeksoida myöhempää käyttöä
+ varten, jotta tiedonhankintaa ei tarvitsisi suorittaa tarpeettomasti uudestaan. Kerätyn tiedon
+ oikeellisuuden arvioimiseksi tiedonhankintaohjelmien tulisi arvioida lähdettä ja sen sisäl
+tämää informaatiota vertailemalla sitä muihin samasta ilmiöistä kirjoitettuihin julkaisuihin
+ 32
+sekä pitämällä kirjaa lähteen aikaisemmin julkaiseman informaation oikeellisuudesta.
+ Lopuksi voidaan todeta, että avointen lähteiden tiedustelun tiedonhankintamenetelmien auto
+maattisia sovellusmahdollisuuksia tulisi tutkia aiempaa enemmän. Tulevaisuudessa tietojen
+ analysointi ja tiedolla johtamisen taito tulevat todennäköisesti korostumaan päätöksenteos
+sa. Alati kasvava julkisen tiedon määrä tulee muodostamaan haasteita toimintaympäristön
+ ennakoimiselle, jolloin tiedustelun on ensiarvoisen tärkeää kyetä erottelemaan tehokkaasti
+ oleellista, tarkkaa ja luotettavaa informaatiota tietovirrasta.
+ 33
+Lähteet
+ Aliprandi, Carlo, Juan A. Irujo, Montse Cuadros, Sebastian Maier, Felipe Melero ja Mat
+teo Raffaelli. 2014. “CAPER: Collaborative Information, Acquisition, Processing, Exploi
+tation and Reporting for the Prevention of Organised Crime”. Teoksessa HCI International
+ 2014- Posters’ Extended Abstracts. Communications in Computer and Information Science,
+ 434:147–152. Cham, Sveitsi: Springer. https://doi.org/10.1007/978-3-319-07857-1_26.
+ Ball, Leslie. 2016. “Automating social network analysis: A power tool for counter-terrorism”.
+ Security Journal 29:147–168. https://doi.org/10.1057/sj.2013.3.
+ Bartal, Alon, Elan Sasson ja Gilad Ravid. 2009. “Predicting Links in Social Networks using
+ Text Mining and SNA”. Teoksessa Proceedings of the 2009 International Conference on
+ Advances in Social Network Analysis and Mining, 131–136. IEEE. https://doi.org/10.1109/
+ ASONAM.2009.12.
+ Bayerl, Petra S., Babak Akhgar, Alice Raven, Helen Gibson ja Tony Day. 2023. “Future
+ Challenges and Requirements for Open Source Intelligence in Law Enforcement Investi
+gations: Results from a horizon scanning exercise”. European Law Enforcement Research
+ Bulletin 22 (22): 21–38. https://bulletin.cepol.europa.eu/index.php/bulletin/issue/view/31.
+ Bazzell, Michael. 2019. Open source intelligence techniques: Resources for searching and
+ analyzing online information. 7. painos. Itsenäisesti julkaistu. https://inteltechniques.com.
+ Bellingcat. 2017. How a Werfalli Execution Site Was Geolocated. https://www.bellingcat.
+ com/news/mena/2017/10/03/how-an-execution-site-was-geolocated/. Viitattu 11.4.2023.
+ . 2022. Bellingcat Online Investigation Toolkit. http : / / bit . ly / bcattools. Viitattu
+ 18.3.2023.
+ Benes, Libor. 2013. “OSINT, New Technologies, Education: Expanding Opportunities and
+ Threats. A New Paradigm”. Journal of Strategic Security 6 (3): 22–37. https://www.jstor.
+ org/stable/26485053.
+ 34
+Best, Clive. 2008. “Web Mining for Open Source Intelligence”. Teoksessa 2008 12th Inter
+national Conference Information Visualisation, 321–325. IEEE. https://doi.org/10.1109/IV.
+ 2008.86.
+ . 2011. “Challenges in Open Source Intelligence”. Teoksessa 2011 European Intelli
+gence and Security Informatics Conference, 58–62. IEEE. https://doi.org/10.1109/EISIC.
+ 2011.41.
+ Chaudhary, Megan,jaDivyaBansal.2022.“Opensourceintelligence extraction for terrorism
+related information: A review”. WIREs Data Mining and Knowledge Discovery 12 (5). https:
+ //doi.org/10.1002/widm.1473.
+ Coakley, Amanda. 2021. “Borderline: Tinder profiles of Polish troops appear in Belarus”.
+ The Independent, 15.11.2021, https://www.independent.co.uk/news/world/europe/belarus
+poland-border-tinder-troops-b1957953.html.
+ Derr, Richard L. 1983. “A conceptual analysis of information need”. Information Processing
+ &Management 19 (5): 273–278. https://doi.org/10.1016/0306-4573(83)90001-8.
+ Di Pietro, Giulia, Carlo Aliprandi, Antonio E. De Luca, Matteo Raffaelli ja Tiziana Soru.
+ 2014. “Semantic crawling: An approach based on Named Entity Recognition”. Teoksessa
+ 2014 IEEE/ACM International Conference on Advances in Social Network Analysis and
+ Mining, ASONAM, 695–699. IEEE. https://doi.org/10.1109/ASONAM.2014.6921661.
+ Diouf, Rabiyatou, Edouard Ngor Sarr, Ousmane Sall, Babiga Birregah, Mamadou Bousso
+ ja Sény Ndiaye Mbaye. 2019. “Web Scraping: State-of-the-Art and Areas of Application”.
+ Teoksessa 2019 IEEE International Conference on Big Data (Big Data), 6040–6042. IEEE.
+ https://doi.org/10.1109/BigData47090.2019.9005594.
+ Drus, Zulfadzli, ja Haliyana Khalid. 2019. “Sentiment Analysis in Social Media and Its
+ Application: Systematic Literature Review”. Procedia Computer Science 161:707–714. ht
+ tps://doi.org/10.1016/j.procs.2019.11.174.
+ Dupont, Alan. 2003. “Intelligence for the Twenty-First Century”. Intelligence and National
+ Security 18 (4): 15–39. https://doi.org/10.1080/02684520310001688862.
+ 35
+Eldridge, Christopher, Christopher Hobbs ja Matthew Moran. 2017. “Fusing algorithms and
+ analysts: open-source intelligence in the age of ‘Big Data’”. Intelligence and National Secu
+rity 33 (3): 391–406. https://doi.org/10.1080/02684527.2017.1406677.
+ European Media Monitor, EU. 2023. EMM Current top 10 stories. https://emm.newsbrief.
+ eu/NewsBrief/clusteredition/en/latest.html. Viitattu 10.4.2023.
+ Fiorella, Giancarlo. 2019. A Beginner’s Guide To Flight Tracking. https://www.bellingcat.
+ com/resources/how- tos/2019/10/15/a-beginners- guide- to- flight- tracking/. Viitattu
+ 29.4.2023.
+ Gibson, Helen. 2016. “Acquisition and Preparation of Data for OSINT Investigations”. Teok
+sessa Open Source Intelligence Investigation From Strategy to Implementation, toimittanut
+ Babak Akhgar, Saskia M. Bayerl ja Fraser Sampson, 69–94. Springer International Publis
+hing. https://doi.org/10.1007/978-3-319-47671-1.
+ Gibson, Helen, Steve Ramwell ja Tony Day. 2016. “Analysis, Interpretation and Validation
+ of Open Source Data”. Teoksessa Open Source Intelligence Investigation From Strategy to
+ Implementation, toimittanut Babak Akhgar, Saskia M. Bayerl ja Fraser Sampson, 95–110.
+ Springer International Publishing. https://doi.org/10.1007/978-3-319-47671-1.
+ Haasio, Ari, ja Reijo Savolainen. 2004. Tiedonhankintatutkimuksen perusteet. Helsinki: BTJ.
+ Hassan, Nihad A., ja Rami Hijazi. 2018. Open Source Intelligence Methods and Tools: A
+ Practical Guide to Online Intelligence. Berkeley, Kalifornia: Apress. https://doi.org/10.
+ 1007/978-1-4842-3213-2.
+ Helmus, Todd C. 2022. “Artificial Intelligence, Deepfakes, and Disinformation: A Primer”.
+ RANDCorporation, http://www.jstor.org/stable/resrep42027.
+ Hoppa, Mary A., Scott M. Debb, George Hsieh ja KC Bigyan. 2020. “TwitterOSINT: Au
+tomated Open Source Intelligence Collection, Analysis & Visualization”. Teoksessa Annual
+ Review of Cybertherapy and Telemedicine 2019, toimittanut Brenda K. Wiederhold, Giusep
+pe Riva ja Scott M. Debb, 17:121–128. Interactive Media Institute.
+ 36
+Hulnick, Arthur S. 2002. “The Downside of Open Source Intelligence”. International Jour
+nal of Intelligence and Counterintelligence 15 (4): 565–579. https://doi.org/10.1080/
+ 08850600290101767.
+ Jardines, Eliot A. 2016. “Open Source Intelligence”. Teoksessa The Five Disciplines of In
+telligence Collection, toimittanut Mark M. Lowenthal ja Robert M. Clark, 5–43. Thousand
+ Oaks, Kalifornia: CQ Press.
+ JCS, Yhdysvaltain puolustushaarakomentajien neuvosto. 2019. Insights and Best Practices
+ Focus Paper: Intelligence Operations. https://www.jcs.mil/Doctrine/focus_papers/. Viitattu
+ 11.4.2023. Haettu 11.4.2023 osoitteesta: https://www.jcs.mil/Portals/36/Documents/
+ Doctrine/ fp/intell_ops_fp.pdf.
+ . 2021. DOD Dictionary of Military and Associated Terms, November 2021. http:
+ //www.jcs.mil/Doctrine/DOD-Terminology/. Viitattu 9.3.2023. Haettu 9.3.2023 osoitteesta:
+ https://irp.fas.org/doddir/dod/dictionary.pdf.
+ Jurgens, David. 2021. “That’s What Friends Are For: Inferring Location in Online Social
+ MediaPlatforms Based onSocialRelationships”. Teoksessa Proceedings of the International
+ AAAI Conference on Web and Social Media, 7:273–282. 1. https://doi.org/10.1609/icwsm.
+ v7i1.14399.
+ Järvelin, Kalervo, ja Eero Sormunen. 2010. “Tiedon tallennus ja haku”. Teoksessa Ote infor
+maatiosta: Johdatus informaatiotutkimukseen ja interaktiiviseen mediaan, toimittanut Sami
+ Serola, 155–210. Helsinki: BTJ.
+ Kozera, Cyprian A. 2020. “Fitness OSINT: Identifying and tracking military and security
+ personnel with fitness applications for intelligence gathering purposes”. Security and De
+fence Quarterly (Varsova) 32 (5): 41–52. https://doi.org/10.35467/sdq/131759.
+ Lee, Yunsoo, ja Suk-Ju Kang. 2019. “Web Scraping Crawling-based Automatic Data Aug
+mentation for Deep Neural Networks-based Vehicle Classifications”. Teoksessa 2019 IEEE
+ International Conference on Consumer Electronics (ICCE), 1–2. Las Vegas, Nevada: IEEE.
+ https://doi.org/10.1109/ICCE.2019.8661971.
+ 37
+Li, Hao, Heng Ji ja Lin Zhao. 2015. “Social Event Extraction: Task, Challenges and Tech
+niques”. Teoksessa 2015 IEEE/ACM International Conference on Advances in Social Net
+works Analysis and Mining, 526–532. Association for Computing Machinery. https://doi.
+ org/10.1145/2808797.2809413.
+ Lowenthal, Mark M. 2020. Intelligence: From Secrets to Policy. 8. painos. Thousand Oaks,
+ Kalifornia: CQ Press.
+ Lubarski, Pawel, ja Mikolaj Morzy. 2012. “Measuring the Importance of Users in a Social
+ Network Based on Email Communication Patterns”. Teoksessa 2012 IEEE/ACM Internatio
+nal Conference on Advances in Social Networks Analysis and Mining, 86–90. IEEE. https:
+ //doi.org/10.1109/ASONAM.2012.24.
+ Luo, Xiangyang, Yaqiong Qiao, Chenliang Li, Jiangtao Ma ja Yimin Liu. 2020. “An over
+view of microblog user geolocation methods”. Information Processing & Management 57
+ (6). https://doi.org/10.1002/widm.1473.
+ Martelius, Juha. 2020. “Tiedustelutieto kansallisen turvallisuuden päätöksenteossa”. Teok
+sessa Suomalaisen tiedustelukulttuurin jäljillä, toimittanut Tommi Koivula, 57–75. Maan
+puolustuskorkeakoulu. https://urn.fi/URN:ISBN:978-951-25-3139-4.
+ Marzell, Laurence. 2016. “OSINT as Part of the Strategic National Security Landscape”.
+ Teoksessa Open Source Intelligence Investigation From Strategy to Implementation, toimit
+tanut Babak Akhgar, Saskia M. Bayerl ja Fraser Sampson, 33–55. Springer International
+ Publishing. https://doi.org/10.1007/978-3-319-47671-1.
+ McDowell, Don. 2009. Strategic Intelligence: A Handbook for Practitioners, Managers, and
+ Users. Lanham, Maryland: Scarecrow Press.
+ McKeown, Sean, David Maxwell, Leif Azzopardi ja William Bradley Glisson. 2014. “In
+vestigating people: a qualitative analysis of the search behaviours of open-source intelli
+gence analysts”. Teoksessa Proceedings of the 5th Information Interaction in Context Sym
+posium, 175–184. New York City, New York: Association for Computing Machinery. https:
+ //doi.org/10.1109/GOCICT.2015.14.
+ 38
+Murgese, Fabio, Gerard Alcaina, Oguz Mulayim, Jesus Cerquides ja Jose Luis Fernandez
+ Marquez. 2022. “Automatic Outdoor Image Geolocation with Focal Modulation Networks”.
+ Teoksessa Frontiers in Artificial Intelligence and Applications, toimittanut Atia Cortés ja
+ Tommaso Grimaldo Francisco and Flaminio, 356:279–288. IOS Press. https://ebooks.iospre
+ ss.nl/volumearticle/61255.
+ NATO. 2002. NATO Open Source Intelligence Handbook. https://archive.org/details/NATO
+ OSINTHandbookV1.2/.
+ Nordine, Justine. 2022. OSINT Framework. https://osintframework.com/. Viitattu 18.3.2023.
+ Pastor-Galindo, Javier, Pantaleone Nespoli, Félix Gómez Mármol ja Gregorio Martínez Pé
+rez. 2020. “The Not Yet Exploited Goldmine of OSINT: Opportunities, Open Challenges
+ and Future Trends”. IEEExplorer 8:10282–10304. https://doi.org/10.1109/ACCESS.2020.
+ 2965257.
+ Perez, Charles, ja Rony Germon. 2015. “Graph Creation and Analysis for Linking Actors:
+ Application to Social Data”. Teoksessa Automating Open Source Intelligence: Algorithms for
+ OSINT, toimittanut Robert Layton ja Paul A. Watters, 103–129. Elsevier Science & Techno
+logy Books. https://doi.org/10.1016/C2014-0-02170-3.
+ Ponder-Sutton, Agate M. 2016. “The Automating of Open Source Intelligence”. Teoksessa
+ Automating Open Source Intelligence: Algorithms for OSINT, toimittanut Robert Layton ja
+ Paul A. Watters, 1–20. Elsevier Science & Technology Books. https://doi.org/10.1016/B978
+0-12-802916-9.00001-4.
+ Porvali, Mikko. 2018. Tiedustelun Näkymätön Historia: Antiikista Maailmansotiin. 1. pai
+nos. 13. Jyväskylä: Atena.
+ Rahwan,Amrel.2022.“Artificial Intelligence and Interoperability for Solving Challenges of
+ OSINT and Cross-Border Investigations”. Teoksessa European Law Enforcement Research
+ Bulletin, nide 6. Euroopan Unionin lainvalvontakoulutusvirasto CEPOL. https://bulletin.
+ cepol.europa.eu/index.php/bulletin/article/view/535.
+ 39
+Ramwell, Steve, Tony Day ja Helen Gibson. 2016. “Use Cases and Best Practices for LEAs”.
+ Teoksessa Open Source Intelligence Investigation From Strategy to Implementation, toimit
+tanut Babak Akhgar, Saskia M. Bayerl ja Fraser Sampson, 197–211. Springer International
+ Publishing. https://doi.org/10.1007/978-3-319-47671-1.
+ Ranaldi, Leondardo, ja Fabio M. Zanzotto. 2020. “Hiding Your Face Is Not Enough: user
+ identity linkage with image recognition”. Social Network Analysis and Mining 10 (56). https:
+ //doi.org/10.1007/s13278-020-00673-4.
+ Rowley, Jennifer. 2007. “The wisdom hierarchy: representations of the DIKW hierarchy”.
+ Journal of Information Science 33 (2): 163–180. https://doi.org/10.1177/016555150607070
+ 6.
+ Sasi, Ashwin, Varun Nair ja Vipin P. 2022. “DARKWEB IMAGE SCRAPPER: An Open
+ Source Intelligence Tool”. Teoksessa 2022 International Conference on Connected Systems
+ &Intelligence (CSI), 1–6. Trivandrum, Intia: IEEE. https://doi.org/10.1109/CSI54720.2022.
+ 9924098.
+ Savolainen, Reijo. 2010. “Tiedonhankintatutkimuksen lähtökohtia”. Teoksessa Ote infor
+maatiosta: Johdatus informaatiotutkimukseen ja interaktiiviseen mediaan, toimittanut Sami
+ Serola, 75–115. Helsinki: BTJ.
+ Silvestri, Giuseppe, Jie Yang, Alessandro Bozzon ja Andrea Tagarelli. 2015. “Linking Ac
+counts across Social Networks: the Case of StackOverflow, Github and Twitter”. https://api.
+ semanticscholar.org/CorpusID:12483080.
+ Stefanidis, Anthony, Andrew Crooks ja Jacek Radzikowski. 2013. “Harvesting ambient geos
+patial information from social media feeds”. GeoJournal 78 (2): 319–338. https://www.jstor.
+ org/stable/42006322.
+ Stock, Kristin, ja Hans Guesgen. 2016. “Geospatial Reasoning With Open Data”. Teoksessa
+ Automating Open Source Intelligence: Algorithms for OSINT, toimittanut Robert Layton ja
+ Paul A. Watters, 171–204. Elsevier Science & Technology Books. https://doi.org/10.1016/
+ B978-0-12-802916-9.00001-4.
+ 40
+Toevs, Brian. 2015. “Processing of Metadata on Multimedia Using ExifTool: A Program
+ming Approach in Python”. Teoksessa 2015 Annual Global Online Conference on Informa
+tion and Computer Technology (GOCICT), 26–30. IEEE. https://doi.org/10.1109/GOCICT.
+ 2015.14.
+ Toler, Aric. 2019. Guide To Using Reverse Image Search For Investigations. https://www.
+ bellingcat.com/resources/how-tos/2019/12/26/guide-to-using-reverse-image-search-for
+investigations/. Viitattu 28.4.2023.
+ Urbansky, David, SandroReichert, KlemensMuthmann,DanielSchusterjaAlexanderSchill.
+ 2021. “An Optimized Web Feed Aggregation Approach for Generic Feed Types”. Teoksessa
+ Proceedings of the International AAAI Conference on Web and Social Media, 5:638–641. 1.
+ https://doi.org/10.1609/icwsm.v5i1.14161.
+ Van Der Weide, Youri. 2020. Using the Sun and the Shadows for Geolocation. https://www.
+ bellingcat.com/resources/2020/12/03/using-the-sun-and-the-shadows-for-geolocation/.
+ Viitattu 28.4.2023.
+ Van Ess, Henk. 2019. Locating The Netherlands’ Most Wanted Criminal By Scrutinising
+ Instagram. https://www.bellingcat.com/news/uk-and-europe/2019/03/19/locating-the
+netherlands-most-wanted-criminal-by-scrutinising-instagram/. Viitattu 28.4.2023.
+ Warner, Michael. 2002. “Wanted: A Definition of Intelligence”. Studies in Intelligence 46
+ (3): 15–23.
+ Weir, George R. S. 2016. “The Limitations of Automating OSINT: Understanding the Ques
+tion, Not the Answer”. Teoksessa Automating Open Source Intelligence: Algorithms for
+ OSINT, toimittanut Robert Layton ja Paul A. Watters, 159–169. Elsevier Science & Techno
+logy Books. https://doi.org/10.1016/B978-0-12-802916-9.00009-9.
+ Yang, Hsin-Chang, ja Chung-HongLee.2012.“Miningopensourcetext documents for intel
+ligence gathering”. Teoksessa 2012 International Symposium on Information Technologies in
+ Medicine and Education, 2:969–973. IEEE. https://doi.org/10.1109/ITiME.2012.6291464.
+ 41
+Ünver, H. Akin. 2018. “Digital Open Source Intelligence and International Security: A Pri
+mer”. Centre for Economics ja Foreign Policy Studies. https://www.jstor.org/stable/
+ resrep21048.
+ Zhang, Tongtao, Spencer Whitehead, HanwangZhang,HongzhiLi,JosephEllis,LifuHuang,
+ Wei Liu, Heng Ji ja Shih-Fu Chang. 2017. “Improving Event Extraction via Multimodal
+ Integration”. Teoksessa Proceedings of the 25th ACM International Conference on Multi
+media, 270–278. New York City, New York: Association for Computing Machinery. https:
+ //doi.org/10.1145/3123266.3123294.
+ 42

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yksinkertainen Chatbot</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
+        .container { 
+            max-width: 800px; 
+            margin: auto; 
+            padding: 20px; 
+            background-color: #fff; 
+            border: 1px solid #ddd; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 { color: #0056b3; text-align: center; margin-bottom: 20px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        select, textarea { 
+            width: 100%; 
+            padding: 10px; 
+            margin-bottom: 15px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px; 
+            box-sizing: border-box;
+        }
+        textarea { height: 100px; resize: vertical; }
+        button { 
+            padding: 10px 20px; 
+            background-color: #007bff; 
+            color: white; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover { background-color: #0056b3; }
+        .response { 
+            margin-top: 30px; 
+            padding: 15px; 
+            background-color: #e9f7ef; 
+            border: 1px solid #d4edda; 
+            border-radius: 5px; 
+            color: #155724;
+        }
+        .response p {
+            white-space: pre-wrap; /* Säilyttää vastauksen muotoilun, kuten rivinvaihdot */
+        }
+        .response strong { color: #0056b3; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Kysy Chatbotilta</h1>
+        <form action="/ask" method="post">
+            <label for="theme-select">Valitse teema:</label>
+            <select name="theme" id="theme-select">
+                {% for theme in themes %}
+                    <option value="{{ theme }}" {% if theme == selected_theme %}selected{% endif %}>{{ theme }}</option>
+                {% endfor %}
+            </select><br>
+            <label for="query-textarea">Kysymyksesi:</label>
+            <textarea name="query" id="query-textarea" placeholder="Kirjoita kysymyksesi tähän...">{{ query if query else '' }}</textarea><br>
+            <button type="submit">Kysy</button>
+        </form>
+        {% if response %}
+            <div class="response">
+                <strong>Vastaus:</strong>
+                <p>{{ response }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

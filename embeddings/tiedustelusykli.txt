@@ -1,0 +1,52 @@
+Perinteinen tiedustelusykli on edelleen tämän kaiken selkäranka (SecMeter, 2025). Mutta nykyaikana data, työkalut ja tekoäly ovat muuttaneet dramaattisesti jokaista sen vaihetta.
+Tässä on kattava malli siitä, miltä se näyttää käytännössä.
+________________________________________
+Moderni Tiedustelusykli: Kehys Datan, Tekoälyn ja Ihmisen Yhteistyölle
+Vaihe 1: Ohjaus ja Suunnittelu (Ihmisen Vahvuusalue)
+•	Perinteinen tehtävä: Päättää, mitä tietoa tarvitaan, kenelle ja miksi. Asettaa kriittiset tietotarpeet (KTT).
+•	Moderni näkökulma: Tämä vaihe on edelleen lähes täysin ihmisen hallussa. Se vaatii strategista ymmärrystä, kontekstitietoa ja kykyä ennakoida. Vain ihminen voi määritellä tehtävän arvon ja eettiset rajat.
+•	Esimerkki: Päätöksentekijä (esim. ministeriö tai yrityksen turvallisuusjohto) pyytää tilannekuvaa tietyn kriittisen infrastruktuurikohteen (esim. sataman) haavoittuvuuksista.
+•	Tekoälyn rooli: Vähäinen, mutta kasvava. Tekoäly voi auttaa tunnistamaan tietopuutteita analysoimalla aiempia raportteja ja tietopyyntöjä ("Emme ole saaneet ajantasaista kuvaa kohteesta X kuuteen kuukauteen").
+Vaihe 2: Tiedonhankinta (Massadata ja Työkalut)
+•	Perinteinen tehtävä: Kerätä raakadataa määriteltyjen tarpeiden pohjalta.
+•	Moderni näkökulma: Datan määrä on räjähtänyt, ja keräys on pitkälti automatisoitua. Lähteitä yhdistellään jatkuvasti.
+•	Esimerkit ja työkalut:
+o	OSINT (Avoimet lähteet): Automaattiset ohjelmistot (scraperit) keräävät jatkuvasti dataa somesta (X, Telegram), keskustelufoorumeilta ja uutissivustoilta.
+	Työkalu: Shodan skannaa internetiä löytääkseen satamaan kytkettyjä suojaamattomia laitteita (esim. valvontakameroita tai teollisuusohjausjärjestelmiä) (IBM, n.d.).
+o	SIGINT (Signaalitiedustelu): Laajat antennijärjestelmät sieppaavat alueen radiotaajuista viestintää (esim. laivojen VHF-liikennettä).
+o	IMINT (Kuvantiedustelu): Kaupallisten satelliittiyhtiöiden (kuten Planet tai Maxar) data ostetaan tai tilataan, tarjoten päivittäisen kuvan sataman muutoksista.
+Vaihe 3: Käsittely (Tekoälyn Ydinalue)
+•	Perinteinen tehtävä: Datan muuntaminen ymmärrettävään muotoon (esim. käännökset, transkriptiot).
+•	Moderni näkökulma: Tämä on tekoälyn mullistavin alue. Ilman tekoälyä Vaiheessa 2 kerätty data olisi käyttökelvotonta kohinaa.
+•	Esimerkit ja tekoälysovellukset:
+o	Luonnollisen kielen käsittely (NLP):
+1.	Speech-to-Text: Siepattu venäjänkielinen VHF-viesti (SIGINT) muutetaan automaattisesti tekstiksi.
+2.	Konekäännös: Teksti käännetään välittömästi suomeksi.
+3.	Entiteettien tunnistus: Tekoäly lukee tuhansia OSINT-uutisia ja poimii niistä automaattisesti kaikki maininnat henkilöistä, paikoista, laivojen nimistä ja organisaatioista.
+o	Kuvantunnistus (Computer Vision):
+1.	Satelliittikuvat (IMINT) syötetään tekoälylle, joka tunnistaa, laskee ja luokittelee automaattisesti kaikki satamassa olevat alukset, kontit ja ajoneuvot.
+2.	Tekoäly vertaa nykyistä kuvaa tuhansiin aiempiin kuviin ja merkitsee poikkeamat.
+Vaihe 4: Analyysi (Ihminen + Tekoäly = Työpari)
+•	Perinteinen tehtävä: "Mitä tämä kaikki tarkoittaa?" Yhdistellä tietoa ja tuottaa ymmärrys.
+•	Moderni näkökulma: Tämä on "ihminen silmukassa" (human-in-the-loop) -vaihe. Tekoäly ei (vielä) ymmärrä kontekstia, aikeita tai miksi-kysymyksiä. Se löytää korrelaatioita, ihminen päättelee kausaliteetin.
+•	Esimerkit ja työkalut:
+o	Tekoäly (Poikkeamien havaitseminen): Tekoäly hälyttää analyytikolle: "Havaitsin satamassa uuden, epätavallisen laivakuljetuksen ajankohtana, jolloin sitä ei yleensä tapahdu (perustuen 5 vuoden dataan). Samaan aikaan OSINT-datassa on 300 % piikki keskustelulle 'sataman turvallisuus'."
+o	Työkalu (Visualisointi): Analyytikko käyttää Maltego-tyyppistä työkalua visualisoidakseen nopeasti, miten nämä OSINT-keskustelijat linkittyvät toisiinsa ja muihin tunnettuihin toimijoihin.
+o	Ihminen (Kriittinen päättely): Analyytikko tekee lopullisen arvion. Hän yhdistää tekoälyn löydökset (epätavallinen kuljetus, some-piikki) tietoon, jota tekoälyllä ei ole (esim. luottamuksellinen HUMINT-tieto tai ymmärrys paikallispolitiikasta), ja päättelee: "Kyseessä ei ole onnettomuus, vaan suunniteltu mielenilmaus, jonka tarkoitus on testata sataman reagointikykyä."
+Vaihe 5: Jakelu ja Palaute (Oikea Tieto Oikealle Päättäjälle)
+•	Perinteinen tehtävä: Valmiin raportin toimittaminen päätöksentekijälle.
+•	Moderni näkökulma: Raportit eivät ole enää staattisia. Tieto on dynaamista ja sen on oltava käytettävissä välittömästi ja ymmärrettävästi.
+•	Esimerkki:
+o	Sen sijaan, että analyytikko kirjoittaisi 10-sivuisen PDF-raportin, hän päivittää johtotason reaaliaikaista koontinäyttöä (dashboard).
+o	Päätöksentekijä voi kysyä tekoälyavustajaltaan: "Mikä on tilanne satamassa X?" Avustaja käyttää analyytikon hyväksymää (Vaihe 4) dataa ja tiivistää vastauksen välittömästi (Koponen, 2024).
+•	Palaute: Sykli alkaa alusta. Päätöksentekijä antaa palautetta ("Tieto oli hyvä, mutta tarvitsen nyt tarkennuksen tuosta some-ryhmästä"), mikä käynnistää uuden, tarkemman tiedustelusyklin.
+________________________________________
+Lisälähteet (Tietokanta)
+Tässä on koottuna aiemmin käyttämiämme ja aihetta tukevia lähteitä, jotka auttoivat tämän kehyksen rakentamisessa:
+IBM. (n.d.). What is open source intelligence (OSINT)?. IBM Think. Saatavilla: https://www.ibm.com/think/topics/osint
+Imperva. (n.d.). Open-Source Intelligence (OSINT) | Techniques & Tools. Imperva. Saatavilla: https://www.imperva.com/learn/application-security/open-source-intelligence-osint/
+Koponen, J. (2024). Johtajuus tekoälyn aikakaudella: Vuorovaikutus ja osaaminen muutoksessa. UEF Blogs. Saatavilla: https://blogs.uef.fi/etajohtaminen/2024/12/11/johtajuus-tekoalyn-aikakaudella-vuorovaikutus-ja-osaaminen-muutoksessa/
+Puolustusvoimat. (2025). Tutkimuskatsaus generatiivisen tekoälyn vaikutuksista disinformaatiokampanjoihin. Puolustusvoimat. Saatavilla: https://puolustusvoimat.fi/web/kansainvalinen-kriisinhallinta/-/1948673/tutkimuskatsaus-generatiivisen-tekoalyn-vaikutuksista-disinformaatiokampanjoihin
+SecMeter. (2025). Tiedustelusykli. SecMeter. Saatavilla: https://secmeter.com/tiedustelusykli.html
+Theseus. (2024). Tekoäly poliisitoiminnassa. Theseus.fi. Saatavilla: https://www.theseus.fi/handle/10024/811845
+

@@ -1,0 +1,1248 @@
+Jarmo Huovinen 
+Teollisuusverkkojen kybertietoturvallisuus 
+Metropolia Ammattikorkeakoulu 
+Insinööri (AMK) 
+Sähkötekniikka 
+Insinöörityö 
+23.5.2019 
+ Tiivistelmä 
+ 
+ 
+Tekijä 
+Otsikko 
+ 
+Sivumäärä 
+Aika 
+Jarmo Huovinen 
+Teollisuusverkkojen kybertietoturva 
+ 
+36 sivua  
+23.5.2019 
+Tutkinto insinööri (AMK) 
+Tutkinto-ohjelma Sähkötekniikka 
+Ammatillinen pääaine Sähkövoimatekniikka 
+Ohjaajat 
+ 
+Head of Network & Security Team Ilari Karinen 
+Lehtori Jukka Karppinen 
+Insinöörityön aiheena oli tutkia teollisuusverkkojen kyberturvallisuutta sekä verkostoauto
+maatioon kohdistuvia tietoturvauhkia, haavoittuvuuksia, havainnointia ja suojaamista.   
+Työssä perehdyttiin teollisuuden tietoturvallisuutta käsitteleviin ohjeistuksiin sekä standar
+deihin IEC 62443 ja IEC 62254-1. Lisäksi tutustuttiin tietoturvavyöhykkeiden merkitykseen 
+ja niiden suojaamiseen palomuureilla. Työssä selvitettiin tunkeutumisenesto- ja havainnoin
+titekniikoiden toimintaa sekä niiden tuottamien lokitietojen ja tietoturvatapahtumien käsitte
+lyä keskitetysti SIEM-järjestelmien avulla. Langattomien laitteiden käytöstä, hallinnoinnista, 
+tietoturvasta ja haasteista käsiteltiin teollisuusympäristön IIoT-ratkaisuja. Lopuksi työssä esi
+teltiin  esimerkein ohjelmia, joilla voidaan etsiä internettiin kytkettyjä iot-laitteita ja avoimeksi 
+jääneitä palveluita. 
+Insinöörityö tuotti ohjeistusta automaatio-, sähkö- ja tietoturva-ammattilaisille teollisuuden 
+kybertietoturvajärjestelmien suunnittelussa, testauksissa ja standardien soveltamisessa 
+huomiotavista asioista. 
+Työn tuloksena todettiin, että teollisuuden tietoturvaratkaisuissa keskitytään yleensä suojaa
+miseen, havaitsemiseen ja korjaamiseen, jotka ovat ominaisuuksia, joilla pyritään tehokkaa
+seen uhkien ehkäisemiseen ja toiminnan jatkuvuuden varmistamiseen 
+ 
+ 
+ 
+  
+Avainsanat IIot, SCADA, IPS, IDS, SIEM, DMZ    
+ Abstract 
+ 
+ 
+Author 
+Title 
+ 
+Number of Pages 
+Date 
+Jarmo Huovinen 
+Cybersecurity for Industrial Control Systems 
+ 
+36 pages  
+23  May  2019 
+Degree Bachelor of Engineering 
+Degree Programme Electrical Engineering 
+Professional Major Electrical Power Engineering 
+Instructors 
+ 
+Ilari Karinen, Head of Network & Security Team  
+Jukka Karppinen, Senior Lecturer 
+The purpose of the thesis study was to investigate cyber security in industrial networks, 
+security threats, vulnerabilities, detection and protection against network automation. 
+The first part discusses the guidelines for industry information security and standards IEC 
+62443 and IEC 62254-1. The second part of thesis introduces the importance of security 
+zones and their protection with firewalls. After that the work explores the operation of intru
+sion prevention and detection techniques, as well as centralized processing of log data and 
+security events produced by them using SIEM systems. The use, management, security, 
+and challenges of wireless devices were addressed in IIoT industrial environment solutions. 
+Finally the  thesis gives examples of programs that were able to search for iot- devices 
+connected to the Internet and open services.  
+This work was successful in providing guidance to automation, electrical and information 
+security professionals in the design, testing and application of standards for industrial cyber 
+security systems. As a result it was found that industrial security solutions tend to focus on 
+protection, detection and repair, which are features that aim at effective threat prevention 
+and operational continuity. 
+ 
+ 
+ 
+ 
+ 
+Keywords IIot, SCADA, IPS, IDS, SIEM, DMZ    
+ 
+ 
+ 
+ 
+Sisällys 
+Lyhenteet 
+1 Johdanto 1 
+2 Tavoitteena tietoturvallinen järjestelmäympäristö ja rakenne 2 
+3 Teollisuuden ohjaus- ja automaatiojärjestelmien verkkoarkkitehtuuri 3 
+4 Verkon segmentointi 5 
+4.1 Liiketoiminta- /yritystason vyöhyke 6 
+4.2 Demilitarisoitu vyöhyke 7 
+4.3 Tehdasverkkovyöhyke 8 
+4.4 Tehdasverkon erillisvyöhykkeet 8 
+5 Palomuurit 10 
+5.1 Pakettisuodatteiset palomuurit 10 
+5.2 Tilalliset palomuurit 11 
+5.3 Seuraavan sukupolven palomuuri 12 
+5.4 Sovelluskerroksen palomuurit 13 
+5.5 Teollisuusverkkojen protokollia 14 
+5.6 Komentoväylän yleisimpiä protokollia 15 
+6 Haavoittuvuuksien ja hyväksikäytön tunnistus- ja estojärjestelmät 17 
+6.1 Tunkeutumisen tunnistus- ja havaitsemisjärjestelmä 17 
+6.2 Tunkeutumisen estojärjestelmä 18 
+6.3 Haittaohjelmat ja suojaus 19 
+6.4 Prosessinohjausjärjestelmien tietoturvatestaus 20 
+7 Langaton IIoT-ratkaisu teollisuusympäristöön 21 
+8 Teolliseen langattomaan internetiin liittyvät haasteet 23 
+9 Verkkoturvallisuuden tapahtumien valvonta 24 
+10   Verkkoturvallisuuden hallinta 26 
+ 
+ 
+ 
+10.1 Etäkäytön tietoturva 27 
+10.2 VPN-käyttö 28 
+10.3 RDP-etätyöpöytäyhteydet 29 
+10.4 Pilvipohjaiset etäkäyttöratkaisut 30 
+11   Verkkolaitteiden haavoittuvuuksien etsintä internet-verkosta 31 
+12   Yhteenveto 32 
+Lähteet 34 
+ 
+  
+Lyhenteet 
+BYOD 
+DCS  
+DMZ   
+ERP 
+HMI 
+ICS  
+IED  
+IoT 
+IIoT 
+IT 
+IDS  
+IPS  
+ISA99 
+MES 
+Bring Your Own Device, Tietoverkkoon oma laite. 
+Distributed Control System, Hajautettu automaatiojärjestelmä. 
+De-militarized Zone, Demilitarisoitu vyöhyke.   
+Enterprise Resource Planning, Toiminnanohjausjärjestelmä. 
+Human Machine Interface, Ihmisen ja ohjelmoitavan logiikan välinen 
+käyttöliittymä. 
+Industrial Control System, Teollisuuden ohjausjärjestelmä. 
+Intelligent Electronic Device, SCADA-järjestelmän laite. 
+Internet of Things, Teollinen internet, esineiden ja laitteiden, palveluiden, 
+ohjelmistojen sekä järjestelmien liittämistä yhteen Internetin avulla.  
+Industry Internet of Things, Teollinen internet. 
+Information Technology, Informaatiotekniikka, tietotekniikka. 
+Intrusion Detection System, Hyökkäyksen ja tunkeutumisen tunnistus
+järjestelmä.  
+Intrusion Protection System, Hyökkäyksen ja tunkeutumisen estojär
+jestelmä. 
+Instrumentation, Systems and Automation Society, Yhdysvaltalainen 
+globaali automaatioteollisuuden asiantuntijoiden organisaatio.  
+Manufacturing Execution System, MES-järjestelmä on tuotannon- tai val- 
+mistuksen ohjausjärjestelmä, joka yhdistää ERP-järjestelmän varsinai- 
+seen tehdasautomaatioon. 
+MODBUS   Sarjaliikenneprotokolla jota käytettään ohjelmoitavien logiikkapiirien 
+kanssa.  
+NIST   
+NERC   
+PLC 
+Profinet 
+Profibus  
+RDC  
+SCADA  
+SSH  
+SCP 
+VPN  
+ZigBee  
+National Institute of Standards and technology, Sähköalan standardointijär
+jestö. 
+North American Electric Reliability Corporation, Sähköalan järjestö. 
+Programmable Controller, Ohjelmoitava kontrolleri. 
+Teollisuus-Ethernet-standardi. 
+Avoin kenttäväyläjärjestelmä. 
+Remote Desktop Connection, Etätyöpöytäyhteys. 
+Supervisory Control and Data Acquisition, Tiedonkeruu ja valvonta. 
+Secure Shell, Tietoliikenteeseen tarkoitettu protokolla. 
+Secure copy protocol, Salattuun tietoliikenteeseen tarkoitettu tiedonsiirto 
+protokolla. 
+Virtual Private Network, loogisesti erotettu suojattu verkko-osa. 
+Lyhyen kantaman tietoliikenneverkko. 
+1  
+1 Johdanto 
+Teollisuusverkkojen tietoturvan  kriittisyys on kasvanut ja kasvaa jatkuvasti. Yritykset ja 
+järjestelmät verkottuvat kiihtyvää tahtia, jolloin niiden välille rakennetaan erilaisia tiedon
+siirtoväyliä. Teollisuuden automaatiojärjestelmät suunniteltiin aluksi toimimaan eristet
+tynä ja omina yksiköinään ja tietoturvalla tarkoitettiin enemminkin fyysistä kulunvalvontaa 
+kuin tietoliikenteen valvontaa. Sähköverkkolaitteiden määrän huomattava kasvu ja so
+vellusten monimutkaistuminen sekä etätyöskentelyn yleistyminen Internet-verkon yli 
+ovat asettaneet myös omat haasteensa automaatiojärjestelmien tietoturvalle. [1.] 
+Tämän opinnäytetyön tarkoituksena on täydentää ja syventää tietojani teollisuusverko
+jen- ja teollisen internetin kybertietoturvallisuuden suojaamisessa, joita käytän hyödyksi  
+asiakkaiden toimeksiantojen ja toteutusten suunnitteluun. 
+Työn tavoitteena on tutkia teollisuusverkkojen tietoturvaa Purdue-viitekehysmallin mu
+kaisesti, joka perustuu IEC 62443 (Teollisuuden tietoliikenneverkot, Verkkojen ja järjes
+telmien tietoturvallisuus) sekä automaatioalan järjestön ISA:n (International Society of 
+Automation) viitekehysmalliin. Teollisuusverkon tietoturva-arkkitehtuuria määriteltäessä 
+ovat verkon tietoturvavyöhykkeet ja segmentointi tärkeimmät kulmakivet,  joiden perus
+teella pystytään suunnittelemaan muut tasot ja niiden väliset suhteet.  
+Tietoturvavyöhykkeiden suojaamiseen käytettään palomuureja, jotka ovat turvallisuus
+strategioiden perusrakenne, jonka vuoksi opinnäytetyössä käsitellään niiden sovelta
+mista verkkosegmenttien suojaamiseen.  
+Etäyhteyksien kautta tulevien etäkäyttäjien tunnistamis- ja pääsynhallintamenetelmät 
+ovat tapa varmistaa ja tunnistaa käyttäjät sekä liiketoiminnan kannalta tärkeät järjestel
+mät, jolloin julkisten verkkojen kautta liikkuvaa informaatiota suojataan käyttäen IPsec
+tunnelointia, jota työssä tarkastellaan VPN-tunneloinnin yhteydessä. 
+2  
+2 Tavoitteena tietoturvallinen järjestelmäympäristö ja rakenne 
+Teollisen Internetin osalta riskit ovat jatkuvasti kasvava puheenaihe ja on helppo kuvi
+tella uhkakuvia kuinka itsenäisesti toimivien anturien ja tekoälyyn perustuvien järjestel
+mien toimintaa voidaan uhata tietoverkkorikollisuudella. 
+Viestintätekniikan integrointi teollisuusjärjestelmiin ei ainoastaan anna uusia mahdolli
+suuksia vaan luo myös monia ennalta arvaamattomia haavoittuvuuksia. On erittäin haas
+tavaa löytää sopivat keinot sellaisen ympäristön suojelemiseksi, joissa uhkamallit ja mo
+ninaiset asetukset ovat usein sidoksissa toisiinsa.  Eräs suurimmista ongelmista auto
+maatioalan ammattilaisilla on laitosten SCADA-järjestelmien ohjausjärjestelmät, jotka 
+yhdistävät esimerkiksi sähkö-, öljy- ja kaasuputket, vedenjakelu- ja jätevedenkeräysjär
+jestelmät. Ne ovat suunniteltu avoimiksi ja kestäviksi sekä helppokäyttöisiksi mutta eivät 
+välttämättä ole tietoturvallisia. [4.] 
+Teollisuusverkosta käytetään termiä ICS (kuva 1), jonka toimintaa voidaan ohjata mo
+nella eri tavalla riippuen sen käyttö tarkoituksesta.  
+ICS
+ Industrial Control System
+ SCADA
+ Supervisory Control and Data 
+Acquistion
+ tiedonkeruu ja valvonta
+ järjestelmä
+ DCS
+ Distributed Control System
+ hajautettu ohjausjärjestelmä
+ PLC
+ Programmable Logic Controller
+ ohjelmoitava logiikka
+ RTU
+ Remote Terminnal Unit 
+etäpääte
+ Kuva 1. Industrial Control System toimii yleisenä terminä, joka kuvaa SCADA-, DCS-, PLC- ja 
+RTU-järjestelmiä. [24.] 
+Karkea jako menee SCADA- ja DCS-järjestelmien välillä siten, että SCADA on suurempi 
+kokonaisuus ja hajautettu laajemmalle alueelle, jossa voi olla pienempiä hallintakokonai
+suuksia eli DCS-ympäristöjä. 
+3  
+DCS-ympäristö voi myös esiintyä itsenäisenä prosessin ohjausverkkona, joka ei välttä
+mättä tarvitse suurempaa keskitettyä hallintaa ja sijaitsee yleensä maantieteellisesti pie
+nellä alueella esimerkiksi tehdasrakennus.  
+Etäasemia (RTU) käytetään mittaustietojen keräämiseen järjestelmän ohjausyksikölle, 
+joka suorittaa niiden perusteella järjestelmien säätötoimenpiteet ohjelmoitavien logiik
+kayksiköiden (PLC) toimesta.  
+Miten toteutetaan yhteydet teollisuuden ohjausjärjestelmien eri tasoille sekä suunnitel
+laan liityntä arkkitehtuurit konserni verkkoihin? Haasteina ovat usean toimittajan verkot 
+ja liitynnät. Tietoturvauhkana ei nykyisin enää ole tavallinen kaupallisella virustorjunta
+ohjelmalla havaittava haittaohjelma vaan teknisesti kehittyneet ja monipuoliset verkko
+hyökkäystyökalut. Työkalujen ensimmäisenä tehtävänä on verkon tietyn osan haltuun
+otto ja seuraavana kehittyneimpien hyökkäyksellisten vakoilu- ja haittaohjelmien asenta
+minen. Vakoiluoperaatiot ovat ennakkoon ja tarkoin suunniteltu ja niillä on täsmällinen 
+operatiivinen tehtävä talouteen ja teollisuuteen liittyvissä kohteissa. 
+3 Teollisuuden ohjaus- ja automaatiojärjestelmien verkkoarkkitehtuuri 
+Puolustuksen syvyys, jota kutsutaan yleisesti myös kerrostetuksi puolustukseksi, on so
+tilaallinen käsite, jota on mukautettu tietotekniikkamaailmassa. Sitä käytetään nyt myös 
+säännöllisesti ICS-maailmassa. Sotilaallisesti syvällisellä viittauksella tarkoitetaan jouk
+koa toisiaan tukevia puolustavia toimenpiteitä, joiden tarkoituksena on hidastaa viholli
+sen edistymistä pyrkimyksellä antaa puolustajalle enemmän aikaa vastata ja estää hyök
+käys. Olemme kaikki kuulleet kliseen "jos hakkerit haluavat päästä sisään, he pääsevät 
+sisään”. [9.] 
+Tämä pätee myös kyberturvallisuusmaailmaan, joissa puolustussyvyys hidastaa hyök
+kääjiä ja antaa puolustajalle enemmän aikaa vastata, kun puolustava kohde on vaaran
+tunut. Ohjausjärjestelmien turvallisuuden paras puolustus on siten vankka verkkoarkki
+tehtuuri, joka eristää herkät ohjausjärjestelmät luontaisesti riskialttiilta yritysverkoilta. Oh
+jeistuksia ja standardeja erilaisiin tietoturvateknologioihin julkaisevat yhdysvaltalaiset 
+National Institute of Standards and Technology (NIST) -organisaation Computer Security  
+ 
+  4  
+ 
+ 
+ 
+sekä The Industrial Control Systems Cyber Emergency Response Team (ICS-CERT), 
+joita käytetään pohjana teollisuudessa tietoturvallisten ratkaisujen suunnitellussa.  
+ISA99-valmistus- ja valvontakomitea on laatinut IACS-mallina tunnetun arkkitehtuurimal
+lin, joka on rakennettu valvonnan hierarkian Purdue-malliin ISA99 / IEC-62443, jossa 
+joukko vyöhykkeitä ja tasoja tunnistaa protokollasarjat, turvallisuusrajat ja tuotantolaitok
+sen toimintamalleja (kuva 2).  
+           
+Tehtaan hallinta
+ 4
+ 3
+ 2
+ 1
+ 0
+ Tasot 
+Yritys verkko
+ Tuotannon ohjaus ja 
+sunnittelu 
+Toiminta 
+turvallisuus
+ Prosessi
+ Paikallinen hallinta
+ Aluellinen
+ hallinta
+ 5
+ 4
+                      
+Kuva 2. Teollisuuden ohjaus- ja automaatiojärjestelmien verkkoarkkitehtuuri perustuu Yhdys
+valtain turvallisuusviraston suosittelemaan malliin teollisuusverkkojen tietoturvasta. [9.]                  
+Automaatioteollisuuden tueksi on kehitetty erityisiä ohjausprotokollia, jotka käyttävät ta
+vanomaisia tietoliikenneprotokollia. Kolme suosituinta ohjausprotokollaa ovat EtherNet / 
+IP, PROFINET ja Modbus / TCP. Kun koneet ja laitteet on liitetty alueiden vyöhykkeisiin, 
+niiden turvallisuus on sen jälkeen ensiarvoisen tärkeää. Keskitetyn pääsynvalvonnan, 
+5  
+laitteen ja käyttäjän profiloinnin avulla on identiteettiin tunnistus suositeltavaa, ettei epä
+luotettavia tietokoneita tai laitteita käytetä teollisuusalueella verkoissa. [2.] 
+Turvallisuutta tulisi siis hallita kattavan ja syvällisen puolustusstrategian avulla, joka si
+sältää useita mekanismeja kuten käyttäjien todentamisen, salauksen, etäkäytön hallin
+nan, virustorjunnan ja käyttöjärjestelmäpäivitykset. Tärkein ero ICS-ympäristöissä ver
+rattuna tietotekniikkaan on huomattavasti korkeammat käytettävyyden vaatimukset, 
+jotka edellyttävät enemmän suunnittelua ja testausta, joilla varmistetaan prosessin on
+nistuminen. 
+4 Verkon segmentointi   
+Ensimmäinen askel suunnitella ICS/SCADA -verkon tietoturva-arkkitehtuuria on määri
+tellä verkon segmentointi. Segmentoinnilla pyritään jakamaan verkkoa fyysisiin ja loogi
+siin alueisiin, joissa tavoitteena on saada häiriöalueet ja verkon käyttäjät rajattua pienen
+piin alueisiin sekä niiden välille liikenteen valvontaa ja pääsypolitiikkoja. Tyypillinen ICS
+verkko sisältää kuvassa 3 olevat vyöhykkeet, joilla on vastaavat luottamustasot.  
+Yritysverkko
+ Enterprise
+ Zone
+ Prosessiverkko
+ IDMZ
+ Zone
+ Tehdasverkko 
+Industrial
+ Zone
+ matala luottamus 
+keskitason luottamus 
+korkea luottamus 
+Kuva 3. Tyypillisen ICS/SCADA-verkon sisältämät vyöhykkeiden luottamussuhteet. [9.]  
+Tällöin erilaisia tietoturvallisuusluokituksia on myös helpompi toteuttaa. Segmentointi liit
+tyy entistä enemmän verkon tietoturvan parantamiseen ja on myös tehokas uhkien eh
+6  
+käisymenetelmä. Segmenttien välinen liikenne eristetään käyttämällä palomuureja, 
+DMZ- alueita ja muita liikennesuodatusjärjestelmiä kuten yksisuuntaista suodatusta. 
+ICS-verkon puitteissa tuotantoverkkoa pidetään korkeimpana ja toimistoverkkoa mata
+limpana turvallisuustasovyöhykkeenä. Selkeästi määritelty segmentointi selkeyttää ja 
+poistaa epäselvyyksiä uusien laitteiden tai järjestelmien sijoittamisessa eri turvallisuus
+vyöhykkeille. [3.] 
+4.1 Liiketoiminta- /yritystason vyöhyke  
+Käyttäjät ja järjestelmät vaativat usein Internet-yhteyksiä ja pääsyä yrityksen laajuisiin 
+resursseihin kuten sähköpostiin ja Chatiin. Tyypillisesti tälle alueelle sijoitetaan toimin
+nanohjaus- ja tietokantajärjestelmiä, loppukäyttäjien työasemia ja etäkäyttöratkaisuja, 
+kuten Citrix, VPN, SSH tai RDP.  
+Hallinta- ja toimistojärjestelmien suojauksilla pyritään sulkemaan ja rajaamaan tuotanto
+verkon turhat palvelut sekä laiteyhteydet, jolloin liikenne voidaan eristää esimerkiksi da
+tadiodilla kulkemaan vain yhteen suuntaan. Palomuurin edessä oleva reititin tarjoaa pa
+kettisuodatuksen peruspalvelut ja palomuuri pystyy käsittelemään monimutkaisempia 
+ongelmia joko tilapäisen tarkastuksen tai välityspalvelimen avulla.  
+Palomuuri + IDS/IPS
+ Sähköposti
+ ERP
+ Activer Directory
+ Kuva 4. Yritysverkon laitteita. [9.] 
+Tasot 4 – 5
+ Enterprise
+ Zone
+7  
+Tämäntyyppinen sijoittelu on erittäin suosittu internetiin suuntautuvissa palomuureissa, 
+koska se mahdollistaa nopeamman reitittimen käsittelemään suurimman osan tulevista 
+paketeista, erityisesti palveluestohyökkäyksissä, joka vähentää palomuurin kuormitusta. 
+Se tarjoaa myös paremman puolustuksellisen syvyyssuojan, koska on olemassa kaksi 
+erilaista laitetta, jotka hyökkääjän on ohitettava (kuva 4). [9.]   
+4.2 Demilitarisoitu vyöhyke  
+Demilitarisoitu vyöhyke (DMZ) on vyöhyke, joka sijaitsee teollisuus- ja yritysvyöhykkei
+den välissä, jota käytetään turvallisten liikennevirtojen hallintaan vierekkäisillä alueilla. 
+Tämä on myös se kohta, jossa palomuuri on tyypillisesti toteutettu liikennevirran ohjaa
+miseksi laitosverkkoon ja siitä ulos.  Tyypillisesti DMZ-alueelta löytyy yksi tai useampi 
+kriittinen komponentti kuten tuotannon historioitsija, joka sisältää arvokasta tietoa järjes
+telmien laadun- ja suorituskyvyn historiasta, langaton tukiasema tai etähallintapalvelin ja 
+kolmansien osapuolten käyttöjärjestelmät (kuva 5). [9.]   
+Palomuuri
+ toimistoverkkoon
+ X
+ 1
+ 2
+ DMZ taso
+ Industrial DMZ
+ Zone
+ Etähallintapalvelin
+ 3
+ IDS/IPS
+ Palomuuri
+ tuotantoverkkoon
+ Antivirus palvelin
+ Kuva 5. DMZ-vyöhykkeen palvelimia. [9.] 
+Tuotanto historioitsija
+ Tiedosto pavelin
+ Tuotanto- ja DMZ-verkon välinen liikenne sallitaan palomuurisäännöillä. Palomuurin lo
+kitietoja seurataan jatkuvasti hallinnan kautta. DMZ-alueelle suositellaan sijoitettavaksi 
+vain tallentavia tietoja olevia laitteita. DMZ-tietoturva on kriittinen laitosten toiminnan kan
+nalta, koska se suojaa koneita haitalliselta liikenteeltä alemman luottamustason ver
+koista. 
+8  
+4.3 Tehdasverkkovyöhyke  
+Tehdasverkkoverkkoalueen eriyttäminen ja suojaaminen muista verkoista on tärkein osa 
+verkon segmentointia, jonka vuoksi sillä on myös korkein suojaustaso. Tyypillisesti teh
+dasverkkoon sijoitetaan tuotantokriittiset järjestelmät kuten prosessinohjaus työasemia, 
+palvelimia, tietokantoja ja automaatiota sekä instrumentointi- ja ohjauslaitteita (kuva 6). 
+SFS-käsikirjassa 631-3 vyöhykkeestä käytetään myös nimeä turvajärjestelmävyöhyke. 
+[19.] 
+Palomuuri
+ Palomuuri
+ Tehdas historioitsija
+ IDS
+ IT palvelut (DNS, DHCP, LDAP jne.)
+ Hallintatyöasema
+ IDS
+ IDS
+ Prosessityöasema
+ PLC
+ Sensori
+ Kuva 6. Tehdasverkon laitteita. [9.] 
+4.4 Tehdasverkon erillisvyöhykkeet 
+Tuotannon ajastus
+ Loki kerääjä
+ DCS
+ RTU
+ Aktuaattori
+ Hana/Säädin
+ Palomuuri
+ + IDS
+ HMI
+ SIEM
+ Loki kerääjä
+ Tasot 3 – 0
+ Intdustrial
+ Zone
+ Tietoturvan ja toiminnallisuuden kannalta tehdasverkon alueet tulisi jakaa edelleen eril
+lisalueisiin, jolloin jokainen alue sisältää järjestelmät ja laitteet, joilla on yhteinen tehtävä  
+9  
+tai molemminpuolinen panos tuotantoprosessissa (kuva 7). Erillisalueilla tulisi olla selke
+ästi määritellyt rajat ja niiden välinen liikenne suodatettava käytön mukaisesti. Palvelut, 
+protokollat ja sovellukset, jotka eivät ole olennaisia vyöhykkeen sisällä, tulisi poistaa.    
+Industrial Zone/
+ Production network
+ Järjestelmät
+ /Laitteet
+ Industrial 
+Core
+ Tuotanto 
+linja  1
+ Ohjelmistot 
+Tuotanto 
+linja 2
+ Kuva 7. Tuotantoverkon erillisalueita, joilla on sama toiminnallisuus. [9.] 
+Teollisuusverkon protokollilla on lähtökohtaisesti erilaiset vaatimukset kuin muilla TCP/IP -perheeseen kuuluvilla protokollilla. Näistä keskeisimpiä ovat pienet viiveet tiedonsiir
+rossa, luotettavuus sekä luottamus siihen, että verkko, jossa toimitaan, on lähtökohtai
+sesti turvallinen.  
+Modus-TCP- tai DNP3-teollisuusverkon protokollat ovat pakollisia komponentteja pro
+sessilaitteiden ohjaamiseen, mutta aina kun mahdollista, näiden protokollien pääsy alu
+een ulkopuolelle tulisi estää.  
+Jos tämä ei ole mahdollista, on toteutettava toimenpiteitä niiden suojaamiseksi hyök
+käyksiltä tai väärinkäytöltä prosessinohjausverkon ulkopuolisista lähteistä, käyttämällä 
+esimerkiksi palomuureja. 
+10  
+5 Palomuurit  
+Palomuurit ovat tärkeässä asemassa uhkien estämisessä, jotka voivat vaikuttaa turvalli
+suuteen ja luotettavuuteen sekä tuottavuuteen. Palomuureja käytetään yleisesti verkko
+jen suojaamiseen sekä eristämiseen eri segmenttien välillä.  Mikäli yhteyksissä käytet
+tään julkisia verkko-osoitteita, lähiverkot suositellaan suojattavaksi palomuurein, joissa 
+verkostoautomaatioliikenteen VPN-tunnelointi on välttämätöntä. Julkisten verkkojen 
+kautta välitettävä verkostoautomaatioliikenne on salattava ja salaus on suositeltavaa 
+myös käytettäessä verkkoyhtiöiden omia tietoliikenneverkkoja. [1.]  
+5.1 Pakettisuodatteiset palomuurit  
+Palomuurit luokitellaan neljään eri teknologiatyyppiin, joista ensimmäisenä paketti
+suodatteiset palomuurit (Packet Filtering Firewall), jotka perustuvat pääsylistoihin ja pää
+töksiin pakettien sallimiseksi tai kieltämiseksi yksinkertaisilla suodatinperusteilla kuten 
+lähde- ja kohde-IP-osoitteet viestissä (kuva 8).  
+Kuva 8. Pakettisuodatteinen palomuuri.  
+Kun suodatinperusteena on lähde- ja kohdeprotokollan numero, niin silloin tämän tekno
+logian palomuureissa hyökkäykset eivät tyypillisesti ole estetty eikä havaittu (kuva 9). 
+192.168.1.0/24
+ Internet
+ Sallii:
+ TCP-liikennne (ACK -lippubitti päällä) sisään
+ UDP-liikenne porttiin 53 sisään 
+Liikenne verkosta 192.168.1.0/24 ulos
+ Kiellä:
+ kaikki muu liikenne 
+Kuva 9. Esimerkki pakettisuodatteisen palomuurin liikenteestä.  
+11  
+Pakettisuodatteisen palomuurin ensisijaisena etuna on alhaiset kustannukset ja vähäi
+nen vaikutus verkon suorituskykyyn. Usein on hyödyllistä toteuttaa pakettisuodatus  rei
+tittimessä tilapäisen tarkastuspalomuurin edessä. Tällä on kaksi etua; se tarjoaa syvälli
+sen puolustuksen ja vähentää tilallisen palomuurin työmäärää.  
+5.2 Tilalliset palomuurit 
+Tilalliset palomuurit (Stateful Firewall) ovat käytössä kaikkein yleisimpiä ja ne tunnetaan 
+myös dynaamisina pakettisuodattimina, jotka valvovat yhteyksien tilaa ja tekevät määri
+tyksiä siitä, minkä tyyppisiä tietopaketteja kuuluu tunnetulle aktiiviselle yhteydelle palo
+muurin läpi.  
+Yhteyksistä pidetään yllä erillistä tilataulua, jonka perusteella liikennettä suodatetaan. 
+Algoritmi muodostaa automaattisesti tilataulun, joten suodatussääntöjen tekeminen on 
+huomattavasti helpompaa kuin tilattomassa pakettisuodattimessa. Käytännössä jokai
+nen paketti tarkastetaan ja verrataan sitä tilatietokantaan.  
+Olemassa oleviin yhteyksiin liittyvät paketit päästetään läpi ja tästä jälkeenpäin kaikki 
+yhteyteen liittyvät paketit päästetään läpi niin kauan kuin yhteys on päällä. Kuvassa 10 
+on esitetty tilallisen palomuurin perustoimintaa.  
+192.168.3.110:TCP80
+ Tilallinen
+ Palomuuri
+ 192.168.1.11:TCP4440
+ LAN
+ arvo:100
+ Internet 
+arvo:0
+ Lähde
+ 192.168.1.11
+ Lähdeportti
+ Kohde
+ TCP:4440
+ 192.168.3.110
+ 192.168.3.110
+ TCP:80
+ 192.168.1.11
+ Kuva 10. Tilallinen palomuuri. 
+Internet
+ Kohdeportti
+ TCP:80
+ Sallittu
+ Kyllä (100-0)
+ TCP:4440
+ Kyllä, 
+tilataulusta 
+löytyy tieto
+12  
+Useimmissa tapauksissa uusien yhteyksien on esiteltävä itsensä palomuurille, mitä 
+useimmat asiantuntijat kutsuvat kädenpuristukseksi, ennen kuin ne sallitaan vakiintunei
+den yhteyksien luetteloon. 
+Yhteys muodostuu lähiverkon puolelta, joka on määritelty palomuurissa luotettavaksi 
+verkkoliittymäksi (kuvassa LAN, Arvo:100). Kun liikenne tulee palomuurille asti, algoritmi 
+tekee tilatauluun tietueen ja palomuuri puhkaisee paluuliikenteelle reiän. Kun paluulii
+kenne saapuu muurille niin tutkitaan, onko tilataulussa vastaavaa tietuetta. Mikäli tietue 
+löytyy, tilatauluun muodostetaan sallittu yhteys kahden eri laitteen välille. Palomuurissa 
+oleva reikä suljetaan silloin kun yhteys katkeaa. Mikäli kyseessä on yhteydetön proto
+kolla, reikä suljetaan halutun ajan kuluessa eli esimerkiksi UDP-pohjaisessa yhteydessä 
+kahden minuutin kulutta viimeisen paketin saapumisesta.  
+Kuvassa 10  on reitittimen ulkoreunaan asennettu pakettisuodatin, jonka tarkoituksena 
+on rajoittaa liikenne siten, että vain WWW-liikenne on sallittua (UDP 53 tarvitaan DNS
+kyselyn läpimenemiseen) ja siten, että liikenne väärennetyllä IP- osoitteella on mahdo
+tonta.  
+Täytyy muistaa, että kyseessä on karkean tason suodattaminen ja esimerkiksi TCP-portti 
+80 -liikennettä ei millään tavalla suodateta eli mikä tahansa sovellus menee läpi, kunhan 
+se käyttää kommunikointiin TCP-protokollan porttia 80 ja on syntynyt sisäverkossa 
+(ACK-bitti päällä). Tilalliset palomuurit ovat tehokkaampia uhkien havaitsemisessa mutta 
+niillä on korkeammat kustannukset, suuremmat suorituskykyvaikutukset ja ne ovat 
+monimutkaisempia konfiguroida ja käyttää.[1.]  
+5.3 Seuraavan sukupolven palomuuri  
+Seuraavan sukupolven palomuuri (Next-Generation Firewall) on kolmannen sukupolven 
+palomuuriteknologiaa, joka yhdistää edellisten palomuurisukupolvien ominaisuudet so
+vellustunnistukseen perustuvaan suojaan (kuva 11).  
+Monitasoisen liikenteen suojauksessa palomuurin pitää osata monia toiminteita kuten 
+haittaohjelmasuodatusta, sovellusten ja botnet-liikenteen tunnistusta, IDS/IPS- web
+13  
+sivustojen suodatusta/estoa, SSL-liikenteen purkua sekä eritasoisia raportointeja. Käy
+tännössä ulkoverkon reunalle viedään älykäs palomuuri, joka pystyy suojaamaan moni 
+tasoisesti internetin ja sisäverkon välistä liikennettä. Monitasoista suojausta tarvitaan, 
+koska haittaohjelmat voivat levitä myös turvalliseksi luokitellun luotettavan web-sivuston 
+kautta, mikäli sisäverkosta vieraillaan tällaisella sivustolla. [14.] 
+Kuva 11. NGFW palomuurin ominaisuudet. [14.]   
+5.4 Sovelluskerroksen palomuurit  
+Sovelluskerroksen palomuureja (Proxy Firewall) kutsutaan myös Proxy-palvelimiksi, 
+jotka lisäävät mahdollisuuden tutkia tiettyjä sovellusliikenteen palveluita (Web, FTP,      
+telnet). 
+Kuva 12. Esimerkki Proxy-palomuuritopologiasta. 
+Kuvassa 12 on esimerkki Proxy-palomuurin toiminnasta, jossa käyttäjä ottaa ensin yh
+teyden Proxy-palomuuriin, joka puolestaan muodostaa jatkoyhteyden vastapään 
+14  
+koneeseen.  Kyseessä on kaksi erillistä yhteyttä, asiakas -Proxy ja Proxy- kohde. Asia
+kaskonetta ei näy kohteen suuntaan vaan ainoastaan Proxy-palomuurin osoite, jolloin  
+käyttäjän tiedot ovat turvassa. [14.] 
+Erilaisista palomuuriteknologiosta huolimatta palomuurit ovat turvallisuusstrategioiden 
+perusrakenne. Palomuureja käytetään monimuotoisesti teollisuudessa sekä internetin 
+laidalla, etä- ja konttoritoimistoissa, yrityksen ytimessä infrastruktuurin segmentoimiseksi 
+mukaan lukien perinteiset ja virtualisoidut verkkoympäristöt. Nykyään kaupalliset palo
+muurit ovat yleensä hybridijärjestelmiä, joissa verkkotason perussuodatusta lisätään so
+vellustason yhdyskäytäväominaisuuksilla. 
+5.5 Teollisuusverkkojen protokollia 
+Kenttäväylätekniikan käyttö 1990-luvulla on ollut merkittävä innovaatio, joka on mahdol
+listanut automaatiojärjestelmien siirtymisen keskitetysti hajautettuihin järjestelmiin. Teol
+lisuusverkkojen protokollat jakautuvat monessa tapauksessa kahteen osaan: kenttä
+väylään ja komentoväylään (kuva 13).  
+Kenttäväylä (fieldbus) 
+• hoitaa liikennöinnin 
+itse sensoreiden sekä 
+PLC kontrollereiden 
+välillä.
+ • käskyttää laitteita 
+tekemään prosessin 
+vaatimia asioita, sekä 
+palauttaa sensorin 
+lähettämän tiedon 
+esim. paljonko 
+lämpötila on tai mikä 
+on kallistuskulma. 
+protokolla esimerkkejä
+ Modbus
+ Profibus
+ Interbus 
+Komentoväylä 
+• liikennöi  PLC, HMI 
+ja DCS laitteiden 
+välillä ja käyttää 
+yleensä TCP/IP 
+Ethernet protokollaa 
+pohjana jonka päälle 
+itse datanvälitys 
+protokolla rakentuu. 
+• komennetaan         
+kontrollereita (PLC) 
+tekemään muutokset 
+sekä ilmoitetaan 
+sensori dataa ns. 
+ylävirtaan jotta sen 
+pohjata voidaan tehdä 
+päätelmiä.
+ protokolla esimerkkejä
+ Modbus TCP
+ Profinet
+ DNP3
+ Introduct
+ ory
+ Stage
+ Growth
+ Stage
+ Maturity
+ Stage
+ Decline 
+Stage
+ Total
+ Marke
+ t
+ Sales
+ PLC
+ HMI
+ Kuva 13. Esimerkki kenttäväylän- ja komentoväylän eroista. 
+A
+ B
+ AB
+ Valve
+ I/O
+ Drives
+15  
+5.6 Komentoväylän yleisimpiä protokollia  
+Modbus 
+Modbus-protokollaa (kuva 14) käytetään yleisesti sähköteollisuuden SCADA- järjestel
+missä, jolla yhdistetään valvontapääte (HMI) kentällä oleviin hallintapäätteisiin (RTU). 
+Protokolla oli aluksi suunniteltu toimimaan pienillä nopeuksilla käyttäen kommunikointiin 
+hitaita sarjaliikenne RS-232- ja RS-485-portteja. [2.] 
+Tästä syystä protokollaan itsessään ei sisälly mitään sisäänrakennettuja tietoturvaomi
+naisuuksia tai käyttäjien tunnistusta.  Protokollan yksi suurimmista heikkouksista on 
+heikko tietoturva, koska liikenne on avointa ja salaamatonta. Protokollasta on olemassa 
+sarjaportti Modbus- ja ethernet Modbus -TCP-versiot. Sarjaporttiversio tarvitsee monesti 
+muuntimen väliin, jotta liikenne saadaan kulkemaan TCP/IP:n päällä. [3.] 
+Kuva 14. Modbus-protokollan käyttöä. [3.] 
+Suojauksessa lähtökohtaisesti oletetaan, että tuotantoverkko on eristetty ja turvallinen 
+eikä siellä ole haitallista liikennettä. Vaihtoehtoisesti liikenne voidaan salata käyttämällä 
+TLS- liikennesalausta tai VPN-tunnelia päätelaitteiden välillä. Protokollan toimintavar
+muus, luotettavuus ja yksinkertaisuus ovat suosineet teollisuudessa sen käyttöä vaikka 
+heikkoudet tiedetään. [2.] 
+16  
+DNP3  
+DNP3-protokollaa (Distributed Network Protocol) käytetään pääasiassa sähkö- ja vesi
+laitoksissa ja se on kehitetty erityisesti tiedonsiirtoon eri tiedonkeruu- ja ohjauslaitteiden 
+välille (HMI, RTU ja IED). Kuten muutkin teollisuusverkon protokollat DNP3 on haavoit
+tuvainen salakuuntelulle sekä väärentämiselle.  
+IEC TC57 -komitea on saanut tehdä DNP3 :n tietoturvalliseksi, koska se on yksi yleisim
+mistä teollisuusverkoissa käytetyistä protokollista. [9.] DNP3-protokollalla toimivien pää
+telaitteidenvälille suositellaan IPSec/L2TP VPN- tunnelointia tai verkko eristetään ja ra
+jataan tarkasti, minne liikennettä saa mennä. [7.] 
+Kuva 15. Esimerkki DNP3 protokollan käytöstä. [7.] 
+PROFINET  
+PROFINET on laajalti teollisuuden käytössä oleva Ethernet-protokolla, joka on PRO
+FIBUS-käyttäjäorganisaation ja Siemensin kehittämä avoin standardi. PROFINET on re
+aaliaikainen Ethernet-protokolla, jota käytetään ohjainten ja laitteiden väliseen nopeaan 
+tietojen vaihtamiseen, jossa aikavaateet voivat olla vain millisekunteja. Teknologia mah
+dollistaa myös langattoman tiedonsiirron. [10.] 
+Tietoturvan kannalta PROFINET välittää liikennettä yritys- ja teollisuusverkon välillä, jol
+loin liikenteen tulisi olla tiukasti valvottua. PROFINET :in käyttöönotto on suunniteltava 
+erittäin huolellisesti, sillä se ei tue VLAN-segmentointia.  
+17  
+Suojauksissa palomuurit ja ICS-tietoiset tunkeutumisen estojärjestelmät olisi määritet
+tävä siten, että ne estävät nimenomaan PROFINET-liikenteen määriteltyjen alueiden ja 
+vyöhykkeiden ulkopuolelle. [10.]   
+6 Haavoittuvuuksien ja hyväksikäytön tunnistus- ja estojärjestelmät 
+6.1 Tunkeutumisen tunnistus- ja havaitsemisjärjestelmä  
+Tietoturvauhkien tunnistaminen jo aikaisessa vaiheessa on avain kykyyn puolustautua 
+niitä vastaan ja varmistaa, ettei verkossa olevia tietojasi vaaranneta. Tietoturvavalvon
+nan tehtävänä on jatkuvasti seurata, arvioida ja vastata nopeasti tunkeutumisen havain
+nointitapahtumiin.  
+Tunnettujen verkkohyökkäysten havaitsemiseksi käytetään tunkeutumisen tunnistus- ja 
+havaitsemisjärjestelmiä (IDS) (kuva 16), jotka on alun perin rakennettu haavoittuvuuk
+sien havaitsemiseksi perustuu oletukseen, että järjestelmän haavoittuvuuksien hyväksi
+käyttö edellyttää poikkeavaa toimintaa kohdesovelluksia tai tietokoneita vastaan.  IDS
+laitteet seuraavat verkkoliikennettä ja käyttävät erilaisia havaitsemismenetelmiä, kuten 
+liikenteen osia, vertaamalla tunnettujen hyökkäysten allekirjoituksiin. IDS on kuunteleva 
+laite, joka valvoo liikennettä ja raportoi tuloksistaan järjestelmänvalvojalle, mutta se ei 
+voi automaattisesti ryhtyä toimiin estääkseen havaittua poikkeamaa.  
+Internet
+ Palomuuri
+ IDS 
+laite
+ Kuva 16. IDS verkon reunalla. [15.]   
+Palvelin
+18  
+IDS perustuu verkkoliikenteen passiiviseen seurantaan ja poikkeamia käytetään hälytys
+ten laukaisijoina. Yksinkertaisia sääntöjä voidaan kirjoittaa seuraamaan IP-lähteitä, koh
+teita, protokollia ja pakettien pituuksia. [15.] 
+6.2 Tunkeutumisen estojärjestelmä   
+Tunkeutumisen estojärjestelmä (IPS) (kuva 17) on osa verkon tietoturvatorjuntatekniik
+kaa, joka tutkii verkkoliikennettä haavoittuvuuksien hyödyntämiseksi ja estämiseksi. Tun
+keutumisen estojärjestelmät analysoivat paketteja mutta voivat myös estää paketin toi
+mittamisen sen perusteella, millaisia hyökkäyksiä se havaitsee. 
+IPS-laite sijaitsee usein palomuurin takana tai on integroituna suoraan palomuuriin, joka 
+tarjoaa täydentävän analyysikerroksen estämään negatiivisesti vaarallisen sisällön siir
+tymistä verkkoon Toisin kuin edeltäjänsä, tunkeutumisen havaitsemisjärjestelmä on pas
+siivinen järjestelmä, joka skannaa liikennettä ja raportoi uhkista. 
+Laitteet ovat olennainen osa puolustuksen syvällistä strategiaa ja tarjoavat automaatti
+sen tavan valvoa ja vastata odottamattomiin uhkiin mutta kuitenkaan ne eivät voi tehdä 
+kaikkea. 
+Internet
+ Palomuuri
+ IPS-laite
+ Kuva 17. IPS palomuurin takana. [16.] 
+Palvelin
+ IPS-ratkaisut ovat yhteensopivia palomuurien tai ICS/SCADA -laitteiden kanssa ja voivat 
+toimia estämällä liikennettä, joka ei täytä määriteltyjä sääntöjä. Haitallisen verkkoliiken
+teen havainnointiin ja estämiseen on useita menetelmiä, joista allekirjoitukseen perus
+tuva tunnistus ja tilastollinen poikkeavuuden havaitseminen ovat kaksi määräävää me
+kanismia. 
+19  
+Tunnisteisiin perustuva tekniikka on yksinkertaisin havainnointitapa, joka perustuu en
+nalta tunnettujen haavoittuvuuksien etsimiseen. Tekniikassa käytetään lähinnä laiteval
+mistajien laajoja hyökkäystietokantoja, joihin verkossa tapahtuvaa liikennettä verrataan 
+mutta haasteena on ennalta tuntemattomien haavoittuvuuksien havaitseminen, joita ei 
+vielä tunnisteta.    
+Tilastolliseen poikkeaman havaitsemiseen otetaan näytteitä verkkoliikenteestä sattu
+manvaraisesti ja verrataan niitä normaaliksi määriteltyyn verkkoliikenteeseen havaittui
+hin tapahtumiin etsien merkittäviä poikkeamia. Kun verkon liikennetoiminnan näyte on 
+perusviestinnän parametrien ulkopuolella, IPS ryhtyy toimiin tilanteen käsittelemiseksi. 
+IPS rakennettiin ja julkaistiin aluksi erillisenä laitteena 2000-luvun puolivälissä mutta se 
+on tullut integroituna ratkaisuna nykyisiin palomuuriratkaisuihin yritystasolla. IPS- ja IDS
+laitteet toimivat osana tietoturvaratkaisua (kuva 18). 
+IDS 
+Intruction Detection System 
+Tärkein ominaisuus havainnointi
+ Tarkkailee hyökkäyksiä  ja antaa hälyytyksen
+ Vaatii ihmisen tai jonkun muun tarkastamaan 
+tuloksen
+ Tunnistepohjaisella
+ IPDS- järjestelmällä 
+käytettävissä laaja 
+tietokanta erilaisten 
+hyökkäysten tunnisteista 
+IPS
+ Intrusion Detection Prevension System 
+Hyökkäysten tunkeutumisen estojärjestelmä
+ Ennakoiva ennalta ehkäisy
+ Pysäyttää vain tunnetun haitallisen liikenteen  
+Vaatii kohdennettua säätöä jotta vältetään 
+yhteysongelmat
+ Kuva 18. IDS- ja IPS-järjestelmät toimivat osana tietoturvaratkaisuja. [15;16.] 
+6.3 Haittaohjelmat ja suojaus 
+Teollisuusympäristöissä tietotekniikan päivittäminen ja muutosten tekeminen on tehty 
+tarkoituksella yhä vaikeammaksi. Usein muutosten tekeminen onnistuu vain tuotantokat
+kojen yhteydessä. Virustentorjuntatyökalut toimivat tehokkaasti, kun ne asennetaan ja 
+ylläpidetään kunnolla ja vaikka virustentorjuntatyökalut ovat yleinen käytäntö tietotekniik
+kajärjestelmissä, niiden käyttö ICS/SCADA:n kanssa saattaa edellyttää erityiskäytäntöjä, 
+kuten yhteensopivuustarkistukset, muutoksenhallinnan ongelmat ja tehokkuusvaikutuk
+set tuotantoon.  
+20  
+Suuret ICS/SCADA -järjestelmätoimittajat suosittelevat, jopa tukevat, tiettyjen virusten
+torjuntatyökalujen käyttöä ja joissakin tapauksissa valvontajärjestelmätoimittajat ovat 
+saattaneet tehdä testaukseen oman työkalunsa tuotelinjansa tueksi ja siihen liittyvät 
+asennukset. Usein pyritään lisäksi kehittämään yleisohjeita ja testausmenetelmiä, jossa 
+keskitytään valvontaohjelmistojen suorituskykyyn, jotta ne täyttäisivät aukot, joissa 
+ICS/SCADA- ja virustorjunta-asiantuntijan ohjeita ei ole saatavilla. [1;22.] 
+Valitettavasti viruksentorjunta suojausta ei ole aina mahdollista asentaa prosessinoh
+jausjärjestelmiin, koska vanhojen järjestelmien ongelmana on käyttöjärjestelmien ikä. 
+Teollisuusverkon tehokkaassa suojauksessa laitteet toimivat Internetissä erotetussa IP
+verkossa, jolloin jokaisessa laitteessa on palomuuri. Vanhat suojaamattomat protokollat 
+voidaan suojata kuljettamalla ne salatun tiedonsiirtokanavan yli (VPN), jolloin etälaite 
+avaa VPN-putken palvelimelle ja valvomo saa tätä kautta turvallisen yhteyden kenttä
+laitteeseen. Miehittämättömät laitokset, joilla on suorat yhteydet järjestelmien ohjausyk
+siköihin, voidaan luokitella suuren riskin omaaviksi. 
+6.4 Prosessinohjausjärjestelmien tietoturvatestaus 
+Järjestelmän haavoittuvuuksien löytymiseen voidaan käyttää kahta menetelmää, joista 
+ensimmäisenä vertailumenetelmä, jossa tuotannossa olevat ohjelmistot, laiteohjelmistot 
+sekä käyttöjärjestelmän versiot voidaan viedä online-haavoittuvuustietokantoihin, joissa 
+niitä verrataan aiemmin tunnistettuihin haavoittuvuuksiin. Vertailumenetelmässä tietojen 
+kerääminen on melko työlästä mutta se ei aiheuta ICS/SCADA-verkkoon tuotannollisia 
+riskejä tai vaaraa, koska tietoja ei lähetetä verkosta ulos eikä tietojen keräämiseen tarvita 
+erikseen asenettavia ohjelmistoja. 
+Prosessinohjausjärjestelmien haavoittuvuustestausta on suunniteltava äärimmäisen va
+rovasti, sillä toisessa menetelmässä eli haavoittuvuuksien skannaukseen asennettavat 
+ohjelmistot voivat vaikuttaa haitallisesti moniin toimintoihin ja ohjauslaitteisiin. 
+Skannausmenetelmät ovat kyllä nopeampia ja paljon vähemmän työvoimavaltaisempia 
+mutta tuovat myös paljon liikennettä ICS/SCADA-verkkoon ja siten voivat skannauksen 
+tyypistä riippuen vaikuttaa negatiivisesti ICS-laitteisiin.  
+21  
+Koska ICS-laitteisiin voi kohdistua haitallisia vaikutuksia, on suositeltavaa, että skan
+naukset tehtäisiin testausta varten rakennetuissa erillisissä suljetuissa testaus- ympäris
+töissä.  
+Nykyään järjestelmät ja tietyt verkkolaitteet, kuten ohjaimet ja HMI:t, voidaan virtualisoida 
+ja luoda tuotantoverkosta virtuaalinen testausympäristö ja siten skannata haavoittuvuuk
+sia turvallisesti.  
+7 Langaton IIoT-ratkaisu teollisuusympäristöön 
+Nopeasti kehittyvät IIoT-ratkaisut tuovat uutta tehokkuutta teollisuuteen sekä uusia mah
+dollisuuksia tuotantolaitosten hallintaan, prosessien tehostamiseen ja laitteiden enna
+koivaan ylläpitoon. Teollisuusmaailma yhdistää ja integroi nykyään teolliset ohjausjärjes
+telmät yritysjärjestelmiin, jossa on mukana liiketoimintaprosessit ja analytiikka. Kyseessä 
+on liiketoimintaprosessien ja -mallien uudistaminen reaaliaikaisiksi ja yhä vahvemmin 
+dataan pohjautuviksi.  
+IIoT-järjestelmät mahdollistavat siten merkittävää edistystä päätöksentekoon, toimin
+taan sekä yhteistyön optimointiin. IIoT:n tehokkuus perustuu isoon määrään kevyttä da
+taa, jota voidaan analysoida lähes reaaliaikaisesti erilaisten sensoreiden, kameroiden ja 
+analytiikan avulla. Saatu tilannetieto voidaan valjastaa tuotekehityksen, palvelun ja liike
+toiminnan tueksi. 
+Erilaiset tietolähteet on mahdollista yhdistää yhdeksi tilannekuvanäkymäksi, joka tukee 
+laitteiden etähallintaa ja auttaa optimoimaan palveluiden ja prosessien toimintaa uudella 
+tavalla. Yhden näkymän avulla on mahdollista ohjata jopa kokonaista tuotantolaitosta. 
+Nykyaikaisten IIoT-ratkaisujen avulla teollisuuden toimijoiden on mahdollista saavuttaa 
+merkittäviä säästöjä vuositasolla tuotantolaitoksen eri osa-alueilla.  
+Säästöt voivat muodostua esimerkiksi prosessien, varastonhallinnan ja kokonaistuotan
+non tehostumisesta sekä huoltotoiminnan oikeasta aikaistumisesta. [18.] Langattoman 
+verkon nykyinen suunnittelu on osoittautunut tärkeäksi teollisen internetin hyötyjen to
+teuttamisessa. Nykyään laitokset käyttävät yhä enemmän langattomia verkkoja kriittisille 
+22  
+teollisuusautomaatio- ja ohjausjärjestelmille, jotka edellyttävät luotettavaa tiedonsiirtoa 
+vähäisin viivein. 
+Langattomat lähiverkot poikkeavat merkittävästi perinteisistä kiinteistä lähiverkkoista 
+käyttäessään jaettuja radiotaajuuksia ja ovat siten herkkiä häiriöihin ja kattavuuteen. 
+Langattoman verkon käyttöönotto edellyttää harkittua suunnittelua sekä kaistanlevey
+den, läpäisykyvyn, luotettavuuden ja turvallisuuden osalta. 
+Teollisten tuotantolaitosten järjestelmävaatimukset painottuvat kestävyyteen, joustavuu
+teen ja saatavuuteen. Tietoverkkoturvallisuus on kuitenkin ratkaiseva tekijä digitaalisille 
+ratkaisuille mutta sen toteuttaminen teollisuudessa vaatii erityistä huomiota. Tämä johtuu 
+siitä, että teollisuuden tuotantojärjestelmissä ja -laitteissa on paljon pidemmät elinkaaret, 
+jotka perustuvat usein vanhempaan teknologiaan, prosessoreihin ja käyttöjärjestelmiin, 
+joita ei ole suunniteltu liitettäväksi internetin kautta ulkopuolisiin verkkoihin. Laiteet sijai
+sivat yleensä lähiverkoissa, jotka ovat suojattu ja eristetty ulkoisesta maailmasta palo
+muureilla. 
+IIoT-ratkaisujen on myös toimittava samassa ympäristössä, joissa on huomattava määrä 
+vanhoja toimintatekniikoita. Niiden olisi myös oltava samanaikaisesti tietolähteinä erilais
+ten toimivien laitteiden kanssa kuten SCADA, PLC, DCS, joissa voi olla erilaiset proto
+kollat ja tietokokonaisuudet. IIoT-ratkaisuissa käytetään yleensä erilaisia turvallisempia 
+sekä joustavampia järjestelmäarkkitehtuureja, jotka koostuvat erikoistuneista piirisar
+joista, salauksesta ja todentamisesta sekä uhkien havaitsemisesta. Tietoturvassa on si
+ten olennaista, että se suunnitellaan alusta lähtien huolellisesti huomioiden turvallisuus, 
+luotettavuus, kestävyys sekä kustannustehokkuus. [4.] Teollisuuden tuleva digitalisointi 
+vaatii tehokkaita teollisia tiedonsiirtoverkkoja, joissa suurimpana haasteena toteutuk-  
+sissa on tietoturvallinen ja helppo kommunikointi.  Siirrettävän tiedon määrä kasvaa mo
+ninkertaiseksi seuraavan kymmenen vuoden kuluessa. Internet-verkkoon arvioidaan kyt
+keytyvän miljardeja laitteita, jotka yhdistyvät yhdeksi älykkääksi kokonaisuudeksi. Lait
+teiden tietoturvatasot voivat ovat vaihtelevia ja näin ollen tietoturvan rakentaminen IT- ja 
+teollisuusjärjestelmiin tulee erittäin haastavaksi. [20.] 
+Teollisuuden langaton lähiverkkoarkkitehtuuri koostuu tukiasemista (Access Point) ja 
+verkon liittyjistä (client), joita voidaan hallinnoida keskitetysti. Tukiasema voi toimia reitit
+23  
+timenä, jolloin se hoitaa langattoman verkon reitityksen sekä hallinnoinnin. Liittyjät muo
+dostavat yhteyden langallisen laitteen ja langattoman verkon välille, jonne luodaan so
+velluksen vaatima radiokenttä. 
+Teollisuuden automaatiomarkkinat ovat vuosien ajan toimineet ”tuo oma laite verkkoon” -periaatteella. Verkkoon kytkettyjen laitteiden hallinnan varmistamiseksi käytetään tun
+nistamis- ja pääsynhallintamenetelmiä. Kytkettäessä laite verkkoon, sitä voidaan seu
+rata, hallita tai paikantaa etänä, joka mahdollistaa monien prosessien automatisoinnin ja 
+toiminnan tehostamisen. Teollisilla sovelluksilla on usein erityisiä turvallisuusvaatimuksia 
+ja siksi on tärkeää ymmärtää sovellusten ominaispiirteet ja arvioida niiden haavoittuvuu
+det ja riskit. Teollisuusympäristöt asettavat monet omat vaatimuksensa käytettäville rat
+kaisuille. [23.] Kuvassa 19 on esimerkkinä Siemensin teollisuuden langattoman verkon 
+periaatteellinen toteutus. 
+Kuva 19. Siemensin esimerkki langattoman verkon toteutuksesta. [23.]  
+8 Teolliseen langattomaan internetiin liittyvät haasteet 
+Päätös langattoman teknologian käyttöönotosta sähkö- tai teollisuuslaitoksessa on stra
+teginen valinta, jonka ansiosta infrastruktuuri tarjoaa merkittäviä etuja kuten alhaisem
+mat johdotuskustannukset. Oikea päätös voi parantaa turvallisuutta ja tehostaa laitoksen 
+toimintaa. Kuten useimmissa kehittyvissä teknologioissa nykypäivän markkinat tarjoavat 
+24  
+langattomia ratkaisuja, jotka ratkaisevat teollisen liiketoiminnan tarpeet, mutta eivät vält
+tämättä täytä tulevaisuuden vaatimuksia.   
+Langaton verkko on monimutkainen ja mahdollistava teknologia, mutta edellyttää tark
+kaa harkintaa ennen laajaa käyttöönottoa.  
+Jotta kehitystoiminta pysyisi ajan tasalla ja auttaisi käyttäjiä löytämään parhaan ratkaisun 
+sovelluksiinsa, ovat monet organisaatiot laatineet suosituksia ja standardeja sekä avoi
+mia ratkaisuja, joita eri toimijat voivat hyödyntää omiin langattomiin ratkaisuihinsa.  
+Järjestelmien toimivuuden kannalta tulisi huomioida koko prosessin toiminta alusta lop
+puun. Teollisuudessa käytetään moninaisia tekniikoita sekä protokollia, jotka eivät ole 
+yhteensopivia keskenään, jonka vuoksi suunnittelussa tulisi huomioida vanhojen laitteis
+tojen ja uuden teknologian yhteensovittamisen integraatiovaikeudet.  
+Infrastruktuurivaatimukset edellyttävät luotettavia ja varmennettuja verkkoyhteyksiä. 
+9 Verkkoturvallisuuden tapahtumien valvonta 
+Kaikkia tietoturvauhkia ei enää pystytä havaitsemaan tai torjumaan pelkästään palomuu
+reilla, IDS- tai IPS-laitteilla. Kehittyneiden haittaohjelmien taustalla ovat ammattimaiset 
+tahot, jotka pyrkivät toimimaan huomaamattomasti pitkän ajan kuluessa.  
+Ulkoisia hyökkäyksiäkin vaikeammin torjuttavia uhkia saattavat olla organisaation sisäi
+set väärinkäytökset tai tietovarkaudet, jolloin tietoturvainformaation ja tapahtumien hal
+linnan SIEM-tuotteet ovat keskeinen osa tietoverkkohyökkäysten tunnistamista ja niihin 
+puuttumista.  
+Tapahtumalokit ovat arvokas resurssi vianmääritykseen ja vastauskäytäntöihin. Koska 
+tietoturvallisuus koostuu monista kerroksista, olisi tärkeää saada yksittäinen näkymä kai
+kista tietoturvatapahtumista yhdestä paikkaa, johon SIEM-järjestelmät tuovat näkyvyyttä.  
+25  
+Vaikka SIEM-järjestelmän käyttöönotto ei ole helppoa, niin se on yksi tärkeimmistä indi
+kaattoreista, että organisaatiolla on selkeästi määritelty tietoturvapolitiikka. SIEM:n yli
+voimaiset lokien hallintaominaisuudet ovat tehneet tästä keskuksen, jossa se auttaa ha
+vaitsemaan hyökkäykset ja reagoimaan niihin nopeasti.  
+Useimmat tietoturvaohjelmat käsittelevät pienempiä uhkia mutta niiltä puuttuu isompi 
+kuva tietoverkkohyökkäyksistä. Yksinään tunkeutumisen havainnointijärjestelmä voi har
+voin tehdä enemmän kuin seurata paketteja ja IP-osoitteita. Samoin palvelulokit näyttä
+vät vain käyttäjän istuntoja ja kokoonpanon muutoksia. [24.] 
+SIEM-teknologiat tukevat tapahtumaprosessia mutta ne voivat myös tukea ICS/SCDA 
+toimintoja, jolloin niiden tiedot oikein konfiguroituna ja analysoituna voivat auttaa laittei
+den vika- ja kapasiteettitilanteiden ennustamiseen sekä tietoturvainformaation saami
+seen. Vähintään palomuuri-, IDS/IPS-, reititin/kytkin- sekä käyttöjärjestelmän- ja sovel
+lusten lokitiedot tulisi tallentaa (kuva 20). Lokitietoja siirretään useista järjestelmistä yh
+deksi näkymäksi automaattisesti ja siten minimoidaan manuaalisten lokikatselmusten 
+vaatimaa aikaa ja vaivaa.  
+Kuva 20. SIEM järjestelmä kerää lokeja eri lähteistä. [17.] 
+Skannaustulokset voidaan myös integroida SIEM -järjestelmiin, joiden avulla saadaan 
+tuotettua hälytyksiä tunnistetuista liikennemalleista. SIEM: n analyysimoottori nopeuttaa 
+tietojen käsittelyä ja muotoilua ja helpottaa toiminnallisten, operatiivisten ja turvallisuus
+tietojen tarkastelua. Skannaustulokset voidaan myös integroida SIEM-järjestelmiin, 
+26  
+joista saadaan tuotettua hälytyksiä tunnistetuista liikennemalleista, joista sitten voidaan 
+valita tiettyjä tapahtumia vaatimusten mukaiseen raportointiin, syyvaurioiden analysoin
+tiin sekä tapahtumien havaitsemiseen. 
+Käyttöönotosta voi aiheutua huomattavia kustannuksia, joten tämän vuoksi pienemmät 
+organisaatiot ovat olleet vähemmän innostuneita järjestelmän käytöstä, jonka vuoksi 
+useat pienet yritykset ulkoistavat lokien hallinnan palveluntarjoajille. 
+Nykyään hyödynnetään kehittyneempien SIEM-järjestelmien analytiikkaominaisuuksia 
+kun etsitään tavallisuudesta poikkeavaa liikennettä tai käyttäjän toimia suuresta tieto
+määrästä.  
+10 Verkkoturvallisuuden hallinta  
+Tietoturva vaatii käytännössä kattavasti suojattua erillisverkkoratkaisua ja tarkasti mää
+riteltyjä turvallisuuskäytäntöjä sekä korkealuokkaista tietoliikenneverkkojen rakenteel
+lista turvallisuutta. Nykyään langattomat verkkotekniikat, kuten Bluetooth, WLAN- ja Zig
+bee (kuva 21), joita käytetään tiedonkeruussa ja -siirrossa sekä etähallinnoissa, ovat 
+yleistyneet, jonka vuoksi internetin tietoturva asettaa uusia haasteita järjestelmien toteu
+tuksiin. [20.] 
+Kuva 21. IIoT järjestelmän malli  
+Teollisuuden IIoT-järjestelmissä tietoa siirretään ja tallennetaan pilvipalveluihin, joissa  
+27  
+tietoturvaan ei useinkaan itse pystytä vaikuttamaan vaan tämä on toteutettu palvelun 
+tarjoajan toimesta. Jotta tieto voidaan siirtää turvallisesti pilveen, pitää IoT-laitteen ja pil
+vipalvelun tunnistaa toisensa luotettavasti. Tämä mekanismi voi olla valmiiksi rakennet
+tuna esimerkiksi Azure IoT Hubiin. [22.] 
+10.1 Etäkäytön tietoturva  
+Kriittisten järjestelmien etäkäyttö tarjoaa mahdollisuuden parantaa liiketoimintaa vähen
+tämällä toimintakustannuksia sekä lisäämällä tuottavuutta. Etäyhteydet helpottavat   
+pääsyä reaaliaikaisiin tietoihin, mutta miten verkkoturvallisuuden käytäntöjä sovelletaan 
+liiketoiminnan tukemiin vaatimuksiin? Huomio tulisi kiinnittää ympäristöjen erojen tarkas
+teluun ja siihen, miten ne rajoittavat käytettävissä olevien teknologioiden valintoja.  
+Etäyhteys ICS/SCADA -järjestelmiin avaa kuitenkin huomattavan riskin, vaikka monet 
+kolmansien osapuolten palveluntarjoajat ja järjestelmien valmistajat ovat asettaneet etä
+käytön perusedellytykseksi päivittäiseen toimintaan ja tukeen. [5;6.]  
+Etäkäytön tarve kasvaa edelleen sekä yrityksen työntekijöille että kolmannen osapuolen 
+tuelle mutta valvontajärjestelmien etäkäyttöön liittyy yhä merkittäviä haasteita, joista tär
+keimpinä ovat toimivat ja turvalliset yhteydet. Nykyaikaisissa ICS/SCADA -ympäristöissä 
+on useita samankaltaisia tekniikoita kuin tieto- ja viestintätekniikassa ja siten myös sa
+mankaltaisia ratkaisuja. Pääsynvalvonta, verkkojen ja järjestelmien sekä haittaohjelmien 
+aktiivinen seuranta ovat perusta Purdue-mallin mukaiseen puolustuksen. Yksittäistä etä
+käyttöratkaisua, joka soveltuisi kaikkiin mahdollisiin arkkitehtuureihin, ei ole eikä mikään 
+yksittäinen etäkäyttöratkaisu voi tarjota riittävää suojausta ilman puolustuksen perusteel
+lista lähestymistapaa. Turvallisten etäkäyttöratkaisujen käyttöönotto ja ylläpito voidaan 
+kuitenkin toteuttaa varovaisesti ja laadukkaiden analyysien perusteella tiukkojen vaati
+musten luomisessa ja toteuttamisessa. [1.] 
+28  
+10.2 VPN-käyttö 
+VPN-yhteydet edustavat tunnettua teknologiaa, jota käytettään yleisesti ICS/SCADA 
+teollisuudessa. VPN perustuu tekniikkaan, jossa julkisten verkkojen kautta liikkuvaa in
+formaatiota suojataan käyttäen IPsec-tunnelointia ja vahvoja salausavaimia yhdessä 
+toistaiseksi murtamattomien salausmenetelmien kanssa. [19.]  
+VPN-pohjaiset ratkaisut ovat edelleen turvallinen lähestymistapa ICS/SCADA -verkkojen 
+etäkäyttöön, vaikka se voi olla kallista asentaa ja ylläpitää. Kuvassa 22 on esimerkki 
+VPN-yhteydenmuodistamisesta. [1;5] 
+Internet
+ 1
+ Käyttäjä
+ Palomuuri + IDS/IPS
+ 1
+ Radius 
+2
+ 2
+ Sähköposti
+ Palomuuri
+ Palomuuri
+ Palomuuri
+ 3
+ 3
+ IDS/IPS
+ 3
+ IDS
+ Etähallintapalvelin
+ ERP
+ 3
+ Antivirus palvelin
+ Tehdas historioitsija
+ Activer Directory
+ Tuotanto historioitsija
+ Tiedosto pavelin
+ Hallintatyöasema
+ IT palvelut (DNS, DHCP, LDAP jne.)
+ IDS
+ IDS
+ 3
+ Prosessityöasema
+ Tuotannon ajastus
+ Loki kerääjä
+ 3
+ PLC
+ Sensori
+ 3
+ DCS
+ RTU
+ Aktuaattori
+ Hana/Säädin
+ 1. 
+Käyttäjä avaa VPN 
+yhteyden 
+etäpalvelimelle 
+DMZ tasolla 
+toimistoverkkoon.
+ HMI
+ 2.
+ Ennen kuin yhteys 
+muodostetaan, 
+käyttäjä syöttämä 
+käyttäjätunnus,Ra
+ dius palvelimella
+ 3.
+ Käyttäjän 
+todennuksen 
+jälkeen ylläpitäjä, 
+jonka rooli sallii 
+yhteyden, pääsee 
+muodostamaan 
+etätyöpöytäyh
+teyden 
+varsinaiselle 
+hallinta
+työasemalle 
+Kuva 22. Esimerkki VPN-liikennöinnistä teollisuusverkossa. [1.] 
+Tyypillinen liitettävyys tapahtuu joko IPsec / SSL VPN -laitteen kautta mutta toisaalta 
+monet yritykset käyttävät myös hybridiratkaisuja. Laitevalmistajat tarjoavat erilaisia 
+29  
+tapoja identiteetin tunnistuksen toteuttamiseen mutta yleensä tunnistus tapahtuu käyttä
+jähallintapalvelun kanssa, jossa käyttäjätiedot haetaan toimialueen Active Directorystä 
+tai RADIUS, TACACS -palvelimelta.  Kun käyttäjä on todennettu, tarkistetaan sovellus, 
+lähde -IP ja -portti, kohde -IP ja -portti. Mikäli jokin näistä epäonnistuu, liikenne estetään. 
+Jotta VPN-yhteydet toimisivat, kohdeorganisaation on pitänyt avata palomuurilta IPSec
+portit (IP 50, UDP 500) ulkomaailmaan. Tämän jälkeen palomuureilla tehdään säännöt, 
+mihin saadaan liikennöidä. 
+10.3 RDP-etätyöpöytäyhteydet   
+Myös RDP-etätyöpöytäyhteydet ovat hankalia, koska ne paljastavat laiteverkon tietoko
+neita julkiseen verkkoon ja luovat näin turvallisuusriskejä. Tietokoneet tarvitsevat sään
+nöllisiä tietoturvakorjauksia, joita joudutaan päivittämään, kun ne muodostavat yhteyden 
+julkisiin verkkoihin kuten laitoksen Wi-Fi-verkkoon.  Tällöin tehtaan tietokoneet ovat sit
+ten haavoittuvia julkisten verkkojen käyttöikkunoiden aikana (jos ne ovat myös avoinna 
+RDC-ohjaukselle). Ne voivat joutua verkkohyökkäysten kohteiksi ja olla alttiita ran
+somware-injektioille.  
+Näiden turvallisuuskysymysten lieventäminen edellyttää lisäresursseja henkilöstöresurs
+sien sekä ylläpidon kannalta. Perinteisten tekniikoiden lisäämä monimutkaisuus voi li
+sätä tietoturva-aukkoja, sillä teollisia ohjausjärjestelmiä ei ole yleensä suunniteltu liitet
+täväksi ulkoisiin tietoliikenneverkkoihin.   
+VPN:n käyttäminen yhdistää järjestelmän IT-verkkoon, mikä tarkoittaa myös sitä, että 
+hakkerilla on pääsy johonkin järjestelmän pisteeseen, jota käytettiin esimerkiksi Ukrainan 
+sähköverkkoa vastaan tehdyissä hyökkäyksissä vuonna 2016. [8.] Vaikka perinteistä 
+VPN- ja etätyöpöytäyhteyksiä (RDP) käytetään laajalti ja ne sopivat etävalvonnalle ja 
+hallinnalle, ovat nämä teknologiat monimutkaisia sekä kalliita eikä ratkaisuissa kuiten
+kaan ole joustavuutta tai älykkyyttä erityistarpeiden tyydyttämiseksi. 
+30  
+10.4  Pilvipohjaiset etäkäyttöratkaisut  
+Monille ihmisille lauseet "etäkäyttö" ja "VPN" ovat synonyymejä. Yritykset ottavat kuiten
+kin nopeasti käyttöön pilvisovelluksia, jotka muuttavat turvallisuuden ja verkottumisen 
+vaatimuksia. Käyttäjät ja sovellukset ovat alkaneet siirtyä käyttämään yhä enemmän in
+ternetin pilvipalveluita, jotka toimivat verkon ulkopuolelta ilman VPN- yhteyden muodos
+tamista mistä tahansa laitteesta. 
+Yhdellä silmäyksellä näyttää, että pilvipohjainen turvallinen etäkäyttöratkaisu toimisi pää
+osin samalla tavalla kuin perinteinen VPN. Molemmat sallivat kahden IP-yhteensopivan 
+laitteen kommunikoida turvallisesti keskenään etänä internetin välityksellä. 
+Etäyhdyskäytävät on liitetty kenttälaitteisiin, jotta niitä voidaan käyttää etäyhteyden 
+kautta, jossa asiakasohjelmisto on asennettu asiantuntijan tietokoneeseen sekä pilvipal
+velin voidaan asentaa pilvipohjaiseen alustaan kuten Amazon Web Serviceen tai Micro
+soft Azureen (kuva 23).  
+Kuva 23. Pilvipohjaiset etäkäyttöratkaisut. [20.] 
+Etäyhdyskäytävä ja asiakasohjelmisto käynnistävät molemmat lähtevän suojatun yh
+teyspyynnön pilvipalvelimelle. Pilvipalvelin kartoittaa kaksi yhteyspyyntöä ja onnistuneen 
+todennuksen jälkeen molemmilta puolilta muodostetaan yhteys. Tämä voi aiheuttaa jon
+kinlaisen riskin ilman asianmukaisia suojausominaisuuksia. 
+31  
+11 Verkkolaitteiden haavoittuvuuksien etsintä internet-verkosta 
+Lähtökohtaisesti ICS-laitteita ei pitäisi näkyä internetiin mutta valitettavasti suojaamatto
+mia laitteita löytyy tietoturvaskannauksissa, joita hyödyntämällä hakkerit yrittävät etsiä 
+järjestelmiin pääsyä eri menetelmillä sekä automaattisesti että manuaalisesti. Hakkerei
+den käytettävissä on siis paljon jo valmiita automatisoituja työkaluja, omia ohjelmia sekä 
+koneille asennettavia haavoittuvuusskannereita. Lisäksi löytyy julkisia skannauspalve
+luita kuten perinteisiä hakukoneita. Erikoistuneet hakukoneet keskittyvät johonkin tiet
+tyyn aihepiiriin toisin kuin yleiskäyttöiset hakukoneet. [11.]  Shodan on yksi internetin 
+hakukoneista, jonka peruskäyttö on ilmaista ja mahdollistaa kaikkien yleisessä verkossa 
+olevien laitteiden löytämisen, jonka avulla voidaan löytää esimerkiksi web-kamerat, rei
+tittimet, palvelimet ja internet-laitteet, jotka on liitetty internetiin. Pienellä lisämaksulla 
+saadaan Shodaniin käyttöön hyödyllisiä lisäominaisuuksia kuten mm. laajemmat haku
+tulokset, komentorivikäyttö sekä karttahakuja. 
+Shodanilla on omat indeksointirobotit, jotka hakevat ja päivittävät jatkuvasti sen tietokan
+taa internettiin kytketyistä laitteista. Shodan-tietokanta sallii hakkerin etsiä IP-osoitteita 
+ja aloittaa portin skannauksen tunnistaakseen mitä käyttöjärjestelmää kohteet käyttävät 
+ja miten verkkoihin päästään sisään. Kun hakkeri tietää, mitkä ohjelmistosovellukset ovat 
+käynnissä kohteen verkossa, hän voi kehittää tiettyjä työkaluja tunnettujen haavoittu
+vuuksien hyödyntämiseksi. Esimerkiksi jos hakkeri tietää, että kohteen valvontajärjestel
+mänä toimii Siemens ja sinne on raportoitu kaksi ohjelmiston haavoittuvuutta, ensimmäi
+nen haavoittuvuus sallii onnistuneen etäisen hyökkäyksen ja toinen haavoittuvuus hak
+kerin paikallisen pääsyn muokkaamaan suojaustason salasanoja. Vaikka Siemensin oh
+jelmistopäivitys on käytettävissä, on todennäköistä, ettei sitä ei ole asennettu kaikkiin 
+järjestelmiin. Esimerkkitapaus oli raportoitu vuonna 2015. [12.]  
+Shodan tutkii siis internetiä jatkuvasti ja yksi tärkeimmistä työkaluista, joka tekee verk
+kolaitteiden haavoittuvuuksien etsinnästä helppoa ja tuotetta kuvataan internetin ensim
+mäiseksi verkkoon kytkettyjen laitteiden hakukoneeksi 
+Palvelun kautta voidaan hakea esimerkiksi kaikki Suomessa verkkoon kytketyt FTP-pal
+velimet, jotka sallivat anonyymin kirjautumisen eli palvelimen käytön ilman salasanaa.  
+32  
+Shodania käytetään Web-käyttöliittymän (kuva 24) kautta kuten muitakin yleisimpiä ha
+kukoneita. SHODAN toimii eri selaimissa, jota kuvailtu myös maailman vaarallisimmaksi 
+hakukoneeksi eli hakkerien Googleksi. 
+Kuva 24. Esimerkki Shodan Web-käyttöliittymästä. [11.] 
+Tunkeutumiskokeiden testauksessa yleisimmin käytetty työkalu on Metasploit Fra
+mework, joka on avoimen lähdekoodin projekti ja tarjoaa myös tietoa tietoturva-aukoista. 
+Muita yleisiä, vapaasti internetistä ladattavia hakukoneita ovat Google Hacking Diggity 
+Project, Nmap, Snort, Kismet, Nessus, McAfee, Sophia ja Bandolier. [17.] 
+12 Yhteenveto 
+Tietoverkkohyökkäyksissä on havaittavissa selkeä kasvu, joissa usein kohteena ovat te
+ollisuuden järjestelmät. Näin yritykset joutuvat arvioimaan uudelleen tietoturvamallinsa 
+ja sen suojaukset.  
+Tunkeutumisreittien moninaisuus tarjoaa laajan valikoiman hyökkääjille haavoittuvuuk
+sista ja problematiikkaa lisää vaikeus sulkea kaikkia tietoliikenneyhteyksiä. Yritysten tu
+lisi ottaa käyttöön puolustuksen syvällinen strategia, jossa on useita kerroksia, jotka suo
+jaavat toisiaan aina ohjauslaitteisiin saakka.  
+33  
+Saadaksemme verkon suojaukseen teolliseen käyttöön soveltuva ratkaisu, on järjestel
+mien suunnittelupuolella suositeltavaa käyttää enemmän sisäisiä vyöhykkeiden suojauk
+sia ja tunkeutumisen havaitsemiseen tarvittavia analytiikkaohjelmistoja.  
+Valvontajärjestelmävalmistajilta edellytetään hyvää suunnittelua ja testausta ennen au
+tomaatiolaitteiden käyttöönottoa. SCADA- ja kontrolliprotokollien turvallisuus ominai
+suuksia tulisi myös parantaa, sillä tällä hetkellä useimmat laitteet näyttävät olevan hyvin 
+alttiita jopa pienille hyökkäyksille, koska niillä ei ole todentamis- tai valtuutusmekanis
+meja, joilla estetään väärennösten valvonta. 
+Muuttuviin haavoittuvuuksiin sopeutuminen ja niiden havaitseminen on valvontajärjestel
+mille haaste jossa virheet näkyvät ja tuloksena voisi helposti olla maineen menetys, ym
+päristövaikutukset, tuotannolliset ja taloudelliset menetykset. 
+Yhtä ja kaikille sopivaa malliratkaisua on vaikeaa kiteyttää ja löytää, koska useasti yri
+tysten liiketoimintojen laajuus ja luonne sekä kumppaniverkostot vaihtelevat merkittä
+västi. 
+Opinnäytetyön lopputuloksena oli osoittaa arkkitehtuurisuunnittelun ja tietoturvauhkien 
+havainnoinnin merkityksen tärkeyttä teollisuusverkkojen kybertietoturvariskien pienentä
+miseen sekä toiminnan jatkuvuuden varmistamiseen. Tietoturvan parantaminen on osa 
+jatkuvaa ja kehitettävää toimintaprosessia, jonka on seurattava koko ajan aikaansa. 
+34  
+Lähteet 
+1 Recommended Practice: Improving Industrial Control System Cybersecurity 
+with Defense-in-Depth Strategies Industrial. 2016. Verkkoaineisto. Department 
+of Homeland Security. https://ics-cert.us-cert.gov/sites/default/files/recom
+mended_practices/NCCIC_ICS-CERT_Defense_in_Depth_2016_S508C.pdf. 
+Luettu 21.12.2019. 
+2 Alasdair,Gilchrist. 2018. The Industrial Internet of Things.  O’Reilly Media, Inc. 
+1005 Gravenstein Highway North, Sebastopol, CA 95472, USA Industry 4.0. 
+Luettu 11.11.2018 
+3 Cyber Security & Information Systems Information Analysis Center. 2016.  
+Verkkoaineisto.The Efficacy and Challenges of SCADA and Smart Grid Integra
+tion.https://www.csiac.org/journal-article/the-efficacy-and-challenges-of-scada
+and-smart-grid-integration/ .Luettu 23.3.2019 
+4 Pascal, Ackerman .2017. Recommended Practice: Improving Industrial Control 
+System Cybersecurity with Defense-in-Depth Strategies 2016. E-kirja. Packt 
+Publishing. Luettu 23.9.2018 
+5 NIST Special Publication 800-82 . 2013. Verkkoaineisto. Guide to Industrial 
+Control Systems (ICS) Security http://csrc.nist.gov/groups/SMA/fisma/ics/.    
+Päivitetty 12.8.2015. Luettu 1.2.2019.    
+6 Prepared for the U.S. Department of Energy under Contract DE-AC05
+76RL01830. 2011. Secure Data Transfer Guidance for Industrial Control and 
+SCADA Systems. Verkkoaineisto. https://www.pnnl.gov/main/publications/exter
+nal/technical_reports/PNNL-20776.pdf .Luettu 20.3.2019.  
+7 DNP3 2019. Verkkoaineisto. Wikipedia. https://en.wikipedia.org/wiki/DNP3. 
+Päivitetty 18.1.2019. Luettu. 13.5.2019. 
+8 Yhdysvallat tutkii Ukrainan joulukuista sähkökatkosta. Verkkoaineisto. YLE . 
+https://yle.fi/uutiset/3-8592656. Päivitetty 13.1.2016. Luettu 12.1.2019. 
+9 Pascal, Ackerman. 2017. Industrial Cybersecurity. E-kirja. Packt Publishing.   
+Luettu 23.1.2019. 
+10 Siemens Teollinen tiedonsiirto. 2019. Verkkoaineisto. Väylämuunnokset.   
+http://www.siemens.fi/fi/industry/teollisuuden_tuotteet_ja_ratkaisut/tuotesi
+vut/automaatiotekniikka/teollinen_tiedonsiirto_esim_profinet/teollisuuden_langa
+ton_tiedonsiirto.htm. Luettu 27.2.2019. 
+35  
+11 Shodan.io.  2019. Verkkoaineisto. Wikipedia. https://en.wikipedia.org/wiki/Sho
+dan_(website). Päivitetty 25.1.2019. Luettu 14.11.2018.     
+12 Siemens : Security Vulnerabilities Published In 2015. 2015. Verkkoaineisto.  
+https://www.cvedetails.com/vulnerability-list/vendor_id-109/year-2015/Sie
+mens.html . Päivitetty 27.11.2015. Luettu 25.12.2018.  
+13 Knapp  Eric D; Samani Raj; Langill Joel. Applied Cyber Security and the Smart 
+Grid E-kirja. Syngress. 
+14 WHAT IS A FIREWALL?. 2019. Verkkoaineisto. Palo Alto Networks, Inc. 
+https://www.paloaltonetworks.com/cyberpedia/what-is-a-firewall. Luettu 
+20.1.2019. 
+15 WHAT IS AN INTRUSION DETECTION SYSTEM ?. 2019. Verkkoaineisto. 
+2019 Palo Alto Networks, Inc. https://www.paloaltonetworks.com/cyberpe
+dia/what-is-an-intrusion-detection-system-ids. Luettu 20.1.2019.  
+16 WHAT IS AN INTRUSION PREVENTION SYSTEM? 2019. Verkkoaineisto. 
+2019 Palo Alto Networks, Inc. https://www.paloaltonetworks.com/cyberpe
+dia/what-is-an-intrusion-prevention-system-ips. Luettu 20.1.2019. 
+17 Hilt Stephen; Wilhoit, Kyle; Shbeeb, Aaron; Singer, Bryan, Bodungen, Clint. 
+2016. Hacking Exposed Industrial Control Systems: ICS and SCADA Security 
+Secrets & Solutions. Chapter 10. E-kirja. McGraw-Hill. 
+18 OWASP Internet of Things Project. 2019. Verkkoaineisto. 18.2.2019. 
+https://www.owasp.org/index.php/OWASP_Internet_of_Things_Pro
+ject#tab=Main. 18.2.2019. Luettu 1.3.2019. 
+19 SFS-käsikirja 631-3. Automaatio. Osa 3: Tietoturvallisuus. 2013. Helsinki: Suo
+men Standardisoimisliitto. 
+20 IoT. 2018. IoT enabled SCADA Solutions. Verkkoaineisto. http://www.travanco
+reanalytics.com/industrial-automation/iiot/. Luettu 23.4.2018.  
+21 Choosing the Right Industrial Wireless Network 2006. Verkkoaineisto. © 2006 
+Honeywell International Inc. http://www.lesmaninst.com/unleashd/catalog/wire
+less/Honeywell-XYR6000-OneWireless/hwwp_ChoosingWireless_0611.pdf.  
+Luettu 25.3.2019.   
+22 ICS-CERT MONITOR.  2017. Verkkoaineisto. Updating Antivirus Software in In
+dustrial Control Systems. Verkkoaineisto. https://ics-cert.us-cert.gov/sites/de
+fault/files/Monitors/ICS-CERT_Monitor_Sep-Oct2017_S508C.pdf. 
+36  
+23 Siemens Teollinen tiedonsiirto. 2018. Verkkoaineisto. Teollisuuden langaton tie
+donsiirto. http://www.siemens.fi/fi/industry/teollisuuden_tuotteet_ja_ratkai
+sut/tuotesivut/automaatiotekniikka/teollinen_tiedonsiirto_esim_profinet/teollisuu
+den_langaton_tiedonsiirto.htm. Luettu 11.1.2018.  
+24 Gervais, Arthur. 2012. Security Analysis of Industrial Control Systems. 
+Diplomityö. KTH Stockholm and Aalto University. Insinööritieteiden 
+korkeakoulu. Aalto-doc-tietokanta. 
